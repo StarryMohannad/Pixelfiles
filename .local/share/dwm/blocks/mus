@@ -1,0 +1,15 @@
+#!/bin/bash
+
+MPCIsPlaying="$(mpc status | grep playing)"
+MPCIsPaused="$(mpc status | grep paused)"
+# [playing] #1/1   0:54/1:52 (48%)
+
+if [ "$MPCIsPaused" == "" ] ; then
+    if [ "$MPCIsPlaying" == "" ] ; then
+        echo "Stopped"
+    else
+        mpc --format '%artist% - %title%' | head -1
+    fi
+else
+    echo "Paused"
+fi

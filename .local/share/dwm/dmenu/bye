@@ -1,0 +1,25 @@
+#!/bin/bash
+
+choice="$(printf "Power Off\nReboot\nLock\nClose DWM\nExit" | dmenu -i -z 495 -p 'Bye :D' )"
+
+case "$choice" in
+    "Power Off")
+        poweroff
+    ;;
+
+    "Reboot")
+        reboot
+    ;;
+
+    "Lock")
+        slock
+    ;;
+
+    "Close DWM")
+        killall dwm
+    ;;
+
+    "Exit")
+        return 0
+    ;;
+esac

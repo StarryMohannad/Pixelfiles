@@ -1,0 +1,6 @@
+#!/bin/bash
+
+KPFile="$HOME"/Sync/Other/PasswordDB.kdbx
+KPPass="$(/bin/cat ~/.config/db-passwd)"
+
+kpmenu -d "$KPFile" -p "$KPPass" --argsMenu "-z 495" --argsField "-z 495" --argsEntry "-z 495" --argsPassword "-z 495" 

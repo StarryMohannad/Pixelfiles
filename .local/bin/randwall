@@ -1,0 +1,9 @@
+#!/bin/bash
+
+Wallpapers=(~/.local/share/wallpapers/*)
+RandWallpaper=$(printf "%s\n" "${Wallpapers[RANDOM % ${#Wallpapers[@]}]}")
+ 
+feh --no-fehbg --bg-fill $RandWallpaper
+
+echo "[setbg]: Changed Wallpaper Randomly to "$RandWallpaper""
+

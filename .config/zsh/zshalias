@@ -1,0 +1,51 @@
+alias mkdir='mkdir -p'
+
+# Alternatives
+alias ls='exa --long --header --git --icons --group-directories-first'
+alias ll='exa --long --header --git --icons --group-directories-first'
+alias la='exa --long --header --git --icons --group-directories-first -a'
+alias youtube-dl='yt-dlp'
+alias cat='bat'
+alias cd='z'
+
+# Shotcuts
+alias g='git'
+alias gi='git init'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gcl='git clone'
+alias gp='git push'
+alias gs='git submodule'
+alias gsi='git submodule init'
+alias gsa='git submodule add'
+alias gsu='git submodule update'
+
+alias cl='clear'
+alias clh='rm -rf $ZSH/zshistory'
+alias cld='rm -rf $HOME/Downloads/*.*'
+
+alias vim='nvim'
+alias v='nvim'
+
+alias s='sudo'
+alias y='yay'
+alias se='sudoedit'
+alias sp='sudo pacman'
+alias ss='sudo systemctl'
+alias srs='sudo rc-service'
+alias sru='sudo rc-update'
+
+alias e='$EDITOR'
+alias b='$BROWSER'
+alias r='$FILEMANAGER'
+
+alias f='flatpak'
+alias fin='flatpak install'
+alias fs='flatpak search'
+alias fr='flatpak remove'
+
+alias sy='systemctl'
+
+# CleanUP
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
+alias feh="feh --no-fehbg"

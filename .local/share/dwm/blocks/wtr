@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl 'v2t.wttr.in/?format='%c%t''

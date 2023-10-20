@@ -1,0 +1,10 @@
+[user]
+	email = 73769579+StarryMohannad@users.noreply.github.com
+	name = StarryMohannad 
+	signingkey = FF518FDCF34B27C411F010DC0FB379BD8B714F9F
+[init]
+	defaultBranch = main
+[protocol "file"]
+	allow = always
+[commit]
+	gpgsign = true
