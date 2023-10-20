@@ -1,6 +1,5 @@
 format = """
 [░▒▓](#b8c0e0)\
-[ $USER ](bg:#b8c0e0 fg:#1e2030)\
 [  ](bg:#b8c0e0 fg:#1e2030)\
 [](bg:#7dc4e4 fg:#b8c0e0)\
 $directory\
@@ -17,6 +16,7 @@ $time\
 [ ](fg:#363a4f)\
 """
 
+#[ $USER ](bg:#b8c0e0 fg:#1e2030)\
 [directory]
 style = "fg:#e3e5e5 bg:#7dc4e4"
 format = "[ $path ]($style)"
