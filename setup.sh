@@ -15,7 +15,7 @@ cd /tmp/paru
 makepkg -si
 
 # Installing Packages
-paru -S xorg xorg-xinit harfbuzz neovide libx11 libxft libxinerama coreutils fontconfig freetype2 glibc ttf-dejavu ttf-firacode-nerd bat btop cava kpmenu kvantum mpv zathura zsh starship picom upower alsa-utils mpd mpc flatpak xwallpaper zoxide eza wget curl catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato nwg-look-bin shotgun hacksaw neovim ncmpcpp mpd-discord-presence-git xsel mpdris2
+paru -S xorg xorg-xinit harfbuzz libx11 libxft libxinerama coreutils fontconfig freetype2 glibc ttf-dejavu ttf-firacode-nerd bat btop cava kpmenu kvantum mpv zathura zsh starship picom upower alsa-utils mpd mpc flatpak xwallpaper zoxide eza wget curl catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato nwg-look-bin shotgun hacksaw neovim ncmpcpp mpd-discord-presence-git xsel mpdris2
 
 # Installing Packer.nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim

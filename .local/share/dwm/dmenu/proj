@@ -9,7 +9,7 @@ declare -a options=(
         "Blender"
         "Gimp"
         "Krita"
-        "Neovide"
+        "Neovim"
 )
 
 choice=$(printf '%s\n' "${options[@]}" | dmenu -i -z 525 -p 'Projects: ')
@@ -39,9 +39,9 @@ case "$choice" in
         setsid -f krita "$PROJECTS_FOLDER"/krita/"$KritaChoice"
     ;;
 
-    "Neovide")
-        NeovideChoice=$(printf '%s\n' "$(/bin/ls -1 "$PROJECTS_FOLDER"/neovide)" | dmenu -i -z 525 -p 'Neovide: ')
-        setsid -f neovide "$PROJECTS_FOLDER"/neovide/"$NeovideChoice"
+    "Neovim")
+        NeovimChoice=$(printf '%s\n' "$(/bin/ls -1 "$PROJECTS_FOLDER"/neovim)" | dmenu -i -z 525 -p 'Neovim: ')
+        setsid -f st nvim "$PROJECTS_FOLDER"/neovim/"$NeovimChoice"
 esac
 
 setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu2.mp3
