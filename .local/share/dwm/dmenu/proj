@@ -1,0 +1,48 @@
+#!/bin/sh
+
+source "$XDG_CONFIG_HOME"/pf/shell-config.sh
+
+setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu1.mp3
+
+declare -a options=(
+        "Aseprite"
+        "Blender"
+        "Gimp"
+        "Krita"
+        "Neovide"
+)
+
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -z 525 -p 'Projects: ')
+
+case "$choice" in
+    "Aseprite")
+        cd "$PROJECTS_FOLDER"/aseprite
+        AsepriteChoice=$(printf '%s\n' "$(find ./ | grep '.ase' | cut -c 3-)" | dmenu -i -z 525 -p 'Aseprite: ')
+        setsid -f aseprite "$PROJECTS_FOLDER"/aseprite/"$AsepriteChoice"
+    ;;
+
+    "Blender")
+        cd "$PROJECTS_FOLDER"/blender
+        BlenderChoice=$(printf '%s\n' "$(find ./ | grep '.blend' | cut -c 3-)" | dmenu -i -z 525 -p 'Blender: ')
+        setsid -f blender "$PROJECTS_FOLDER"/blender/"$BlenderChoice"
+    ;;
+
+    "Gimp" )
+        cd "$PROJECTS_FOLDER"/gimp
+        GimpChoice=$(printf '%s\n' "$(find ./ | grep '.xcf' | cut -c 3-)" | dmenu -i -z 525 -p 'Gimp: ') 
+        setsid -f gimp "$PROJECTS_FOLDER"/gimp/"$GimpChoice"
+    ;;
+
+    "Krita" )
+        cd "$PROJECTS_FOLDER"/krita
+        KritaChoice=$(printf '%s\n' "$(find ./ | grep '.kra' | cut -c 3-)" | dmenu -i -z 525 -p 'Krita: ')
+        setsid -f krita "$PROJECTS_FOLDER"/krita/"$KritaChoice"
+    ;;
+
+    "Neovide")
+        NeovideChoice=$(printf '%s\n' "$(/bin/ls -1 "$PROJECTS_FOLDER"/neovide)" | dmenu -i -z 525 -p 'Neovide: ')
+        setsid -f neovide "$PROJECTS_FOLDER"/neovide/"$NeovideChoice"
+esac
+
+setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu2.mp3
+

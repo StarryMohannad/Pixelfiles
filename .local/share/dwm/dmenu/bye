@@ -1,5 +1,6 @@
 #!/bin/bash
 
+setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu1.mp3
 choice="$(printf "Power Off\nReboot\nLock\nClose DWM\nExit" | dmenu -i -z 495 -p 'Bye :D' )"
 
 case "$choice" in
@@ -23,3 +24,5 @@ case "$choice" in
         return 0
     ;;
 esac
+
+setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu2.mp3

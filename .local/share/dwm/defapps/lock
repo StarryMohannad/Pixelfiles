@@ -1,3 +1,4 @@
 #!/bin/bash
 
+setsid -f mpv --no-video ~/.local/share/sounds/open.mp3
 slock

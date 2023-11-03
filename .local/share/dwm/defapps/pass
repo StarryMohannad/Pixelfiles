@@ -3,4 +3,5 @@
 KPFile="$HOME"/Sync/Other/PasswordDB.kdbx
 KPPass="$(/bin/cat ~/.config/db-passwd)"
 
+setsid -f mpv --no-video ~/.local/share/sounds/menu1.mp3
 kpmenu -d "$KPFile" -p "$KPPass" --argsMenu "-z 495" --argsField "-z 495" --argsEntry "-z 495" --argsPassword "-z 495" 

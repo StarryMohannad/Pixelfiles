@@ -44,13 +44,39 @@ static const char *colors[][3]           = {
                                            };
 
 // TAG NAMES
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "󰖟", "", "", "", "", "", "", "󰍡", "*" };
 
 // WINDOW RULES
 static const Rule rules[] = {
-	/* class   instance title    tagsmask floating monitor */
-    { "steam", NULL,    NULL,    0,       1,       -1 },
-    { "steam", NULL,    "Steam", 0,       0,       -1 }
+	/* class         instance   title      tagsmask   floating   monitor */
+
+    // Web Browsers
+    { "firefox",     NULL,      NULL,           1,    0,         -1 },
+    { "librewolf",   NULL,      NULL,           1,    0,         -1 },
+    { "qutebrowser", NULL,      NULL,           1,    0,         -1 },
+
+    // Code Editors
+    { "emacs",       NULL,      NULL,      1 << 1,    0,         -1 },
+    { "neovide",     NULL,      NULL,      1 << 1,    0,         -1 },
+
+    // Art Programs
+    { "aseprite",    NULL,      NULL,      1 << 2,    0,         -1 },
+    { "krita",       NULL,      NULL,      1 << 2,    0,         -1 },
+    { "gimp",        NULL,      NULL,      1 << 2,    0,         -1 },
+    { "blender",     NULL,      NULL,      1 << 2,    0,         -1 },
+
+    // Video Player
+    { "mpv",         NULL,      NULL,      1 << 4,    0,         -1 },
+
+    // File Manager
+    { "pcmanfm",     NULL,      NULL,      1 << 6,    0,         -1 },
+
+    // Chating Applications
+    { "discord",     NULL,      NULL,      1 << 7,    0,         -1 },
+
+    // Steam
+    { "steam",       NULL,      NULL,           0,    1,         -1 },
+    { "steam",       NULL,      "Steam",   1 << 3,    0,         -1 }
 };
 
 // LAYOUTS
@@ -90,13 +116,9 @@ static Keychord *keychords[] = {
         &((Keychord){1, {{MODKEY          , XK_q     }}, spawn, SHCMD("$DWM/defapps/term"    ) }), // Open       | TERMINAL //
         &((Keychord){1, {{MODKEY          , XK_o     }}, spawn, SHCMD("$DWM/defapps/pass"    ) }), //            | KPMENU   //
         &((Keychord){1, {{MODKEY          , XK_m     }}, spawn, SHCMD("$DWM/defapps/mpd"     ) }), //            | MUSIC    //
-        &((Keychord){2, {{MODKEY, XK_e},{0, XK_w     }}, spawn, SHCMD("$DWM/defapps/www"     ) }), //            | BROWSER  //
-        &((Keychord){2, {{MODKEY, XK_e},{0, XK_r     }}, spawn, SHCMD("$DWM/defapps/file"    ) }), //            | FILEMANG //
-        &((Keychord){2, {{MODKEY, XK_e},{0, XK_e     }}, spawn, SHCMD("$DWM/defapps/emacs"   ) }), //            | EMACS    //
         //*****************************************************************************************//***********************//
         &((Keychord){1, {{MODKEY          , XK_r     }}, spawn, SHCMD("$DWM/dmenu/run"       ) }), // Prompt     | Run      //
         &((Keychord){1, {{MODKEY          , XK_g     }}, spawn, SHCMD("$DWM/dmenu/steam"     ) }), //            | Steam    //
-        &((Keychord){1, {{MODKEY|ShiftMask, XK_w     }}, spawn, SHCMD("$DWM/dmenu/bye"       ) }), //            | Poweroff //
         //*****************************************************************************************//***********************//  
         &((Keychord){1, {{MODKEY          , XK_p     }}, spawn, SHCMD("$DWM/defapps/lock"    ) }), // Lock Screen           //
         //*****************************************************************************************//***********************//
@@ -152,16 +174,32 @@ static Keychord *keychords[] = {
         &((Keychord){1, {{MODKEY,           XK_0      }}, view,      { .ui = ~0 } }), // Enable All Tags                   //
         &((Keychord){1, {{MODKEY|ShiftMask, XK_0      }}, tag,       { .ui = ~0 } }), // Move the Focus Window to All Tags //
         //****************************************************************************//***********************************//
+        
+        // Keychords
+        //********************************************************************************************//******************//
+        &((Keychord){2,{{MODKEY|ShiftMask, XK_w},{0, XK_q }}, spawn, SHCMD("$DWM/dmenu/bye"     ) }), // PowerOFF         //
+        &((Keychord){2,{{MODKEY|ShiftMask, XK_w},{0, XK_w }}, spawn, SHCMD("xkill"              ) }), // XKill            //
+        //********************************************************************************************//******************//
+        &((Keychord){2,{{MODKEY,           XK_e},{0, XK_w }}, spawn, SHCMD("$DWM/defapps/www"   ) }), // Open  | BROWSER  //
+        &((Keychord){2,{{MODKEY,           XK_e},{0, XK_r }}, spawn, SHCMD("$DWM/defapps/file"  ) }), //       | FILEMANG //
+        &((Keychord){2,{{MODKEY,           XK_e},{0, XK_e }}, spawn, SHCMD("$DWM/defapps/emacs" ) }), //       | EMACS    //
+        //********************************************************************************************//******************//
+        &((Keychord){2,{{MODKEY,           XK_d},{0, XK_w }}, spawn, SHCMD("$DWM/dmenu/proj" ) }),    // DMenu | Proj     //
+        //********************************************************************************************//******************//
 
-        TAGKEYS(XK_1, 0 )
-        TAGKEYS(XK_2, 1 )
-        TAGKEYS(XK_3, 2 )
-        TAGKEYS(XK_4, 3 )
-        TAGKEYS(XK_5, 4 )
-        TAGKEYS(XK_6, 5 )
-        TAGKEYS(XK_7, 6 )
-        TAGKEYS(XK_8, 7 )
-        TAGKEYS(XK_9, 8 )
+
+        // Tagkeys
+        //****************//*********************//
+        TAGKEYS(XK_1, 0 ) // Move to Tag | Web   //
+        TAGKEYS(XK_2, 1 ) //             | Code  //
+        TAGKEYS(XK_3, 2 ) //             | Art   //
+        TAGKEYS(XK_4, 3 ) //             | Games //
+        TAGKEYS(XK_5, 4 ) //             | Media //
+        TAGKEYS(XK_6, 5 ) //             | Music //
+        TAGKEYS(XK_7, 6 ) //             | Files //
+        TAGKEYS(XK_8, 7 ) //             | Chat  //
+        TAGKEYS(XK_9, 8 ) //             | Any   //
+        //****************//*********************//
 
         /** Multi-Monitor Stuff
         &((Keychord){1, {{MODKEY|ShiftMask, XK_comma  }}, tagmon,    { .i  = -1 } }),
@@ -174,16 +212,16 @@ static Keychord *keychords[] = {
 // > mousebinds
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	/** { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } }, **/
-	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
-	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,              Button1,        view,           {0} },
-	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkTagBar,            MODKEY,         Button1,        tag,            { 0                      } },
+	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      { 0                      } },
+	{ ClkWinTitle,          0,              Button2,        zoom,           { 0                      } },
+	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("$DWM/defapps/term") },
+	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      { 0                      } },
+	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, { 0                      } },
+	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    { 0                      } },
+	{ ClkTagBar,            0,              Button1,        view,           { 0                      } },
+	{ ClkTagBar,            0,              Button3,        toggleview,     { 0                      } },
+	{ ClkTagBar,            MODKEY,         Button1,        tag,            { 0                      } },
+	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      { 0                      } },
 };
 
