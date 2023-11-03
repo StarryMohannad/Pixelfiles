@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p "$HOME"/.config
+mkdir -p "$HOME"/.local/share
+
 PF_DIR="$HOME"/.local/pf
 PF_SOURCE="$PF_DIR"/src
 PF_CONFIG="$PF_DIR"/.config
@@ -12,7 +15,7 @@ cd /tmp/paru
 makepkg -si
 
 # Installing Packages
-paru -S neovide libx11 libxft libxinerama coreutils fontconfig freetype2 glibc ttf-dejavu ttf-firacode-nerd bat btop cava kpmenu kvantum mpv zathura zsh starship picom upower alsa-utils mpd mpc flatpak xwallpaper zoxide eza wget curl catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato nwg-look-bin shotgun hacksaw neovim ncmpcpp mpd-discord-presence-git xsel mpdris2
+paru -S xorg xorg-xinit harfbuzz neovide libx11 libxft libxinerama coreutils fontconfig freetype2 glibc ttf-dejavu ttf-firacode-nerd bat btop cava kpmenu kvantum mpv zathura zsh starship picom upower alsa-utils mpd mpc flatpak xwallpaper zoxide eza wget curl catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato nwg-look-bin shotgun hacksaw neovim ncmpcpp mpd-discord-presence-git xsel mpdris2
 
 # Installing Packer.nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -35,10 +38,6 @@ sudo make clean install
 
 cd "$PF_SOURCE"/dmenu
 sudo make clean install
-
-# Themeing
-papirus-folders -C cat-macchiato-blue --theme Papirus-Dark
-bat cache --build
 
 # Linking Configs
 ln -s "$PF_CONFIG"/bat             "$HOME"/.config/bat
@@ -65,6 +64,10 @@ ln -s "$PF_CONFIG"/starship.toml   "$HOME"/.config/starship.toml
 ln -s "$PF_LOCAL"/bin              "$HOME"/.local/bin
 ln -s "$PF_LOCAL"/share/sounds     "$HOME"/.local/share/sounds
 ln -s "$PF_LOCAL"/share/dwm        "$HOME"/.local/share/dwm
+
+# Themeing
+papirus-folders -C cat-macchiato-blue --theme Papirus-Dark
+bat cache --build
 
 # Finishing Up
 echo 'export ZDOTDIR="$HOME"/.config/zsh' | sudo tee -a /etc/zsh/zshenv
