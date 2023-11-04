@@ -3,4 +3,4 @@
 source "$XDG_CONFIG_HOME"/pf/shell-config.sh
 
 setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu1.mp3
-kpmenu -d "$KeePassDB" -p "$KeePassPW" --argsMenu "-z 495" --argsField "-z 495" --argsEntry "-z 495" --argsPassword "-z 495" 
+kpmenu -d "$KeePassDB" -p "$KeePassPW" --argsMenu "-z 525" --argsField "-z 525" --argsEntry "-z 525" --argsPassword "-z 525" 
