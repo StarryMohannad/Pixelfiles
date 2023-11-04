@@ -24,7 +24,7 @@ def parse_arguments() -> argparse.Namespace:
         '--dmenu',
         '-d',
         dest='dmenu',
-        default='dmenu -p Launch -z 495 -i',
+        default='dmenu -i',
         help='Custom dmenu command (default is \'dmenu -i\')'
     )
     parser.add_argument(
@@ -32,7 +32,7 @@ def parse_arguments() -> argparse.Namespace:
         '-l',
         dest='library',
         nargs='*',
-        default=['~/.var/app/com.valvesoftware.Steam/.local/share/Steam'],
+        default=['~/.local/share/Steam'],
         help='Steam library location[s] (default is \'~/.local/share/Steam\')'
     )
     parsed_args = parser.parse_args()

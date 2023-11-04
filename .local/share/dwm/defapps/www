@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
-setsid -f mpv --no-video ~/.local/share/sounds/open.mp3
+setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/open.mp3
 firefox

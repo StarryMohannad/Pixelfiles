@@ -65,6 +65,8 @@ ln -s "$PF_LOCAL"/bin              "$HOME"/.local/bin
 ln -s "$PF_LOCAL"/share/sounds     "$HOME"/.local/share/sounds
 ln -s "$PF_LOCAL"/share/dwm        "$HOME"/.local/share/dwm
 
+cp -r "$PF_CONFIG"/pf              "$HOME"/.config/pf
+
 # Themeing
 papirus-folders -C cat-macchiato-blue --theme Papirus-Dark
 bat cache --build

@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-brightnessctl 5%+
+brightnessctl s 5%+

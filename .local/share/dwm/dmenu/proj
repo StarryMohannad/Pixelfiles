@@ -12,35 +12,35 @@ declare -a options=(
         "Neovim"
 )
 
-choice=$(printf '%s\n' "${options[@]}" | dmenu -i -z 525 -p 'Projects: ')
+choice=$(printf '%s\n' "${options[@]}" | "$MENU" 'Projects: ')
 
 case "$choice" in
     "Aseprite")
         cd "$PROJECTS_FOLDER"/aseprite
-        AsepriteChoice=$(printf '%s\n' "$(find ./ | grep '.ase' | cut -c 3-)" | dmenu -i -z 525 -p 'Aseprite: ')
+        AsepriteChoice=$(printf '%s\n' "$(find ./ | grep '.ase' | cut -c 3-)" | ${MENU} 'Aseprite: ')
         setsid -f aseprite "$PROJECTS_FOLDER"/aseprite/"$AsepriteChoice"
     ;;
 
     "Blender")
         cd "$PROJECTS_FOLDER"/blender
-        BlenderChoice=$(printf '%s\n' "$(find ./ | grep '.blend' | cut -c 3-)" | dmenu -i -z 525 -p 'Blender: ')
+        BlenderChoice=$(printf '%s\n' "$(find ./ | grep '.blend' | cut -c 3-)" | "$MENU" 'Blender: ')
         setsid -f blender "$PROJECTS_FOLDER"/blender/"$BlenderChoice"
     ;;
 
     "Gimp" )
         cd "$PROJECTS_FOLDER"/gimp
-        GimpChoice=$(printf '%s\n' "$(find ./ | grep '.xcf' | cut -c 3-)" | dmenu -i -z 525 -p 'Gimp: ') 
+        GimpChoice=$(printf '%s\n' "$(find ./ | grep '.xcf' | cut -c 3-)" | "$MENU" 'Gimp: ') 
         setsid -f gimp "$PROJECTS_FOLDER"/gimp/"$GimpChoice"
     ;;
 
     "Krita" )
         cd "$PROJECTS_FOLDER"/krita
-        KritaChoice=$(printf '%s\n' "$(find ./ | grep '.kra' | cut -c 3-)" | dmenu -i -z 525 -p 'Krita: ')
+        KritaChoice=$(printf '%s\n' "$(find ./ | grep '.kra' | cut -c 3-)" | "$MENU" 'Krita: ')
         setsid -f krita "$PROJECTS_FOLDER"/krita/"$KritaChoice"
     ;;
 
     "Neovim")
-        NeovimChoice=$(printf '%s\n' "$(/bin/ls -1 "$PROJECTS_FOLDER"/neovim)" | dmenu -i -z 525 -p 'Neovim: ')
+        NeovimChoice=$(printf '%s\n' "$(/bin/ls -1 "$PROJECTS_FOLDER"/neovim)" | "$MENU" 'Neovim: ')
         setsid -f st nvim "$PROJECTS_FOLDER"/neovim/"$NeovimChoice"
 esac
 

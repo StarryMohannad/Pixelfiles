@@ -2,8 +2,7 @@
 export BROWSER="firefox"
 export TERMINAL="kitty"
 export EDITOR="nvim"
-export FILETUI="ranger"
-export FILEGUI="pcmanfm"
+export MENU="dmenu -z 525 -i -p"
 
 # XDG-DIRS
 export XDG_DATA_HOME="$HOME"/.local/share
