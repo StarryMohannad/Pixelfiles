@@ -1,4 +1,3 @@
 #!/bin/sh
 
 pamixer -d 5
-setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/open.mp3

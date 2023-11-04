@@ -1,4 +1,4 @@
 #!/bin/sh
 
 setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu1.mp3
-"$MENU" 'Run'
+dmenu_run -z 525 -p 'Run: '
