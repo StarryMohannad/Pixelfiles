@@ -1,0 +1,11 @@
+#!/bin/sh
+
+source "$XDG_CONFIG_HOME"/pf/shell-config.sh
+
+setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu1.mp3
+
+choice=$(printf '%s\n' "$(/bin/ls -1 "$CODE_FOLDER")" | ${MENU} 'Neovim: ')
+setsid -f ${TERMINAL} ${EDITOR} "$CODE_FOLDER"/"$choice"
+
+setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu2.mp3
+

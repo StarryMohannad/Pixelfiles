@@ -9,39 +9,33 @@ declare -a options=(
         "Blender"
         "Gimp"
         "Krita"
-        "Neovim"
 )
 
 choice=$(printf '%s\n' "${options[@]}" | ${MENU} 'Projects: ')
 
 case "$choice" in
     "Aseprite")
-        cd "$PROJECTS_FOLDER"/aseprite
+        cd "$ART_FOLDER"
         AsepriteChoice=$(printf '%s\n' "$(find ./ | grep '.ase' | cut -c 3-)" | ${MENU} 'Aseprite: ')
-        setsid -f aseprite "$PROJECTS_FOLDER"/aseprite/"$AsepriteChoice"
+        setsid -f aseprite "$ART_FOLDER"/"$AsepriteChoice"
     ;;
 
     "Blender")
-        cd "$PROJECTS_FOLDER"/blender
+        cd "$ART_FOLDER"
         BlenderChoice=$(printf '%s\n' "$(find ./ | grep '.blend' | cut -c 3-)" | ${MENU} 'Blender: ')
-        setsid -f blender "$PROJECTS_FOLDER"/blender/"$BlenderChoice"
+        setsid -f blender "$PROJECTS_FOLDER"/"$BlenderChoice"
     ;;
 
     "Gimp" )
-        cd "$PROJECTS_FOLDER"/gimp
+        cd "$ART_FOLDER"
         GimpChoice=$(printf '%s\n' "$(find ./ | grep '.xcf' | cut -c 3-)" | ${MENU} 'Gimp: ') 
-        setsid -f gimp "$PROJECTS_FOLDER"/gimp/"$GimpChoice"
+        setsid -f gimp "$PROJECTS_FOLDER"/"$GimpChoice"
     ;;
 
     "Krita" )
-        cd "$PROJECTS_FOLDER"/krita
+        cd "$ART_FOLDER"
         KritaChoice=$(printf '%s\n' "$(find ./ | grep '.kra' | cut -c 3-)" | ${MENU} 'Krita: ')
-        setsid -f krita "$PROJECTS_FOLDER"/krita/"$KritaChoice"
-    ;;
-
-    "Neovim")
-        NeovimChoice=$(printf '%s\n' "$(/bin/ls -1 "$PROJECTS_FOLDER"/neovim)" | ${MENU} 'Neovim: ')
-        setsid -f st nvim "$PROJECTS_FOLDER"/neovim/"$NeovimChoice"
+        setsid -f krita "$PROJECTS_FOLDER"/"$KritaChoice"
 esac
 
 setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu2.mp3

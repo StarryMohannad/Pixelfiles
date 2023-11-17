@@ -1,6 +1,6 @@
 # Default Apps
 export BROWSER="firefox"
-export TERMINAL="kitty"
+export TERMINAL="st"
 export EDITOR="nvim"
 export MENU="dmenu -z 525 -i -p"
 
