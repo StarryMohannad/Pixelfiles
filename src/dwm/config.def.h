@@ -22,7 +22,7 @@ static const int showsystray             = 1;  // Toggle SysTray
 static const unsigned int systrayspacing = 2;  // SysTray Spacing
 static const unsigned int systrayonleft  = 0;  // SysTray on left of status text
 static const unsigned int systraypinning = 0;  // Which Monitor is the SysTray on (0 for the Focused Monitor)
-static const int systraypinningfailfirst = 1;  // 1: if pinning fails, display systray on the first monitor, 0: display systray on the last monitor
+static const int systraypinningfailfirst = 1;  // 1: display systray on the first monitor, 0: display systray on the last monitor
 
 // > topbar
 static const int showbar                 = 1;  // Toggle Bar
@@ -48,35 +48,39 @@ static const char *tags[] = { "󰖟", "", "", "", "", "", "", 
 
 // WINDOW RULES
 static const Rule rules[] = {
-	/* class         instance   title      tagsmask   floating   monitor */
+	/* Class             Instance   Title      Tagsmask   Floating   Monitor */
 
     // Web Browsers
-    { "firefox",     NULL,      NULL,           1,    0,         -1 },
-    { "librewolf",   NULL,      NULL,           1,    0,         -1 },
-    { "qutebrowser", NULL,      NULL,           1,    0,         -1 },
+    { "firefox",         NULL,      NULL,           1,    0,         -1 },
+    { "Librewolf",       NULL,      NULL,           1,    0,         -1 },
+    { "qutebrowser",     NULL,      NULL,           1,    0,         -1 },
+    { "waterfox",        NULL,      NULL,           1,    0,         -1 },
+    { "thorium-browser", NULL,      NULL,           1,    0,         -1 },
+    { "chromium",        NULL,      NULL,           1,    0,         -1 },
+    { "brave-browser",   NULL,      NULL,           1,    0,         -1 },
 
     // Code Editors
-    { "emacs",       NULL,      NULL,      1 << 1,    0,         -1 },
-    { "neovide",     NULL,      NULL,      1 << 1,    0,         -1 },
+    { "emacs",           NULL,      NULL,      1 << 1,    0,         -1 },
+    { "neovide",         NULL,      NULL,      1 << 1,    0,         -1 },
 
     // Art Programs
-    { "aseprite",    NULL,      NULL,      1 << 2,    0,         -1 },
-    { "krita",       NULL,      NULL,      1 << 2,    0,         -1 },
-    { "gimp",        NULL,      NULL,      1 << 2,    0,         -1 },
-    { "blender",     NULL,      NULL,      1 << 2,    0,         -1 },
+    { "aseprite",        NULL,      NULL,      1 << 2,    0,         -1 },
+    { "krita",           NULL,      NULL,      1 << 2,    0,         -1 },
+    { "gimp",            NULL,      NULL,      1 << 2,    0,         -1 },
+    { "blender",         NULL,      NULL,      1 << 2,    0,         -1 },
 
     // Video Player
-    { "mpv",         NULL,      NULL,      1 << 4,    0,         -1 },
+    { "mpv",             NULL,      NULL,      1 << 4,    0,         -1 },
 
     // File Manager
-    { "pcmanfm",     NULL,      NULL,      1 << 6,    0,         -1 },
+    { "pcmanfm",         NULL,      NULL,      1 << 6,    0,         -1 },
 
     // Chating Applications
-    { "discord",     NULL,      NULL,      1 << 7,    0,         -1 },
+    { "discord",         NULL,      NULL,      1 << 7,    0,         -1 },
 
     // Steam
-    { "steam",       NULL,      NULL,           0,    1,         -1 },
-    { "steam",       NULL,      "Steam",   1 << 3,    0,         -1 }
+    { "steam",           NULL,      NULL,           0,    1,         -1 },
+    { "steam",           NULL,      "Steam",   1 << 3,    0,         -1 }
 };
 
 // LAYOUTS
@@ -116,9 +120,9 @@ static Keychord *keychords[] = {
         &((Keychord){1, {{MODKEY          , XK_q     }}, spawn, SHCMD("$DWM/defapps/term"    ) }), // Open       | TERMINAL //
         &((Keychord){1, {{MODKEY          , XK_o     }}, spawn, SHCMD("$DWM/defapps/pass"    ) }), //            | KPMENU   //
         &((Keychord){1, {{MODKEY          , XK_m     }}, spawn, SHCMD("$DWM/defapps/mpd"     ) }), //            | MUSIC    //
+        &((Keychord){1, {{MODKEY          , XK_g     }}, spawn, SHCMD("$DWM/defapps/game"    ) }), //            | GAMES    //
         //*****************************************************************************************//***********************//
         &((Keychord){1, {{MODKEY          , XK_r     }}, spawn, SHCMD("$DWM/dmenu/run"       ) }), // Prompt     | Run      //
-        &((Keychord){1, {{MODKEY          , XK_g     }}, spawn, SHCMD("$DWM/dmenu/steam"     ) }), //            | Steam    //
         //*****************************************************************************************//***********************//  
         &((Keychord){1, {{MODKEY          , XK_p     }}, spawn, SHCMD("$DWM/defapps/lock"    ) }), // Lock Screen           //
         //*****************************************************************************************//***********************//
@@ -184,7 +188,9 @@ static Keychord *keychords[] = {
         &((Keychord){2,{{MODKEY,           XK_e},{0, XK_r }}, spawn, SHCMD("$DWM/defapps/file"  ) }), //       | FILEMANG //
         &((Keychord){2,{{MODKEY,           XK_e},{0, XK_e }}, spawn, SHCMD("$DWM/defapps/emacs" ) }), //       | EMACS    //
         //********************************************************************************************//******************//
-        &((Keychord){2,{{MODKEY,           XK_d},{0, XK_w }}, spawn, SHCMD("$DWM/dmenu/proj" ) }),    // DMenu | Proj     //
+        &((Keychord){2,{{MODKEY,           XK_d},{0, XK_q }}, spawn, SHCMD("$DWM/dmenu/code"  ) }),   // DMenu | Code     //
+        &((Keychord){2,{{MODKEY,           XK_d},{0, XK_a }}, spawn, SHCMD("$DWM/dmenu/art"   ) }),   //       | Art      //
+        &((Keychord){2,{{MODKEY,           XK_d},{0, XK_g }}, spawn, SHCMD("$DWM/dmenu/steam" ) }),   //       | Steam    //
         //********************************************************************************************//******************//
 
 
