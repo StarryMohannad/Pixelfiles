@@ -43,6 +43,7 @@ sudo make clean install
 ln -s "$PF_CONFIG"/bat             "$HOME"/.config/bat
 ln -s "$PF_CONFIG"/btop            "$HOME"/.config/btop
 ln -s "$PF_CONFIG"/cava            "$HOME"/.config/cava
+ln -s "$PF_CONFIG"/dunst           "$HOME"/.config/dunst
 ln -s "$PF_CONFIG"/discord-rpc     "$HOME"/.config/discord-rpc
 ln -s "$PF_CONFIG"/firefox         "$HOME"/.config/firefox
 ln -s "$PF_COFNIG"/git             "$HOME"/.config/git
