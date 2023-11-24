@@ -28,6 +28,9 @@ static const int systraypinningfailfirst = 1;  // 1: display systray on the firs
 static const int showbar                 = 1;  // Toggle Bar
 static const int topbar                  = 1;  // Wheather the Bar is on the Top
 
+// > swallow
+static const int swallowfloating         = 0;  // Swallow Floating Windows
+
 // > firacode font
 static const char *fonts[]               = { "FiraCode Nerd Font:size=10" };
 
@@ -48,39 +51,26 @@ static const char *tags[] = { "󰖟", "", "", "", "", "", "", 
 
 // WINDOW RULES
 static const Rule rules[] = {
-	/* Class             Instance   Title      Tagsmask   Floating   Monitor */
+	/* Class             Instance   Title      Tagsmask   Floating    Terminal   NoSwallow   Monitor*/
+
+    // Terminal
+    { "st-256color",     NULL,      NULL,           0,    0,          1,         0,         -1 },
 
     // Web Browsers
-    { "firefox",         NULL,      NULL,           1,    0,         -1 },
-    { "Librewolf",       NULL,      NULL,           1,    0,         -1 },
-    { "qutebrowser",     NULL,      NULL,           1,    0,         -1 },
-    { "waterfox",        NULL,      NULL,           1,    0,         -1 },
-    { "thorium-browser", NULL,      NULL,           1,    0,         -1 },
-    { "chromium",        NULL,      NULL,           1,    0,         -1 },
-    { "brave-browser",   NULL,      NULL,           1,    0,         -1 },
-
-    // Code Editors
-    { "emacs",           NULL,      NULL,      1 << 1,    0,         -1 },
-    { "neovide",         NULL,      NULL,      1 << 1,    0,         -1 },
-
-    // Art Programs
-    { "aseprite",        NULL,      NULL,      1 << 2,    0,         -1 },
-    { "krita",           NULL,      NULL,      1 << 2,    0,         -1 },
-    { "gimp",            NULL,      NULL,      1 << 2,    0,         -1 },
-    { "blender",         NULL,      NULL,      1 << 2,    0,         -1 },
-
-    // Video Player
-    { "mpv",             NULL,      NULL,      1 << 4,    0,         -1 },
-
-    // File Manager
-    { "pcmanfm",         NULL,      NULL,      1 << 6,    0,         -1 },
+    { "firefox",         NULL,      NULL,           1,    0,          0,         0,         -1 },
+    { "Librewolf",       NULL,      NULL,           1,    0,          0,         0,         -1 },
+    { "qutebrowser",     NULL,      NULL,           1,    0,          0,         0,         -1 },
+    { "waterfox",        NULL,      NULL,           1,    0,          0,         0,         -1 },
+    { "thorium-browser", NULL,      NULL,           1,    0,          0,         0,         -1 },
+    { "chromium",        NULL,      NULL,           1,    0,          0,         0,         -1 },
+    { "brave-browser",   NULL,      NULL,           1,    0,          0,         0,         -1 },
 
     // Chating Applications
-    { "discord",         NULL,      NULL,      1 << 7,    0,         -1 },
+    { "discord",         NULL,      NULL,      1 << 7,    0,          0,         0,         -1 },
 
     // Steam
-    { "steam",           NULL,      NULL,           0,    1,         -1 },
-    { "steam",           NULL,      "Steam",   1 << 3,    0,         -1 }
+    { "steam",           NULL,      NULL,           0,    1,          0,         0,         -1 },
+    { "steam",           NULL,      "Steam",   1 << 3,    0,          0,         0,         -1 }
 };
 
 // LAYOUTS
