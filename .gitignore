@@ -19,3 +19,6 @@ src/dmenu/dmenu
 src/dmenu/stest
 
 .config/gtk-3.0/bookmarks
+
+.config/ranger/plugins/__init__.py
+.config/ranger/plugins/__pycache__/
