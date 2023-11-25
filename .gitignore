@@ -5,16 +5,19 @@
 .config/zsh/zshistory
 
 *.o
+*.d
 *.orig
 *.rej
 
 blocks.h
+version.h
 config.h
 
 src/dwm/dwm
 src/dwmblocks/dwmblocks
 src/st/st
 src/dmenu/dmenu
+src/sxiv/sxiv
 
 src/dmenu/stest
 
