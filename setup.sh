@@ -52,7 +52,7 @@ ln -s "$PF_CONFIG"/firefox         "$HOME"/.config/firefox
 ln -s "$PF_COFNIG"/git             "$HOME"/.config/git
 ln -s "$PF_CONFIG"/gtk-2.0         "$HOME"/.config/gtk-2.0
 ln -s "$PF_CONFIG"/gtk-3.0         "$HOME"/.config/gtk-3.0
-ln -s "$PF_CONFIG"/heroic          "$HOME"/.config/heroic
+ln -s "$PF_CONFIG"/heroicthemes    "$HOME"/.config/heroicthemes
 ln -s "$PF_CONFIG"/kpmenu          "$HOME"/.config/kpmenu
 ln -s "$PF_CONFIG"/Kvantum         "$HOME"/.config/Kvantum
 ln -s "$PF_CONFIG"/lf              "$HOME"/.config/lf
