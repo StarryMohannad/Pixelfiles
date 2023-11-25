@@ -15,7 +15,7 @@ cd /tmp/paru
 makepkg -si
 
 # Installing Packages
-paru -S zsh-autosuggestions zsh-syntax-highlighting kpmenu nwg-look-bin xorg xorg-xinit harfbuzz libx11 libxft libxinerama coreutils fontconfig freetype2 glibc ttf-dejavu ttf-firacode-nerd bat btop cava kpmenu kvantum mpv zathura zsh starship picom upower alsa-utils mpd mpc flatpak xwallpaper zoxide eza wget curl catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato nwg-look-bin shotgun hacksaw neovim ncmpcpp mpd-discord-presence-git xsel mpdris2
+paru -S ranger zsh-autosuggestions zsh-syntax-highlighting kpmenu nwg-look-bin xorg xorg-xinit harfbuzz libx11 libxft libxinerama coreutils fontconfig freetype2 glibc ttf-dejavu ttf-firacode-nerd bat btop cava kpmenu kvantum mpv zathura zsh starship picom upower alsa-utils playerctl mpd mpc flatpak xwallpaper zoxide eza wget curl catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato nwg-look-bin shotgun hacksaw neovim ncmpcpp mpd-discord-presence-git xsel mpdris2
 
 # Installing Packer.nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -39,6 +39,9 @@ sudo make clean install
 cd "$PF_SOURCE"/dmenu
 sudo make clean install
 
+cd "$PF_SOURCE"/sxiv
+sudo make clean install
+
 # Linking Configs
 ln -s "$PF_CONFIG"/bat             "$HOME"/.config/bat
 ln -s "$PF_CONFIG"/btop            "$HOME"/.config/btop
@@ -55,6 +58,7 @@ ln -s "$PF_CONFIG"/Kvantum         "$HOME"/.config/Kvantum
 ln -s "$PF_CONFIG"/mpd             "$HOME"/.config/mpd
 ln -s "$PF_CONFIG"/mpv             "$HOME"/.config/mpv
 ln -s "$PF_CONFIG"/npm             "$HOME"/.config/npm
+ln -s "$PF_CONFIG"/sxiv            "$HOME"/.config/sxiv
 ln -s "$PF_CONFIG"/X11             "$HOME"/.config/X11
 ln -s "$PF_CONFIG"/zathura         "$HOME"/.config/zathura
 ln -s "$PF_CONFIG"/zsh             "$HOME"/.config/zsh
