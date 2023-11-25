@@ -1,0 +1,15 @@
+# Basic vars
+set icons
+set drawbox
+set hidden ""
+set cleaner   '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
+
+cmd on-cd &{{
+    export STARSHIP_SHELL=
+    fmt="$(starship prompt)"
+    lf -remote "send $id set promptfmt \"$fmt\""
+}}
+
+cmd trash $rm -rf $fx
+map D trash
