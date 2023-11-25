@@ -57,13 +57,13 @@ static const Rule rules[] = {
     { "st-256color",     NULL,      NULL,           0,    0,          1,         0,         -1 },
 
     // Web Browsers
-    { "firefox",         NULL,      NULL,           1,    0,          0,         0,         -1 },
-    { "Librewolf",       NULL,      NULL,           1,    0,          0,         0,         -1 },
-    { "qutebrowser",     NULL,      NULL,           1,    0,          0,         0,         -1 },
-    { "waterfox",        NULL,      NULL,           1,    0,          0,         0,         -1 },
-    { "thorium-browser", NULL,      NULL,           1,    0,          0,         0,         -1 },
-    { "chromium",        NULL,      NULL,           1,    0,          0,         0,         -1 },
-    { "brave-browser",   NULL,      NULL,           1,    0,          0,         0,         -1 },
+    { "firefox",         NULL,      NULL,          -1,    0,          0,         0,         -1 },
+    { "Librewolf",       NULL,      NULL,          -1,    0,          0,         0,         -1 },
+    { "qutebrowser",     NULL,      NULL,          -1,    0,          0,         0,         -1 },
+    { "waterfox",        NULL,      NULL,          -1,    0,          0,         0,         -1 },
+    { "thorium-browser", NULL,      NULL,          -1,    0,          0,         0,         -1 },
+    { "chromium",        NULL,      NULL,          -1,    0,          0,         0,         -1 },
+    { "brave-browser",   NULL,      NULL,          -1,    0,          0,         0,         -1 },
 
     // Chating Applications
     { "discord",         NULL,      NULL,      1 << 7,    0,          0,         0,         -1 },

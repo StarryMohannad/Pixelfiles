@@ -80,7 +80,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 // Opacity
-float alpha = 0.85;
+float alpha = 0.9;
 
 // Colorscheme
 static const char *colorname[] = {
