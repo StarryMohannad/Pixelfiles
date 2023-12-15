@@ -70,7 +70,10 @@ static const Rule rules[] = {
 
     // Steam
     { "steam",           NULL,      NULL,           0,    1,          0,         0,         -1 },
-    { "steam",           NULL,      "Steam",   1 << 3,    0,          0,         0,         -1 }
+    { "steam",           NULL,      "Steam",   1 << 3,    0,          0,         0,         -1 },
+
+    // Doom Runner
+    { "DoomRunner",      NULL,      NULL,      1 << 3,    1,          0,         0,         -1 }
 };
 
 // LAYOUTS
@@ -107,7 +110,7 @@ static Keychord *keychords[] = {
         
         // Default Applications and Scripts
         //*****************************************************************************************//***********************//
-        &((Keychord){1, {{MODKEY          , XK_q     }}, spawn, SHCMD("$DWM/defapps/term"    ) }), // Open       | TERMINAL //
+        &((Keychord){1, {{MODKEY          , XK_t     }}, spawn, SHCMD("$DWM/defapps/term"    ) }), // Open       | TERMINAL //
         &((Keychord){1, {{MODKEY          , XK_o     }}, spawn, SHCMD("$DWM/defapps/pass"    ) }), //            | KPMENU   //
         &((Keychord){1, {{MODKEY          , XK_m     }}, spawn, SHCMD("$DWM/defapps/mpd"     ) }), //            | MUSIC    //
         &((Keychord){1, {{MODKEY          , XK_g     }}, spawn, SHCMD("$DWM/defapps/game"    ) }), //            | GAMES    //
@@ -146,8 +149,8 @@ static Keychord *keychords[] = {
 
         // Layout
         //*********************************************************************************//*************************************//
-        &((Keychord){1, {{MODKEY,           XK_l }}, setmfact,   { .f =  +0.05       } }), // Scale The Master Stack       | UP   //
-        &((Keychord){1, {{MODKEY,           XK_h }}, setmfact,   { .f =  -0.05       } }), //                              | DOWN //
+        &((Keychord){1, {{MODKEY|ShiftMask, XK_l }}, setmfact,   { .f =  +0.05       } }), // Scale The Master Stack       | UP   //
+        &((Keychord){1, {{MODKEY|ShiftMask, XK_h }}, setmfact,   { .f =  -0.05       } }), //                              | DOWN //
         //*********************************************************************************//*************************************//
         &((Keychord){1, {{MODKEY,           XK_i }}, incnmaster, { .i =  +1          } }), // Increse | The No. of Master Windows //
         &((Keychord){1, {{MODKEY,           XK_u }}, incnmaster, { .i =  -1          } }), // Decrese |                           //
@@ -161,8 +164,8 @@ static Keychord *keychords[] = {
 
         // Tags
         //****************************************************************************//***********************************//
-        &((Keychord){1, {{MODKEY,           XK_a      }}, shiftview, { .i  = -1 } }), // Shiftview | NEXT                  //
-        &((Keychord){1, {{MODKEY,           XK_s      }}, shiftview, { .i  = +1 } }), //           | PREV                  //
+        &((Keychord){1, {{MODKEY,           XK_h      }}, shiftview, { .i  = -1 } }), // Shiftview | NEXT                  //
+        &((Keychord){1, {{MODKEY,           XK_l      }}, shiftview, { .i  = +1 } }), //           | PREV                  //
         &((Keychord){1, {{MODKEY,           XK_Tab    }}, view,      {        0 } }), //           | Current & Next Tag    //
         //****************************************************************************//***********************************//
         &((Keychord){1, {{MODKEY,           XK_0      }}, view,      { .ui = ~0 } }), // Enable All Tags                   //
@@ -176,7 +179,6 @@ static Keychord *keychords[] = {
         //********************************************************************************************//******************//
         &((Keychord){2,{{MODKEY,           XK_e},{0, XK_w }}, spawn, SHCMD("$DWM/defapps/www"   ) }), // Open  | BROWSER  //
         &((Keychord){2,{{MODKEY,           XK_e},{0, XK_r }}, spawn, SHCMD("$DWM/defapps/file"  ) }), //       | FILEMANG //
-        &((Keychord){2,{{MODKEY,           XK_e},{0, XK_e }}, spawn, SHCMD("$DWM/defapps/emacs" ) }), //       | EMACS    //
         //********************************************************************************************//******************//
         &((Keychord){2,{{MODKEY,           XK_d},{0, XK_q }}, spawn, SHCMD("$DWM/dmenu/code"  ) }),   // DMenu | Code     //
         &((Keychord){2,{{MODKEY,           XK_d},{0, XK_a }}, spawn, SHCMD("$DWM/dmenu/art"   ) }),   //       | Art      //

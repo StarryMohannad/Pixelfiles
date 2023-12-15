@@ -28,6 +28,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export SSB_HOME="$XDG_DATA_HOME"/zoom
+export WINE_PREFIX="$XDG_DATA_HOME"/wine
 
 # Theme
 export QT_STYLE_OVERRIDE=kvantum
