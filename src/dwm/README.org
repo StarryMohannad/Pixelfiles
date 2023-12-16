@@ -1,0 +1,442 @@
+#+title: Pixelfiles DWM
+#+author: StarryMohannad :DD
+#+description: My Build of DWM
+#+property:
+
+* DWM Pixelfiles
+is my Custom Build of DWM :DD
+
+* Table of Contents :toc:
+- [[#dwm-pixelfiles][DWM Pixelfiles]]
+- [[#config][Config]]
+  - [[#imports][Imports]]
+  - [[#appearance][Appearance]]
+  - [[#window-rules][Window Rules]]
+  - [[#layouts][Layouts]]
+
+* Config
+this file is the org config for DWM
+
+** Imports
+this import the XF86 Key Definitions for Function Keys
+
+#+BEGIN_SRC C
+#include <X11/XF86keysym.h>
+#+END_SRC
+
+** Appearance
+
+*** Window Layout
+These are Varibles for the window layout
+
+| Varible   | Purpose                                                                      |
+|-----------+------------------------------------------------------------------------------|
+| boarderpx | is for the window border size in pixels                                      |
+| gappx     | is the size of the empty gaps around the windows                             |
+| snap      | is how far the window from the screen boarders to snap with the screen edges |
+
+#+BEGIN_SRC C
+static const unsigned int borderpx = 2;
+static const unsigned int gappx = 7;
+static const unsigned int snap = 16;
+#+END_SRC
+
+*** Systray
+These are varibles for the System Tray
+
+| Varible                 | Purpose                                                                                                               |
+|-------------------------+-----------------------------------------------------------------------------------------------------------------------|
+| showsystray             | enables the system tray if 1 and disable it if 0                                                                      |
+| systrayspacing          | is the space between system tray items                                                                                |
+| systraypinning          | if 0 the system tray will be on the focused window if anything else the systemtray will only show on a specifc screen |
+| systraypinningfailfirst | if 1 it views the system tray in the first monitor and if 0 it views the system tray in the last monitor              |
+
+#+BEGIN_SRC C
+static const int showsystray = 1;
+static const unsigned int systrayspacing = 2;
+static const unsigned int systrayonleft = 0;
+static const unsigned int systraypinning = 0;
+static const int systraypinningfailfirst = 1;
+#+END_SRC
+
+*** Bar
+These are varibles for the Bar
+
+| Varible | Purpose                                                      |
+|---------+--------------------------------------------------------------|
+| showbar | if 1 shows the Bar and if 0 hides the bar                    |
+| topbar  | if 1 the Bar is on the top and if 0 the Bar is on the bottom |
+
+#+BEGIN_SRC C
+static const int showbar = 1;
+static const int topbar = 1;
+#+END_SRC
+
+*** Swallow
+this just enables or disables Swallowing Floating Terminal Windows
+
+#+BEGIN_SRC C
+static const int swallowfloating = 0;
+#+END_SRC
+
+*** Font
+this sets the font and it's size
+
+#+BEGIN_SRC C
+static const char *fonts[] = { "FiraCode Nerd Font:size=10" };
+#+END_SRC
+
+*** Colorscheme
+this sets the color scheme of the bar
+( I set it to catppuccin colors :3 )
+
+#+BEGIN_SRC C
+static const char col_gray1[] = "#24273a";
+static const char col_gray2[] = "#24273a";
+static const char col_gray3[] = "#cad3f5";
+static const char col_gray4[] = "#cad3f5";
+static const char col_cyan[]  = "#5b6078";
+static const char *colors[][3] = { [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  } };
+#+END_SRC
+
+*** Tags
+this sets the tag names
+
+#+BEGIN_SRC C
+static const char *tags[] = { "󰖟", "", "", "", "", "", "", "󰍡", "*" };
+#+END_SRC
+
+** Window Rules
+Windows have rules
+
+| Window Class | Window Instance (idk what that is)  | Window Title | Tag Index | Enables Floating | is Terminal | Disable Swallow | Monitor Index |
+
+#+BEGIN_SRC C
+static const Rule rules[] = {
+#+END_SRC
+
+*** Terminal
+This enables window swallowing
+
+#+BEGIN_SRC C
+{ "st-256color", NULL, NULL, 0, 0, 1, 0, -1 },
+#+END_SRC
+
+*** Web Browsers
+moves Browsers to the "Web Tab"
+
+#+BEGIN_SRC C
+{ "firefox", NULL, NULL, -1, 0, 0, 0, -1 },
+{ "Librewolf", NULL, NULL, -1, 0, 0, 0, -1 },
+{ "qutebrowser", NULL, NULL, -1, 0, 0, 0, -1 },
+{ "waterfox", NULL, NULL, -1, 0, 0, 0, -1 },
+{ "thorium-browser", NULL, NULL, -1, 0, 0, 0, -1 },
+{ "chromium", NULL, NULL, -1, 0, 0, 0, -1 },
+{ "brave-browser", NULL, NULL, -1, 0, 0, 0, -1 },
+#+END_SRC
+
+*** Chating Applications
+moves Chat applications to the "Chat Tab"
+
+#+BEGIN_SRC C
+{ "discord", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
+#+END_SRC
+
+*** Gaming Applications
+move Game Launchers to the "Gaming Tab"
+**** Steam
+fixes issues with Steam windows
+
+#+BEGIN_SRC C
+{ "steam", NULL, NULL, 0, 1, 0, 0, -1 },
+{ "steam", NULL, "Steam", 1 << 3, 0, 0, 0, -1 },
+#+END_SRC
+
+**** DoomRunner
+
+#+BEGIN_SRC C
+{ "DoomRunner", NULL, NULL, 1 << 3, 1, 0, 0, -1 } };
+#+END_SRC
+
+** Layouts
+changes how the layout behaves
+
+*** Varibles
+These are Varibles...
+
+| Varible        | Purpose                                                  |
+|----------------+----------------------------------------------------------|
+| mfact          | sets the size of the Master Stack (Presentage of Screen) |
+| nmaster        | sets the number windows in the Master Stack              |
+| resizehints    | respect size hints in tiled resizals                     |
+| lockfullscreen | forces focus on the fullscreen window (if there any)     |
+
+#+BEGIN_SRC C
+static const float mfact = 0.55; // Factor of Master Stack
+static const int nmaster = 1;    // Number of Windows in Master Stack
+static const int resizehints = 1;    //
+static const int lockfullscreen = 1; // force focus on the fullscreen window
+#+END_SRC
+
+*** Layout Presets
+These are layout presets
+
+| Symbol | Preset                                            |
+|--------+---------------------------------------------------|
+| []=    | Tiling                                            |
+| ><>    | Floating                                          |
+| [M]    | Monocle Layout (Fills the Screen with one Window) |
+
+#+BEGIN_SRC C
+static const Layout layouts[] = {
+{ "[]=", tile },
+{ "><>", NULL },
+{ "[M]", monocle },
+};
+#+END_SRC
+
+*** Binds
+
+**** MODKEY Definiction
+This define the MODKEY
+
+#+BEGIN_SRC C
+#define MODKEY Mod4Mask
+#+END_SRC
+
+**** Tag Binds
+This binds:
+ - MODKEY+[n] to show tag
+   - MODKEY+Ctrl+[n] to toggle tag
+     - MODKEY+Shift+[n] to move focused window to tag
+
+#+BEGIN_SRC C
+#define TAGKEYS(KEY,TAG)												\
+	&((Keychord){1, {{MODKEY, KEY}},								view,           {.ui = 1 << TAG} }), \
+		&((Keychord){1, {{MODKEY|ControlMask, KEY}},					toggleview,     {.ui = 1 << TAG} }), \
+		&((Keychord){1, {{MODKEY|ShiftMask, KEY}},						tag,            {.ui = 1 << TAG} }), \
+		&((Keychord){1, {{MODKEY|ControlMask|ShiftMask, KEY}},			toggletag,      {.ui = 1 << TAG} }),
+#+END_SRC
+
+**** SHCMD
+define the shell commands for `SHCMD()`
+
+#+BEGIN_SRC C
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#+END_SRC
+
+**** Include Shiftview
+This enables shiftview
+
+#+BEGIN_SRC C
+#include "shiftview.c"
+#+END_SRC
+
+**** KeyChords
+Here are the Keybinds :DD
+
+#+BEGIN_SRC C
+static Keychord *keychords[] = {
+#+END_SRC
+
+***** Default Applications
+These Binds open the Deafault Applications
+These Applications open from scripts in `~/.local/share/dwm/defapps`
+
+| Bind    | Command                          |
+|---------+----------------------------------|
+| Super+m | Opens Music Player (in Terminal) |
+| Super+r | Opens File Manager (in Terminal) |
+| Super+t | Opens Terminal                   |
+| Super+w | Opens Web Browser                |
+
+#+BEGIN_SRC C
+&((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/defapps/mpd" ) }),
+&((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/defapps/file") }),
+&((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/defapps/term") }),
+&((Keychord){1, {{MODKEY, XK_w }}, spawn, SHCMD("$DWM/defapps/www" ) }),
+#+END_SRC
+
+***** Prompts
+These prompts open in Dmenu
+You can find their scripts in `~/.local/share/dwm/dmenu`
+
+| Bind            | Command                           |
+|-----------------+-----------------------------------|
+| Super+d g       | Opens dmenu_steam for Steam Games |
+| Super+d h       | Opens Art Prompt                  |
+| Super+d t       | Opens Code Prompt                 |
+| Super+o         | Opens KPMenu Password Manager     |
+| Super+p         | Opens the run prompt              |
+| Super+Shift+q q | Opens the Logout Script           |
+
+#+BEGIN_SRC C
+&((Keychord){1, {{MODKEY, XK_o }}, spawn, SHCMD("$DWM/dmenu/pass") }),
+&((Keychord){1, {{MODKEY, XK_p }}, spawn, SHCMD("$DWM/dmenu/run") }),
+&((Keychord){2, {{MODKEY, XK_d }, {0, XK_t }}, spawn, SHCMD("$DWM/dmenu/code" ) }),
+&((Keychord){2, {{MODKEY, XK_d }, {0, XK_h }}, spawn, SHCMD("$DWM/dmenu/art" ) }),
+&((Keychord){2, {{MODKEY, XK_d }, {0, XK_g }}, spawn, SHCMD("$DWM/dmenu/steam" ) }),
+#+END_SRC
+
+***** Screenshots
+These are for taking screenshots using shotgun and hacksaw
+
+| Bind         | Command               |
+|--------------+-----------------------|
+| Super+Prtsrc | Fullscreen Screenshot |
+| Prtsrc       | Rectangle Screenshot  |
+
+#+BEGIN_SRC C
+&((Keychord){1, {{0, XK_Print  }}, spawn, SHCMD("$DWM/scripts/regshot" ) }),
+&((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/scrshot" ) }),
+#+END_SRC
+
+***** Hotkeys
+This binds Function Keys for controlling
+
+Brightness
+#+BEGIN_SRC C
+&((Keychord){1, {{ 0, XF86XK_MonBrightnessDown }}, spawn, SHCMD("$DWM/hotkeys/bright_down") }),
+&((Keychord){1, {{ 0, XF86XK_MonBrightnessUp }}, spawn, SHCMD("$DWM/hotkeys/bright_up") }),
+#+END_SRC
+
+Volume
+#+BEGIN_SRC C
+&((Keychord){1, {{ 0, XF86XK_AudioMute }}, spawn, SHCMD("$DWM/hotkeys/vol_mute") }),
+&((Keychord){1, {{ 0, XF86XK_AudioLowerVolume }}, spawn, SHCMD("$DWM/hotkeys/vol_down") }),
+&((Keychord){1, {{ 0, XF86XK_AudioRaiseVolume }}, spawn, SHCMD("$DWM/hotkeys/vol_up") }),
+#+END_SRC
+
+MPD (Using MPDris and playerctl)
+#+BEGIN_SRC C
+&((Keychord){1, {{ 0, XF86XK_AudioPlay }}, spawn, SHCMD("$DWM/hotkeys/mpd_play") }),
+&((Keychord){1, {{ 0, XF86XK_AudioPrev }}, spawn, SHCMD("$DWM/hotkeys/mpd_prev") }),
+&((Keychord){1, {{ 0, XF86XK_AudioNext }}, spawn, SHCMD("$DWM/hotkeys/mpd_next") }),
+#+END_SRC
+
+***** Focused Window
+These are binds that control the Focused Window
+
+| Bind         | Command                                      |
+|--------------+----------------------------------------------|
+| Super+c      | Closes Window                                |
+| Super+j/k    | Moves Focus to the Previous/Next Window      |
+| Super+Return | Moves the Focused Window to the Master Stack |
+| Super+Space  | Makes the Focused Window Float               |
+
+#+BEGIN_SRC C
+&((Keychord){1, {{MODKEY, XK_c }}, killclient, { 0 } }),
+&((Keychord){1, {{MODKEY, XK_j }}, focusstack, { .i =  +1 } }),
+&((Keychord){1, {{MODKEY, XK_k }}, focusstack, { .i =  -1 } }),
+&((Keychord){1, {{MODKEY, XK_Return }}, zoom, { 0 } }),
+&((Keychord){1, {{MODKEY, XK_space }}, togglefloating, { 0 } }),
+#+END_SRC
+
+***** Layout
+These binds affect the Layout
+
+| Bind              | Command                                                    |
+|-------------------+------------------------------------------------------------|
+| Super+b           | Toggle the bar                                             |
+| Super+Shift+h/l   | Decrese/Increse the Size of the Master Stack               |
+| Super+u/i         | Increse/Decrese the Numbers of Windows in the Master Stack |
+| Super+Shift+t/f/m | Changes the Layout to Tiled/Floating/Monocle               |
+
+#+BEGIN_SRC C
+&((Keychord){1, {{MODKEY|ShiftMask, XK_l }}, setmfact,   { .f =  +0.05 } }), // Scale The Master Stack       | UP   //
+&((Keychord){1, {{MODKEY|ShiftMask, XK_h }}, setmfact,   { .f =  -0.05 } }), //                              | DOWN //
+&((Keychord){1, {{MODKEY, XK_i }}, incnmaster, { .i =  +1 } }), // Increse | The No. of Master Windows //
+&((Keychord){1, {{MODKEY, XK_u }}, incnmaster, { .i =  -1 } }), // Decrese |                           //
+&((Keychord){1, {{MODKEY, XK_b }}, togglebar,  { 0 } }), // Toggle the Top Bar                  //
+&((Keychord){1, {{MODKEY|ShiftMask, XK_t }}, setlayout,  { .v =  &layouts[0] } }), // Layout  | Tiled                     //
+&((Keychord){1, {{MODKEY|ShiftMask, XK_f }}, setlayout,  { .v =  &layouts[1] } }), //         | Floating                  //
+&((Keychord){1, {{MODKEY|ShiftMask, XK_m }}, setlayout,  { .v =  &layouts[2] } }), //         | Monocle                   //
+#+END_SRC
+
+***** Tags
+These are for tags
+
+| Bind          | Command                                              |
+|---------------+------------------------------------------------------|
+| Super+h/l     | Views the Previous/Next Tag                          |
+| Super+0       | Shows All Tags                                       |
+| Super+Shift+0 | Makes the Focused Window Shown in all Tags           |
+| Super+Tab     | Cycles Between the Current and Previously Shown Tags |
+
+#+BEGIN_SRC C
+&((Keychord){1, {{MODKEY, XK_h }}, shiftview, { .i  = -1 } }),
+&((Keychord){1, {{MODKEY, XK_l }}, shiftview, { .i  = +1 } }),
+&((Keychord){1, {{MODKEY, XK_Tab }}, view, { 0 } }),
+&((Keychord){1, {{MODKEY, XK_0 }}, view, { .ui = ~0 } }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_0 }}, tag, { .ui = ~0 } }),
+#+END_SRC
+
+***** Misc
+These are Random Things :P
+
+| Bind            | Command                 |
+|-----------------+-------------------------|
+| Super+Shift+p   | Locks the Screen        |
+| Super+Shift+q w | Runs Xkill              |
+
+#+BEGIN_SRC C
+&((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_q }}, spawn, SHCMD("$DWM/dmenu/bye") }),
+&((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_w }}, spawn, SHCMD("xkill") }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_p }}, spawn, SHCMD("$DWM/defapps/lock") }),
+#+END_SRC
+
+
+***** Tagkeys
+Binds the Tag Keys
+
+#+BEGIN_SRC C
+TAGKEYS(XK_1, 0 )
+TAGKEYS(XK_2, 1 )
+TAGKEYS(XK_3, 2 )
+TAGKEYS(XK_4, 3 )
+TAGKEYS(XK_5, 4 )
+TAGKEYS(XK_6, 5 )
+TAGKEYS(XK_7, 6 )
+TAGKEYS(XK_8, 7 )
+TAGKEYS(XK_9, 8 )
+#+END_SRC
+
+***** Multi-Monitor Stuff
+I don't use it so it's commented out
+
+#+BEGIN_SRC C
+/**
+&((Keychord){1, {{MODKEY|ShiftMask, XK_comma  }}, tagmon,    { .i  = -1 } }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_period }}, tagmon,    { .i  = +1 } }),
+&((Keychord){1, {{MODKEY,           XK_comma  }}, focusmon,  { .i  = -1 } }),
+&((Keychord){1, {{MODKEY,           XK_period }}, focusmon,  { .i  = +1 } }),
+**/ };
+#+END_SRC
+
+**** Mouse Binds
+Bindings for Mice :DD
+
+| Bind                                                                | Command                                      |
+|---------------------------------------------------------------------+----------------------------------------------|
+| Left-Clicking the tag number in the bar While Holding the Super Key | Moves the Focused Window to tag              |
+| Middle-Clicking the Window Title in the bar                         | Moves the Focused Window to the Master Stack |
+| Left-Clicking the Status Bar                                        | Opens Terminal                               |
+| Left-Clicking a Window While Holding the Super Key                  | Freely moves the Window                      |
+| Right-Clicking a Window While Holding the Super Key                 | Freely resizes the Window                    |
+| Middle-Clicking a Window While Holding the Super Key                | Makes the Window Float                       |
+| Left-Clicking the tag number in the bar                             | Shows tag                                    |
+| Right-Clicking the tag number in the bar                            | Toggles tag                                  |
+
+#+BEGIN_SRC C
+static const Button buttons[] = {
+{ ClkTagBar, MODKEY, Button1, tag, { 0 } },
+{ ClkTagBar, MODKEY, Button3, toggletag, { 0 } },
+{ ClkWinTitle, 0, Button2, zoom, { 0 } },
+{ ClkStatusText, 0, Button2, spawn, SHCMD("$DWM/defapps/term") },
+{ ClkClientWin, MODKEY, Button1, movemouse, { 0 } },
+{ ClkClientWin, MODKEY, Button2, togglefloating, { 0 } },
+{ ClkClientWin, MODKEY, Button3, resizemouse, { 0 } },
+{ ClkTagBar, 0, Button1, view, { 0 } },
+{ ClkTagBar, 0, Button3, toggleview, { 0 } },
+};
+#+END_SRC

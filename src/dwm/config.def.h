@@ -109,21 +109,21 @@ static const Layout layouts[] = {
 static Keychord *keychords[] = {
         
         // Default Applications and Scripts
-        //******************************************************************************************//***********************//
-        &((Keychord){1, {{MODKEY           , XK_t     }}, spawn, SHCMD("$DWM/defapps/term"    ) }), // Open       | TERMINAL //
-        &((Keychord){1, {{MODKEY           , XK_w     }}, spawn, SHCMD("$DWM/defapps/www"     ) }), //            | BROWSER  //
-        &((Keychord){1, {{MODKEY           , XK_r     }}, spawn, SHCMD("$DWM/defapps/file"    ) }), //            | FILEMANG //
-        &((Keychord){1, {{MODKEY           , XK_o     }}, spawn, SHCMD("$DWM/defapps/pass"    ) }), //            | KPMENU   //
-        &((Keychord){1, {{MODKEY           , XK_m     }}, spawn, SHCMD("$DWM/defapps/mpd"     ) }), //            | MUSIC    //
-        &((Keychord){1, {{MODKEY           , XK_g     }}, spawn, SHCMD("$DWM/defapps/game"    ) }), //            | GAMES    //
-        //******************************************************************************************//***********************//
-        &((Keychord){1, {{MODKEY           , XK_p     }}, spawn, SHCMD("$DWM/dmenu/run"       ) }), // Prompt     | Run      //
-        //******************************************************************************************//***********************//  
-        &((Keychord){1, {{MODKEY|ShiftMask , XK_p     }}, spawn, SHCMD("$DWM/defapps/lock"    ) }), // Lock Screen           //
-        //******************************************************************************************//***********************//
-        &((Keychord){1, {{0                , XK_Print }}, spawn, SHCMD("$DWM/scripts/regshot" ) }), // Screenshot | Region   //
-        &((Keychord){1, {{MODKEY           , XK_Print }}, spawn, SHCMD("$DWM/scripts/scrshot" ) }), //            | Screen   //
-        //******************************************************************************************//***********************//
+        //*******************************************************************************************//***********************//
+        &((Keychord){1, {{MODKEY           , XK_t      }}, spawn, SHCMD("$DWM/defapps/term"    ) }), // Open       | TERMINAL //
+        &((Keychord){1, {{MODKEY           , XK_w      }}, spawn, SHCMD("$DWM/defapps/www"     ) }), //            | BROWSER  //
+        &((Keychord){1, {{MODKEY           , XK_r      }}, spawn, SHCMD("$DWM/defapps/file"    ) }), //            | FILEMANG //
+        &((Keychord){1, {{MODKEY           , XK_o      }}, spawn, SHCMD("$DWM/defapps/pass"    ) }), //            | KPMENU   //
+        &((Keychord){1, {{MODKEY           , XK_m      }}, spawn, SHCMD("$DWM/defapps/mpd"     ) }), //            | MUSIC    //
+        &((Keychord){1, {{MODKEY           , XK_g      }}, spawn, SHCMD("$DWM/defapps/game"    ) }), //            | GAMES    //
+        //*******************************************************************************************//***********************//
+        &((Keychord){1, {{MODKEY           , XK_p      }}, spawn, SHCMD("$DWM/dmenu/run"       ) }), // Prompt     | Run      //
+        //*******************************************************************************************//***********************//  
+        &((Keychord){1, {{MODKEY|ShiftMask , XK_p      }}, spawn, SHCMD("$DWM/defapps/lock"    ) }), // Lock Screen           //
+        //*******************************************************************************************//***********************//
+        &((Keychord){1, {{0                , XK_Print  }}, spawn, SHCMD("$DWM/scripts/regshot" ) }), // Screenshot | Region   //
+        &((Keychord){1, {{MODKEY           , XK_Print  }}, spawn, SHCMD("$DWM/scripts/scrshot" ) }), //            | Screen   //
+        //*******************************************************************************************//***********************//
 
         // Hotkeys
         //**********************************************************************************************//********//******//
@@ -146,7 +146,7 @@ static Keychord *keychords[] = {
         //**********************************************************************************//*********************************//
         &((Keychord){1, {{MODKEY           , XK_Return }}, zoom,           {        0 } }), // Focused Window | Move to Master //
         &((Keychord){1, {{MODKEY           , XK_space  }}, togglefloating, {        0 } }), //                | Floating       //
-        &((Keychord){1, {{MODKEY|ShiftMask , XK_c      }}, killclient,     {        0 } }), //                | Close          //
+        &((Keychord){1, {{MODKEY           , XK_c      }}, killclient,     {        0 } }), //                | Close          //
         //**********************************************************************************//*********************************//
 
         // Layout
