@@ -1,32 +1,42 @@
 #+title: Pixelfiles DWM
 #+author: StarryMohannad :DD
 #+description: My Build of DWM
-#+property:
+#+property: header-args :tangle config.def.h
 
 * DWM Pixelfiles
 is my Custom Build of DWM :DD
 
-* Table of Contents :toc:
+** Table of Contents :toc:
 - [[#dwm-pixelfiles][DWM Pixelfiles]]
-- [[#config][Config]]
-  - [[#imports][Imports]]
-  - [[#appearance][Appearance]]
-  - [[#window-rules][Window Rules]]
-  - [[#layouts][Layouts]]
+  - [[#screenshots][Screenshots]]
+  - [[#patches][Patches]]
+  - [[#config][Config]]
 
-* Config
+** Screenshots
+
+** Patches
+This Build of DWM uses
+
+1. [[https://dwm.suckless.org/patches/autostart/][autostart]]
+2. [[https://dwm.suckless.org/patches/fullgaps/][fullgaps]]
+3. [[https://dwm.suckless.org/patches/keychord/][keychord]]
+4. [[https://dwm.suckless.org/patches/steam/][steam]]
+5. [[https://dwm.suckless.org/patches/swallow/][swallow]]
+6. [[https://dwm.suckless.org/patches/systray][systray]]
+
+** Config
 this file is the org config for DWM
 
-** Imports
+*** Imports
 this import the XF86 Key Definitions for Function Keys
 
 #+BEGIN_SRC C
 #include <X11/XF86keysym.h>
 #+END_SRC
 
-** Appearance
+*** Appearance
 
-*** Window Layout
+**** Window Layout
 These are Varibles for the window layout
 
 | Varible   | Purpose                                                                      |
@@ -41,7 +51,7 @@ static const unsigned int gappx = 7;
 static const unsigned int snap = 16;
 #+END_SRC
 
-*** Systray
+**** Systray
 These are varibles for the System Tray
 
 | Varible                 | Purpose                                                                                                               |
@@ -59,7 +69,7 @@ static const unsigned int systraypinning = 0;
 static const int systraypinningfailfirst = 1;
 #+END_SRC
 
-*** Bar
+**** Bar
 These are varibles for the Bar
 
 | Varible | Purpose                                                      |
@@ -72,21 +82,21 @@ static const int showbar = 1;
 static const int topbar = 1;
 #+END_SRC
 
-*** Swallow
+**** Swallow
 this just enables or disables Swallowing Floating Terminal Windows
 
 #+BEGIN_SRC C
 static const int swallowfloating = 0;
 #+END_SRC
 
-*** Font
+**** Font
 this sets the font and it's size
 
 #+BEGIN_SRC C
 static const char *fonts[] = { "FiraCode Nerd Font:size=10" };
 #+END_SRC
 
-*** Colorscheme
+**** Colorscheme
 this sets the color scheme of the bar
 ( I set it to catppuccin colors :3 )
 
@@ -99,14 +109,14 @@ static const char col_cyan[]  = "#5b6078";
 static const char *colors[][3] = { [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  } };
 #+END_SRC
 
-*** Tags
+**** Tags
 this sets the tag names
 
 #+BEGIN_SRC C
 static const char *tags[] = { "󰖟", "", "", "", "", "", "", "󰍡", "*" };
 #+END_SRC
 
-** Window Rules
+*** Window Rules
 Windows have rules
 
 | Window Class | Window Instance (idk what that is)  | Window Title | Tag Index | Enables Floating | is Terminal | Disable Swallow | Monitor Index |
@@ -115,14 +125,14 @@ Windows have rules
 static const Rule rules[] = {
 #+END_SRC
 
-*** Terminal
+**** Terminal
 This enables window swallowing
 
 #+BEGIN_SRC C
 { "st-256color", NULL, NULL, 0, 0, 1, 0, -1 },
 #+END_SRC
 
-*** Web Browsers
+**** Web Browsers
 moves Browsers to the "Web Tab"
 
 #+BEGIN_SRC C
@@ -135,16 +145,16 @@ moves Browsers to the "Web Tab"
 { "brave-browser", NULL, NULL, -1, 0, 0, 0, -1 },
 #+END_SRC
 
-*** Chating Applications
+**** Chating Applications
 moves Chat applications to the "Chat Tab"
 
 #+BEGIN_SRC C
 { "discord", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
 #+END_SRC
 
-*** Gaming Applications
+**** Gaming Applications
 move Game Launchers to the "Gaming Tab"
-**** Steam
+***** Steam
 fixes issues with Steam windows
 
 #+BEGIN_SRC C
@@ -152,16 +162,16 @@ fixes issues with Steam windows
 { "steam", NULL, "Steam", 1 << 3, 0, 0, 0, -1 },
 #+END_SRC
 
-**** DoomRunner
+***** DoomRunner
 
 #+BEGIN_SRC C
 { "DoomRunner", NULL, NULL, 1 << 3, 1, 0, 0, -1 } };
 #+END_SRC
 
-** Layouts
+*** Layouts
 changes how the layout behaves
 
-*** Varibles
+**** Varibles
 These are Varibles...
 
 | Varible        | Purpose                                                  |
@@ -178,7 +188,7 @@ static const int resizehints = 1;    //
 static const int lockfullscreen = 1; // force focus on the fullscreen window
 #+END_SRC
 
-*** Layout Presets
+**** Layout Presets
 These are layout presets
 
 | Symbol | Preset                                            |
