@@ -3,18 +3,21 @@
 #+description: My Build of DWM
 #+property: header-args :tangle config.def.h
 
-* DWM Pixelfiles
 is my Custom Build of DWM :DD
 
-** Table of Contents :toc:
-- [[#dwm-pixelfiles][DWM Pixelfiles]]
-  - [[#screenshots][Screenshots]]
-  - [[#patches][Patches]]
-  - [[#config][Config]]
+* Table of Contents :toc:
+- [[#screenshots][Screenshots]]
+- [[#patches][Patches]]
+- [[#config][Config]]
+  - [[#imports][Imports]]
+  - [[#appearance][Appearance]]
+  - [[#window-rules][Window Rules]]
+  - [[#layouts][Layouts]]
+  - [[#binds][Binds]]
 
-** Screenshots
+* Screenshots
 
-** Patches
+* Patches
 This Build of DWM uses
 
 1. [[https://dwm.suckless.org/patches/autostart/][autostart]]
@@ -24,19 +27,19 @@ This Build of DWM uses
 5. [[https://dwm.suckless.org/patches/swallow/][swallow]]
 6. [[https://dwm.suckless.org/patches/systray][systray]]
 
-** Config
+* Config
 this file is the org config for DWM
 
-*** Imports
+** Imports
 this import the XF86 Key Definitions for Function Keys
 
 #+BEGIN_SRC C
 #include <X11/XF86keysym.h>
 #+END_SRC
 
-*** Appearance
+** Appearance
 
-**** Window Layout
+*** Window Layout
 These are Varibles for the window layout
 
 | Varible   | Purpose                                                                      |
@@ -51,7 +54,7 @@ static const unsigned int gappx = 7;
 static const unsigned int snap = 16;
 #+END_SRC
 
-**** Systray
+*** Systray
 These are varibles for the System Tray
 
 | Varible                 | Purpose                                                                                                               |
@@ -69,7 +72,7 @@ static const unsigned int systraypinning = 0;
 static const int systraypinningfailfirst = 1;
 #+END_SRC
 
-**** Bar
+*** Bar
 These are varibles for the Bar
 
 | Varible | Purpose                                                      |
@@ -82,21 +85,21 @@ static const int showbar = 1;
 static const int topbar = 1;
 #+END_SRC
 
-**** Swallow
+*** Swallow
 this just enables or disables Swallowing Floating Terminal Windows
 
 #+BEGIN_SRC C
 static const int swallowfloating = 0;
 #+END_SRC
 
-**** Font
+*** Font
 this sets the font and it's size
 
 #+BEGIN_SRC C
 static const char *fonts[] = { "FiraCode Nerd Font:size=10" };
 #+END_SRC
 
-**** Colorscheme
+*** Colorscheme
 this sets the color scheme of the bar
 ( I set it to catppuccin colors :3 )
 
@@ -109,14 +112,14 @@ static const char col_cyan[]  = "#5b6078";
 static const char *colors[][3] = { [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  } };
 #+END_SRC
 
-**** Tags
+*** Tags
 this sets the tag names
 
 #+BEGIN_SRC C
 static const char *tags[] = { "󰖟", "", "", "", "", "", "", "󰍡", "*" };
 #+END_SRC
 
-*** Window Rules
+** Window Rules
 Windows have rules
 
 | Window Class | Window Instance (idk what that is)  | Window Title | Tag Index | Enables Floating | is Terminal | Disable Swallow | Monitor Index |
@@ -125,14 +128,14 @@ Windows have rules
 static const Rule rules[] = {
 #+END_SRC
 
-**** Terminal
+*** Terminal
 This enables window swallowing
 
 #+BEGIN_SRC C
 { "st-256color", NULL, NULL, 0, 0, 1, 0, -1 },
 #+END_SRC
 
-**** Web Browsers
+*** Web Browsers
 moves Browsers to the "Web Tab"
 
 #+BEGIN_SRC C
@@ -145,16 +148,16 @@ moves Browsers to the "Web Tab"
 { "brave-browser", NULL, NULL, -1, 0, 0, 0, -1 },
 #+END_SRC
 
-**** Chating Applications
+*** Chating Applications
 moves Chat applications to the "Chat Tab"
 
 #+BEGIN_SRC C
 { "discord", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
 #+END_SRC
 
-**** Gaming Applications
+*** Gaming Applications
 move Game Launchers to the "Gaming Tab"
-***** Steam
+**** Steam
 fixes issues with Steam windows
 
 #+BEGIN_SRC C
@@ -162,16 +165,16 @@ fixes issues with Steam windows
 { "steam", NULL, "Steam", 1 << 3, 0, 0, 0, -1 },
 #+END_SRC
 
-***** DoomRunner
+**** DoomRunner
 
 #+BEGIN_SRC C
 { "DoomRunner", NULL, NULL, 1 << 3, 1, 0, 0, -1 } };
 #+END_SRC
 
-*** Layouts
+** Layouts
 changes how the layout behaves
 
-**** Varibles
+*** Varibles
 These are Varibles...
 
 | Varible        | Purpose                                                  |
@@ -188,7 +191,7 @@ static const int resizehints = 1;    //
 static const int lockfullscreen = 1; // force focus on the fullscreen window
 #+END_SRC
 
-**** Layout Presets
+*** Layout Presets
 These are layout presets
 
 | Symbol | Preset                                            |
@@ -205,16 +208,16 @@ static const Layout layouts[] = {
 };
 #+END_SRC
 
-*** Binds
+** Binds
 
-**** MODKEY Definiction
+*** MODKEY Definiction
 This define the MODKEY
 
 #+BEGIN_SRC C
 #define MODKEY Mod4Mask
 #+END_SRC
 
-**** Tag Binds
+*** Tag Binds
 This binds:
  - MODKEY+[n] to show tag
    - MODKEY+Ctrl+[n] to toggle tag
@@ -228,28 +231,28 @@ This binds:
 		&((Keychord){1, {{MODKEY|ControlMask|ShiftMask, KEY}},			toggletag,      {.ui = 1 << TAG} }),
 #+END_SRC
 
-**** SHCMD
+*** SHCMD
 define the shell commands for `SHCMD()`
 
 #+BEGIN_SRC C
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #+END_SRC
 
-**** Include Shiftview
+*** Include Shiftview
 This enables shiftview
 
 #+BEGIN_SRC C
 #include "shiftview.c"
 #+END_SRC
 
-**** KeyChords
+*** KeyChords
 Here are the Keybinds :DD
 
 #+BEGIN_SRC C
 static Keychord *keychords[] = {
 #+END_SRC
 
-***** Default Applications
+**** Default Applications
 These Binds open the Deafault Applications
 These Applications open from scripts in `~/.local/share/dwm/defapps`
 
@@ -267,7 +270,7 @@ These Applications open from scripts in `~/.local/share/dwm/defapps`
 &((Keychord){1, {{MODKEY, XK_w }}, spawn, SHCMD("$DWM/defapps/www" ) }),
 #+END_SRC
 
-***** Prompts
+**** Prompts
 These prompts open in Dmenu
 You can find their scripts in `~/.local/share/dwm/dmenu`
 
@@ -288,7 +291,7 @@ You can find their scripts in `~/.local/share/dwm/dmenu`
 &((Keychord){2, {{MODKEY, XK_d }, {0, XK_g }}, spawn, SHCMD("$DWM/dmenu/steam" ) }),
 #+END_SRC
 
-***** Screenshots
+**** Screenshots
 These are for taking screenshots using shotgun and hacksaw
 
 | Bind         | Command               |
@@ -301,7 +304,7 @@ These are for taking screenshots using shotgun and hacksaw
 &((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/scrshot" ) }),
 #+END_SRC
 
-***** Hotkeys
+**** Hotkeys
 This binds Function Keys for controlling
 
 Brightness
@@ -324,7 +327,7 @@ MPD (Using MPDris and playerctl)
 &((Keychord){1, {{ 0, XF86XK_AudioNext }}, spawn, SHCMD("$DWM/hotkeys/mpd_next") }),
 #+END_SRC
 
-***** Focused Window
+**** Focused Window
 These are binds that control the Focused Window
 
 | Bind         | Command                                      |
@@ -342,7 +345,7 @@ These are binds that control the Focused Window
 &((Keychord){1, {{MODKEY, XK_space }}, togglefloating, { 0 } }),
 #+END_SRC
 
-***** Layout
+**** Layout
 These binds affect the Layout
 
 | Bind              | Command                                                    |
@@ -363,7 +366,7 @@ These binds affect the Layout
 &((Keychord){1, {{MODKEY|ShiftMask, XK_m }}, setlayout,  { .v =  &layouts[2] } }), //         | Monocle                   //
 #+END_SRC
 
-***** Tags
+**** Tags
 These are for tags
 
 | Bind          | Command                                              |
@@ -381,7 +384,7 @@ These are for tags
 &((Keychord){1, {{MODKEY|ShiftMask, XK_0 }}, tag, { .ui = ~0 } }),
 #+END_SRC
 
-***** Misc
+**** Misc
 These are Random Things :P
 
 | Bind            | Command                 |
@@ -396,7 +399,7 @@ These are Random Things :P
 #+END_SRC
 
 
-***** Tagkeys
+**** Tagkeys
 Binds the Tag Keys
 
 #+BEGIN_SRC C
@@ -411,7 +414,7 @@ TAGKEYS(XK_8, 7 )
 TAGKEYS(XK_9, 8 )
 #+END_SRC
 
-***** Multi-Monitor Stuff
+**** Multi-Monitor Stuff
 I don't use it so it's commented out
 
 #+BEGIN_SRC C
@@ -423,7 +426,7 @@ I don't use it so it's commented out
 **/ };
 #+END_SRC
 
-**** Mouse Binds
+*** Mouse Binds
 Bindings for Mice :DD
 
 | Bind                                                                | Command                                      |
