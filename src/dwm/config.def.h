@@ -70,6 +70,7 @@ static const Layout layouts[] = {
 
 static Keychord *keychords[] = {
 
+&((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/defapps/emacs" ) }),
 &((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/defapps/mpd" ) }),
 &((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/defapps/file") }),
 &((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/defapps/term") }),
@@ -146,5 +147,4 @@ static const Button buttons[] = {
 { ClkClientWin, MODKEY, Button2, togglefloating, { 0 } },
 { ClkClientWin, MODKEY, Button3, resizemouse, { 0 } },
 { ClkTagBar, 0, Button1, view, { 0 } },
-{ ClkTagBar, 0, Button3, toggleview, { 0 } },
-};
+{ ClkTagBar, 0, Button3, toggleview, { 0 } }, };

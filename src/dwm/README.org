@@ -157,6 +157,7 @@ moves Chat applications to the "Chat Tab"
 
 *** Gaming Applications
 move Game Launchers to the "Gaming Tab"
+
 **** Steam
 fixes issues with Steam windows
 
@@ -211,17 +212,20 @@ static const Layout layouts[] = {
 ** Binds
 
 *** MODKEY Definiction
-This define the MODKEY
+This define the Super key as MODKEY
 
 #+BEGIN_SRC C
 #define MODKEY Mod4Mask
 #+END_SRC
 
 *** Tag Binds
-This binds:
- - MODKEY+[n] to show tag
-   - MODKEY+Ctrl+[n] to toggle tag
-     - MODKEY+Shift+[n] to move focused window to tag
+These are bindings for Tags
+
+| Binds            | Command                       |
+|------------------+-------------------------------|
+| MODKEY+[n]       | to show tag                   |
+| MODKEY+Ctrl+[n]  | to toggle tag                 |
+| MODKEY+Shift+[n] | to move focused window to tag |
 
 #+BEGIN_SRC C
 #define TAGKEYS(KEY,TAG)												\
@@ -258,12 +262,14 @@ These Applications open from scripts in `~/.local/share/dwm/defapps`
 
 | Bind    | Command                          |
 |---------+----------------------------------|
+| Super+e | Opens Emacs (Client)             |
 | Super+m | Opens Music Player (in Terminal) |
 | Super+r | Opens File Manager (in Terminal) |
 | Super+t | Opens Terminal                   |
 | Super+w | Opens Web Browser                |
 
 #+BEGIN_SRC C
+&((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/defapps/emacs" ) }),
 &((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/defapps/mpd" ) }),
 &((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/defapps/file") }),
 &((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/defapps/term") }),
@@ -450,6 +456,5 @@ static const Button buttons[] = {
 { ClkClientWin, MODKEY, Button2, togglefloating, { 0 } },
 { ClkClientWin, MODKEY, Button3, resizemouse, { 0 } },
 { ClkTagBar, 0, Button1, view, { 0 } },
-{ ClkTagBar, 0, Button3, toggleview, { 0 } },
-};
+{ ClkTagBar, 0, Button3, toggleview, { 0 } }, };
 #+END_SRC
