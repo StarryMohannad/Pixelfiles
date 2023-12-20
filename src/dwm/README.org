@@ -1,12 +1,13 @@
 #+title: Pixelfiles DWM
 #+author: StarryMohannad :DD
-#+description: My Build of DWM
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: my build of dwm (dynamic window manager) :DD
 #+property: header-args :tangle config.def.h
 
-is my Custom Build of DWM :DD
+is my custom build of [[https://dwm.suckless.org][dwm (dynamic window manager)]] for [[https://github.com/StarryMohannad][Pixelfiles]] :DD
 
 * Table of Contents :toc:
-- [[#screenshots][Screenshots]]
+- [[#screenshot][Screenshot]]
 - [[#patches][Patches]]
 - [[#config][Config]]
   - [[#imports][Imports]]
@@ -15,7 +16,8 @@ is my Custom Build of DWM :DD
   - [[#layouts][Layouts]]
   - [[#binds][Binds]]
 
-* Screenshots
+* Screenshot
+[[./../../assets/dwm.png]]
 
 * Patches
 This Build of DWM uses
@@ -28,7 +30,7 @@ This Build of DWM uses
 6. [[https://dwm.suckless.org/patches/systray][systray]]
 
 * Config
-this file is the org config for DWM
+here is the config file for dwm, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
 
 ** Imports
 this import the XF86 Key Definitions for Function Keys
@@ -38,6 +40,7 @@ this import the XF86 Key Definitions for Function Keys
 #+END_SRC
 
 ** Appearance
+these settings configure the colors and font
 
 *** Window Layout
 These are Varibles for the window layout

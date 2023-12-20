@@ -1,0 +1,59 @@
+#+title: Pixelfiles DMENU
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: my build of dmenu :DD
+#+property: header-args :tangle config.def.h
+
+is my custom build of [[https://tools.suckless.org/dmenu][dmenu]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
+
+* Table of Contents :toc:
+- [[#screenshot][Screenshot]]
+- [[#patches][Patches]]
+- [[#config][Config]]
+  - [[#font][Font]]
+  - [[#colorscheme][Colorscheme]]
+  - [[#other-varibles][Other Varibles]]
+
+* Screenshot
+[[./../../assets/dmenu.png]]
+
+* Patches
+This Build of Dmenu only uses the [[https://tools.suckless.org/dmenu/patches/xyw/][xyw]] patch
+
+* Config
+here is the config file for dmenu, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
+
+** Font
+this sets dmenu font
+
+#+BEGIN_SRC C
+static const char *fonts[] = { "FiraCode Nerd Font:size=10" };
+#+END_SRC
+
+** Colorscheme
+this sets the colorscheme of dmenu
+( I use Cattpuccin :3 )
+
+#+BEGIN_SRC C
+static const char *colors[SchemeLast][2] = {
+[SchemeNorm] = { "#cad3f5", "#24273a" },
+[SchemeSel] = { "#cad3f5", "#5b6078" },
+[SchemeOut] = { "#000000", "#00ffff" }, };
+#+END_SRC
+
+** Other Varibles
+this configure other things
+
+| Varible        | Purpose                                                |
+|----------------+--------------------------------------------------------|
+| topbar         | weather the bar is on top or bottom                    |
+| prompt         | the default prompt if -p flag was not applied          |
+| lines          | the default number of lines if -l flag was not applied |
+| worddelimiters | characters not considered part of a word               |
+
+#+BEGIN_SRC C
+static int topbar = 1;
+static const char *prompt = NULL;
+static unsigned int lines = 53;
+static const char worddelimiters[] = " ";
+#+END_SRC

@@ -1,0 +1,55 @@
+#+title: Pixelfiles DWMBLOCKS
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: my build of dwmblocks :DD
+#+property: header-args :tangle blocks.def.h
+
+is my custom build of [[https://github.com/torrinfail/dwmblocks][dwmblocks]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
+
+* Table of Contents :toc:
+- [[#screenshot][Screenshot]]
+- [[#config][Config]]
+  - [[#blocks][Blocks]]
+  - [[#delimiter][Delimiter]]
+
+* Screenshot
+[[./../../assets/dwmblocks.png]]
+
+* Config
+here is the config file for dwmblocks, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
+
+** Blocks
+these are the blocks that appear on the status bar
+they use scripts placed in ~/.local/share/dwm/blocks
+
+| Block    | Script | Icon |
+|----------+--------+------|
+| Music    | mus    |     |
+| Battary  | bat    | 󱐋    |
+| Volume   | vol    | 󰕾    |
+| Weather  | wtr    | ---- |
+| Calender | cal    | 󰸗    |
+| Clock    | tim    |     |
+
+#+BEGIN_SRC C
+static const Block blocks[] = {
+{ "  ", "~/.local/share/dwm/blocks/mus", 1, 0},
+{ "󱐋  ", "~/.local/share/dwm/blocks/bat", 1, 0},
+{ "󰕾  ", "~/.local/share/dwm/blocks/vol", 1, 0},
+{ "",    "~/.local/share/dwm/blocks/wtr", 1, 0},
+{ "󰸗  ", "~/.local/share/dwm/blocks/cal", 1, 0},
+{ "  ", "~/.local/share/dwm/blocks/tim", 1, 0}, };
+#+END_SRC
+
+** Delimiter
+this is the delimiter that appears between blocks
+
+| Varible  | Purpose                                      |
+|----------+----------------------------------------------|
+| delim    | the character that will act as the delimiter |
+| delimLen | the length of the delimiter                  |
+
+#+BEGIN_SRC C
+static char delim[] = " | ";
+static unsigned int delimLen = 5;
+#+END_SRC

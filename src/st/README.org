@@ -1,7 +1,64 @@
+#+title: Pixelfiles ST
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: my build of st (suckless terminal) :DD
+#+property: header-args :tangle config.def.h
+
+is my custom build [[https://st.suckless.org/][st (suckless terminal)]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
+
+* Table of Contents :toc:
+- [[#screenshot][Screenshot]]
+- [[#patches][Patches]]
+- [[#config][Config]]
+  - [[#appearance][Appearance]]
+  - [[#behaviour][Behaviour]]
+  - [[#boxdraw][BoxDraw]]
+  - [[#binds][Binds]]
+  - [[#advanced-settings][Advanced Settings]]
+
+* Screenshot
+[[./../../assets/st.png]]
+
+* Patches
+This Build of St uses these patches
+
+1. [[https://st.suckless.org/patches/alpha][alpha]]
+2. [[https://st.suckless.org/patches/boxdraw][boxdraw]]
+3. [[https://st.suckless.org/patches/scrollback][srollback]]
+4. [[https://st.suckless.org/patches/w3m][w3m]]
+
+* Config
+here is the config file for st, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
+(ALERT: Some of this document might be misleading because I don't know alot about Terminal Emulator Programming)
+
+** Appearance
+these settings configure the colors and font
+
+*** Font
+This sets the font of the Terminal
+
+#+BEGIN_SRC C
 static char *font = "FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=true";
+#+END_SRC
 
+**** Border Pixel
+The Maximum width of a character in the terminal
+
+#+BEGIN_SRC C
 static int borderpx = 5;
+#+END_SRC
 
+*** Colorscheme
+This sets the colorscheme of the terminal
+( I use Cattpuccin :3 )
+
+| Index | Purpose      |
+|-------+--------------|
+|   256 | Background   |
+|   257 | Foreground   |
+|   258 | Curosr Color |
+
+#+BEGIN_SRC C
 // Colorscheme
 static const char *colorname[] = {
 "#494D64",
@@ -29,60 +86,208 @@ unsigned int defaultfg = 256;
 unsigned int defaultbg = 257;
 unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 258;
+#+END_SRC
 
+**** Font Attributes color
+when fontconfig selected a font which doesn't match the ones requested.
+
+#+BEGIN_SRC C
 static unsigned int defaultattr = 11;
+#+END_SRC
 
+*** Opacity
+this sets the opacity
+
+#+BEGIN_SRC C
 float alpha = 0.9;
+#+END_SRC
 
+*** Cursor
+
+**** Shape
+What shape do you want your cursor to be
+
+| Index | Shape |
+|-------+-------|
+|     2 | █     |
+|     4 | _     |
+|     6 | Pipe  |
+|     7 | ☃    |
+
+#+BEGIN_SRC C
 static unsigned int cursorshape = 2;
+#+END_SRC
 
+**** Thickness
+how thick is the cursor (in pixels)
+
+#+BEGIN_SRC C
 static unsigned int cursorthickness = 2;
+#+END_SRC
 
+**** Mouse Cursor
+this defines the default color and shape of the mouse cursor
+
+#+BEGIN_SRC C
 static unsigned int mouseshape = XC_xterm;
 static unsigned int mousefg = 7;
 static unsigned int mousebg = 0;
+#+END_SRC
 
+**** Cursor Blinking
+This sets the rate of cursor blinking (if set to 0 it will disable blinking)
+
+#+BEGIN_SRC C
 static unsigned int blinktimeout = 800;
+#+END_SRC
 
+*** Spaces per Tab
+ When you are changing this value, don't forget to adapt the »it« value in the st.info and appropriately install the st.info in the environment where you use this st version. it#$tabspaces, Secondly make sure your kernel is not expanding tabs. When running `stty -a` »tab0« should appear. You can tell the terminal to not expand tabs by running following command: stty tabs
+
+#+BEGIN_SRC C
 unsigned int tabspaces = 8;
+#+END_SRC
 
+** Behaviour
+
+*** UTMP
+How St Opens Programs
+
+| Index | Choice                        |
+|-------+-------------------------------|
+|     1 | program passed with -e        |
+|     2 | scroll and/or utmp            |
+|     3 | SHELL environment variable    |
+|     4 | value of shell in /etc/passwd |
+|     5 | value of shell in config.h    |
+
+#+BEGIN_SRC C
 static char *shell = "/bin/sh";
 char *utmp = NULL;
+#+END_SRC
 
+*** Scroll
+these things enable the string "scroll"
+
+#+BEGIN_SRC C
 char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
+#+END_SRC
 
+*** Identification Sequance
+returned in DA and DECID
+
+#+BEGIN_SRC C
 char *vtiden = "\033[?6c";
+#+END_SRC
 
+*** Bounding-Box Multipliers
+for Kerning and character
+
+#+BEGIN_SRC C
 static float cwscale = 1.0;
 static float chscale = 1.0;
+#+END_SRC
 
+*** Word Delimiter
+this is a word delimiter string (exp. L" `'\"()[]{}")
+
+#+BEGIN_SRC C
 wchar_t *worddelimiters = L" ";
+#+END_SRC
 
+*** Selection Timeouts
+how quickly you should double/triple click to select (in milliseconds)
+
+#+BEGIN_SRC C
 static unsigned int doubleclicktimeout = 300;
 static unsigned int tripleclicktimeout = 600;
+#+END_SRC
 
+*** Alt Screens
+Enables Alt-Screens (what are alt-screens I have no idea)
+
+#+BEGIN_SRC C
 int allowaltscreen = 1;
+#+END_SRC
 
+*** Allow Inscure
+Allow certain "insecure" Window Operations (exp. Setting the clipboard text)
+
+#+BEGIN_SRC C
 int allowwindowops = 0;
+#+END_SRC
 
+*** Draw Latency
+/*
+ * draw latency range in ms - from new content/keypress/etc until drawing.
+ * within this range, st draws when content stops arriving (idle). mostly it's
+ * near minlatency, but it waits longer for slow updates to avoid partial draw.
+ * low minlatency will tear/flicker more, as it can "detect" idle too early.
+ */
+
+#+BEGIN_SRC C
 static double minlatency = 8;
 static double maxlatency = 33;
+#+END_SRC
 
+*** Colon and Rows
+the Default number of Columns and Rows
+
+#+BEGIN_SRC C
 static unsigned int cols = 80;
 static unsigned int rows = 24;
+#+END_SRC
 
+*** TERM Value
+
+#+BEGIN_SRC C
 char *termname = "st-256color";
+#+END_SRC
 
+*** Bell Volume
+the Volume of the Terminal Bell (from -100 to 100)
+
+#+BEGIN_SRC C
 static int bellvolume = 100;
+#+END_SRC
 
+** BoxDraw
+if boxdraw is 1 it render most of the lines/blocks characters without using the font for perfect alignment between cells (except dashes/diagonals), if boxdraw_bold is 1 it will affects lines thickness (Italic ignored), if boxdraw is 0 it will render all glyphs normally from the font
+
+#+BEGIN_SRC C
 const int boxdraw = 1;
 const int boxdraw_bold = 0;
+#+END_SRC
 
+*** Braille
+if set to 1 it will render as adjacent "pixels"
+
+#+BEGIN_SRC C
 const int boxdraw_braille = 0;
+#+END_SRC
 
+** Binds
+
+*** Mouse
+
+**** Define Mouse MODKEY
+this will define the button you should hold when doing Mouse Binds in the terminal
+
+#+BEGIN_SRC C
 static uint forcemousemod = ShiftMask;
+#+END_SRC
 
+**** Mouse Binds
+
+| Bind                              | Command                   |
+|-----------------------------------+---------------------------|
+| Shift+ScrollUp                    | Scrolls Up                |
+| Shift+ScrollDown                  | Scrolls Down              |
+| Middle-Click                      | Pastes from the Clipboard |
+| ScrollUp/ScrollDown Without Shift | Outputs Random Symbols    |
+
+#+BEGIN_SRC C
 static MouseShortcut mshortcuts[] = {
 { ShiftMask, Button4, kscrollup, {.i = 1} },
 { ShiftMask, Button5, kscrolldown, {.i = 1} },
@@ -91,10 +296,36 @@ static MouseShortcut mshortcuts[] = {
 { XK_ANY_MOD, Button4, ttysend, {.s = "\031"} },
 { ShiftMask, Button5, ttysend, {.s = "\033[6;2~"} },
 { XK_ANY_MOD, Button5, ttysend, {.s = "\005"} } };
+#+END_SRC
 
+*** Keyboard
+
+**** Define Keyboard MODKEY
+this will define the keys you should hold when doing Keyboard Binds in the terminal
+
+#+BEGIN_SRC C
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
+#+END_SRC
 
+**** Keyboard Shortcuts
+These are shortcuts for common terminal Activity
+
+| Bind                       | Command                             |
+|----------------------------+-------------------------------------|
+| Break                      | Break the Current Command           |
+| Ctrl+Print                 | Toggle the Printer Function         |
+| Shift+Print                | Call the Printer Function           |
+| Print                      | Prints the Selected Text            |
+| Ctrl+Shift+PageDown/PageUp | Zooms Out/In                        |
+| Ctrl+Shift+Home            | Reset font Size                     |
+| Ctrl+Shift+c/v             | Copys and Pastes from the Clipboard |
+| Ctrl+Shift+y               | Pastes Selected Text                |
+| Shift+Insert               | Also Pastes Selected Text           |
+| Ctrl+Shift+Numlock         | Toggles Numlock in the Terminal     |
+| Shift+PageDown/PageUp      | Scrolls Down/Up                     |
+
+#+BEGIN_SRC C
 static Shortcut shortcuts[] = {
 { XK_ANY_MOD, XK_Break, sendbreak, { .i =  0 } },
 { ControlMask, XK_Print, toggleprinter, { .i =  0 } },
@@ -110,11 +341,46 @@ static Shortcut shortcuts[] = {
 { TERMMOD, XK_Num_Lock, numlock, { .i =  0 } },
 { ShiftMask, XK_Page_Up, kscrollup, { .i = -1 } },
 { ShiftMask, XK_Page_Down, kscrolldown, { .i = -1 } }, };
+#+END_SRC
 
+
+** Advanced Settings
+I won't Bother make any other Comments because this part is so advance
+
+**** Special keys
+(change & recompile st.info accordingly)
+Mask value:
+Use XK_ANY_MOD to match the key no matter modifiers state
+Use XK_NO_MOD to match the key alone (no modifiers)
+appkey value:
+0: no value
+> 0: keypad application mode enabled
+= 2: term.numlock = 1
+< 0: keypad application mode disabled
+appcursor value:
+0: no value
+> 0: cursor application mode enabled
+< 0: cursor application mode disabled
+Be careful with the order of the definitions because st searches in
+this table sequentially, so any XK_ANY_MOD must be in the last
+position for a key.
+
+If you want keys other than the X11 function keys (0xFD00 - 0xFFFF) to be mapped below, add them to this array.
+
+#+BEGIN_SRC C
 static KeySym mappedkeys[] = { -1 };
+#+END_SRC
 
+State bits to ignore when matching key or button events.  By default, numlock (Mod2Mask) and keyboard layout (XK_SWITCH_MOD) are ignored.
+
+#+BEGIN_SRC C
 static uint ignoremod = Mod2Mask|XK_SWITCH_MOD;
+#+END_SRC
 
+**** Key Array
+This is Essential for compatibilty (DO NOT CHANGE)
+
+#+BEGIN_SRC C
 static Key key[] = {
 	{ XK_KP_Home,       ShiftMask,      "\033[2J",       0,   -1},
 	{ XK_KP_Home,       ShiftMask,      "\033[1;2H",     0,   +1},
@@ -326,12 +592,24 @@ static Key key[] = {
 	{ XK_F34,           XK_NO_MOD,      "\033[21;5~",    0,    0},
 	{ XK_F35,           XK_NO_MOD,      "\033[23;5~",    0,    0},
 };
+#+END_SRC
 
+
+**** Selection types' masks.
+Use the same masks as usual. Button1Mask is always unset, to make masks match between ButtonPress. ButtonRelease and MotionNotify. If no match is found, regular selection is used.
+
+#+BEGIN_SRC C
 static uint selmasks[] = {
 [SEL_RECTANGULAR] = Mod1Mask,
 };
+#+END_SRC
 
+**** Printable characters in ASCII
+used to estimate the advance width of single wide characters.
+
+#+BEGIN_SRC C
 static char ascii_printable[] =
 	" !\"#$%&'()*+,-./0123456789:;<=>?"
 	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
 	"`abcdefghijklmnopqrstuvwxyz{|}~";
+#+END_SRC
