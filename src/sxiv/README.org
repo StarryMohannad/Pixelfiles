@@ -1,0 +1,16 @@
+#+title: Pixelfiles SXIV
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: my build of sxiv :DD
+
+is my custom build of [[https://github.com/xyb3rt/sxiv][sxiv]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
+
+* Table of Contents :toc:
+- [[#screenshot][Screenshot]]
+- [[#config][Config]]
+
+* Screenshot
+[[./../../assets/sxiv.png]]
+
+* Config
+I won't import the entire config because I only changed some keybinds :P
