@@ -22,50 +22,50 @@ these dot files come with all sorts of configs
 ** Base things
 these are configs for things like GTK and QT
 
-| Program | Purpose            | Related Links         |
-|---------+--------------------+-----------------------|
-| GTK 2.0 | Gtk 2.0 Theme      | [[https://gtk.org][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/gtk-2.0][Config]] |
-| GTK 3.0 | Gtk 3.0 Theme      | [[https://gtk.org][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/gtk-3.0][Config]] |
-| Kvantum | Applies QT Styling | [[https://github.com/tsujan/Kvantum/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/Kvantum][Config]] |
-| X11     | X Display Server   | [[https://x.org][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/X11][Config]] |
+| Program | Purpose            | Links  |
+|---------+--------------------+--------|
+| [[https://gtk.org][GTK 2.0]] | Gtk 2.0 Theme      | [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/gtk-2.0][Config]] |
+| [[https://gtk.org][GTK 3.0]] | Gtk 3.0 Theme      | [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/gtk-3.0][Config]] |
+| [[https://github.com/tsujan/Kvantum/][Kvantum]] | Applies QT Styling | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/Kvantum][Config]] |
+| [[https://x.org/][X11]]     | X Display Server   | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/X11][Config]] |
 
 ** Base Desktop Programs
 these are essential programs for the Pixelfiles Desktop
 
-| Program                      | Purpose                                  | Related Links           |
-|------------------------------+------------------------------------------+-------------------------|
-| dwm (Dynamic Window Manager) | is a suckless and minimal window manager | [[https://dwm.suckless.org/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/dwm][Source]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm][Other]]   |
-| dwmblocks                    | for dwm status bar                       | [[https://github.com/torrinfail/dwmblocks][Repo]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/dwmblocks][Source]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/blocks][Scripts]] |
-| dmenu                        | for menu system                          | [[https://tools.suckless.org/dmenu/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/dmenu][Source]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/dmenu][Scripts]] |
-| st (Suckless Terminal)       | for default terminal                     | [[https://st.suckless.org][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/st][Source]]           |
-| dunst                        | for notifications                        | [[https://dunst-project.org/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/dunst][Config]]           |
-| picom                        | Desktop Compositer                       | [[https://github.com/yshui/picom][Repo]] / [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/picom.conf][Config]]           |
+| Program                      | Purpose                                  | Links            |
+|------------------------------+------------------------------------------+------------------|
+| [[https://dwm.suckless.org/][dwm (Dynamic Window Manager)]] | is a suckless and minimal window manager | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/dwm][Source]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm][Other]]   |
+| [[https://github.com/torrinfail/dwmblocks][dwmblocks]]                    | for dwm status bar                       | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/dwmblocks][Source]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/blocks][Scripts]] |
+| [[https://tools.suckless.org/dmenu/][dmenu]]                        | for menu system                          | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/dmenu][Source]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/dmenu][Scripts]] |
+| [[https://st.suckless.org/][st (Suckless Terminal)]]       | for default terminal                     | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/st][Source]]           |
+| [[https://dunst-project.org/][dunst]]                        | for notifications                        | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/dunst][Config]]           |
+| [[https://github.com/yshui/picom][picom]]                        | Desktop Compositer                       | [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/picom.conf][Config]]           |
 
 ** CLI Programs
 these are programs that you will find in the terminal
 
-| Program   | Purpose                                | Related Links |
-|-----------+----------------------------------------+---------------|
-| Bat       | a Modren Cat Alternative               | [[https://github.com/sharkdp/bat][Repo]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/bat][Config]] |
-| Btop      | a system moniter                       | [[https://github.com/aristocratos/btop][Repo]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/btop][Config]] |
-| Cava      | Music Visualizer                       | [[https://github.com/karlstav/cava][Repo]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/cava][Config]] |
-| Git       | Everyone's Favorate Verison Controller | [[https://git-scm.com][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/git][Config]] |
-| lf        | TUI File Manager                       | [[https://github.com/gokcehan/lf][Repo]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/lf][Config]] |
-| MPD       | Music Player Daemon                    | [[https://www.musicpd.org/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpd][Config]] |
-| MPD (RPC) | Discord Rich Presence for MPD          | [[https://github.com/JakeStanger/mpd-discord-rpc][Repo]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/discord-rpc][Config]] |
-| NPM       | Node Package Manager                   | [[https://nodejs.org][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/npm][Config]] |
-| Zsh       | The system Shell                       | [[https://zsh.org][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zsh][Config]] |
-| Starship  | Adds Some Style for your Shell         | [[https://starship.rs/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/starship.toml][Config]] |
+| Program   | Purpose                                | Links  |
+|-----------+----------------------------------------+--------|
+| [[https://github.com/sharkdp/bat][Bat]]       | a Modren Cat Alternative               | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/bat][Config]] |
+| [[https://github.com/aristocratos/btop][Btop]]      | a system moniter                       | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/btop][Config]] |
+| [[https://github.com/karlstav/cava][Cava]]      | Music Visualizer                       | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/cava][Config]] |
+| [[https://git-scm.com/][Git]]       | Everyone's Favorate Verison Controller | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/git][Config]] |
+| [[https://github.com/gokcehan/lf][lf]]        | TUI File Manager                       | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/lf][Config]] |
+| [[https://www.musicpd.org/][MPD]]       | Music Player Daemon                    | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpd][Config]] |
+| [[https://github.com/JakeStanger/mpd-discord-rpc][MPD (RPC)]] | Discord Rich Presence for MPD          | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/discord-rpc][Config]] |
+| [[https://nodejs.org/][NPM]]       | Node Package Manager                   | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/npm][Config]] |
+| [[https://zsh.org/][Zsh]]       | The system Shell                       | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zsh][Config]] |
+| [[https://starship.rs/][Starship]]  | Adds Some Style for your Shell         | [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/starship.toml][Config]] |
 
 ** Other Programs
 
-| Program               | Purpose                                 | Related Links |
-|-----------------------+-----------------------------------------+---------------|
-| Librewolf             | Web Browser :DD                         | [[https://librewolf.net/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/librewolf][Config]] |
-| Heroic Games Launcher | the best alternative for Epics Launcher | [[https://heroicgameslauncher.com/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/heroicthemes][Config]] |
-| KPMenu                | a Dmenu Script for Password Management  | [[https://github.com/AlessioDP/kpmenu][Repo]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/kpmenu][Config]] |
-| MPV                   | Video Player                            | [[https://mpv.io/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpv][Config]] |
-| Zathura               | PDF Reader                              | [[https://pwmt.org/projects/zathura/][Site]] / [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zathura][Config]] |
+| Program               | Purpose                                 | Links  |
+|-----------------------+-----------------------------------------+--------|
+| [[https://librewolf.net/][Librewolf]]             | Web Browser :DD                         | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/librewolf][Config]] |
+| [[https://heroicgameslauncher.com/][Heroic Games Launcher]] | the best alternative for Epics Launcher | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/heroicthemes][Config]] |
+| [[https://github.com/AlessioDP/kpmenu][KPMenu]]                | a Dmenu Script for Password Management  | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/kpmenu][Config]] |
+| [[https://mpv.io/][MPV]]                   | Video Player                            | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpv][Config]] |
+| [[https://pwmt.org/projects/zathura/][Zathura]]               | PDF Reader                              | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zathura][Config]] |
 
 * Credit
 Special Thanks to :DD
