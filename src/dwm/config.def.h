@@ -28,19 +28,20 @@ static const char *tags[] = { "󰖟", "", "", "", "", "", "", 
 
 static const Rule rules[] = {
 
-{ "st-256color", NULL, NULL, 0, 0, 1, 0, -1 },
+{ "firefox", NULL, NULL, 1 << 0, 0, 0, 0, -1 },
+{ "Librewolf", NULL, NULL, 1 << 0, 0, 0, 0, -1 },
+{ "qutebrowser", NULL, NULL, 1 << 0, 0, 0, 0, -1 },
+{ "waterfox", NULL, NULL, 1 << 0, 0, 0, 0, -1 },
+{ "chromium", NULL, NULL, 1 << 0, 0, 0, 0, -1 },
+{ "brave-browser", NULL, NULL, 1 << 0, 0, 0, 0, -1 },
 
-{ "firefox", NULL, NULL, -1, 0, 0, 0, -1 },
-{ "Librewolf", NULL, NULL, -1, 0, 0, 0, -1 },
-{ "qutebrowser", NULL, NULL, -1, 0, 0, 0, -1 },
-{ "waterfox", NULL, NULL, -1, 0, 0, 0, -1 },
-{ "thorium-browser", NULL, NULL, -1, 0, 0, 0, -1 },
-{ "chromium", NULL, NULL, -1, 0, 0, 0, -1 },
-{ "brave-browser", NULL, NULL, -1, 0, 0, 0, -1 },
+{ "emacs", NULL, NULL, 1 << 1, 0, 0, 0, -1 },
+
+{ "st-256color", NULL, NULL, 0, 0, 1, 0, -1 },
 
 { "discord", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
 
-{ "steam", NULL, NULL, 0, 1, 0, 0, -1 },
+{ "steam", NULL, NULL, 1 << 3, 1, 0, 0, -1 },
 { "steam", NULL, "Steam", 1 << 3, 0, 0, 0, -1 },
 
 { "DoomRunner", NULL, NULL, 1 << 3, 1, 0, 0, -1 } };
