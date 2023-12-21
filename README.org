@@ -6,7 +6,7 @@
 
 Pixelfiles is my dotfiles for Arch/dwm it uses the Catppuccin Theme (The Macchiato Flavour) and It's (kinda, maybe not so) Minimal
 
-[[./../../assets/pixelfiles.png]]
+[[./assets/pixelfiles.png]]
 
 * Table of Contents :toc:
 - [[#configs-for][Configs for]]
