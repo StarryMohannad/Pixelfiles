@@ -265,7 +265,7 @@ static Keychord *keychords[] = {
 
 **** Default Applications
 These Binds open the Deafault Applications
-These Applications open from scripts in `~/.local/share/dwm/defapps`
+These Applications open from scripts [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/defapps][Here]]
 
 | Bind    | Command                          |
 |---------+----------------------------------|
@@ -283,9 +283,9 @@ These Applications open from scripts in `~/.local/share/dwm/defapps`
 &((Keychord){1, {{MODKEY, XK_w }}, spawn, SHCMD("$DWM/defapps/www" ) }),
 #+END_SRC
 
-**** Prompts
+**** Dmenu Prompts
 These prompts open in Dmenu
-You can find their scripts in `~/.local/share/dwm/dmenu`
+You can find their scripts [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/dmenu][Here]]
 
 | Bind            | Command                           |
 |-----------------+-----------------------------------|

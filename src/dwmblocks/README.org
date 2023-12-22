@@ -18,25 +18,25 @@ here is the config file for dwmblocks, I wrote it in org mode to document it, to
 
 ** Blocks
 these are the blocks that appear on the status bar
-they use scripts placed in ~/.local/share/dwm/blocks
+they use scripts placed [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/blocks][Here]]
 
-| Block    | Script | Icon |
-|----------+--------+------|
-| Music    | mus    |     |
-| Battary  | bat    | 󱐋    |
-| Volume   | vol    | 󰕾    |
-| Weather  | wtr    | ---- |
-| Calender | cal    | 󰸗    |
-| Clock    | tim    |     |
+| Block    | Script | Purpose                                   |
+|----------+--------+-------------------------------------------|
+| Music    | mus    | Displays the current Playing Song in MPD  |
+| Battary  | bat    | Displays the current Battary Presentage   |
+| Volume   | vol    | Displays the current Speaker Volume       |
+| Weather  | wtr    | Displays the current Weather in your city |
+| Calender | cal    | Displays the current Date                 |
+| Clock    | tim    | Displays the current Time                 |
 
 #+BEGIN_SRC C
 static const Block blocks[] = {
-{ "  ", "~/.local/share/dwm/blocks/mus", 1, 0},
-{ "󱐋  ", "~/.local/share/dwm/blocks/bat", 1, 0},
+{ "  ", "~/.local/share/dwm/blocks/mus", 1, 3},
+{ "󱐋  ", "~/.local/share/dwm/blocks/bat", 1, 2},
 { "󰕾  ", "~/.local/share/dwm/blocks/vol", 1, 0},
-{ "",    "~/.local/share/dwm/blocks/wtr", 1, 0},
-{ "󰸗  ", "~/.local/share/dwm/blocks/cal", 1, 0},
-{ "  ", "~/.local/share/dwm/blocks/tim", 1, 0}, };
+{ "",    "~/.local/share/dwm/blocks/wtr", 1, 5},
+{ "󰸗  ", "~/.local/share/dwm/blocks/cal", 1, 5},
+{ "  ", "~/.local/share/dwm/blocks/tim", 1, 1}, };
 #+END_SRC
 
 ** Delimiter
