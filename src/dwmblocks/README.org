@@ -6,14 +6,12 @@
 
 is my custom build of [[https://github.com/torrinfail/dwmblocks][dwmblocks]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
 
+[[./../../assets/dwmblocks.png]]
+
 * Table of Contents :toc:
-- [[#screenshot][Screenshot]]
 - [[#config][Config]]
   - [[#blocks][Blocks]]
   - [[#delimiter][Delimiter]]
-
-* Screenshot
-[[./../../assets/dwmblocks.png]]
 
 * Config
 here is the config file for dwmblocks, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)

@@ -6,16 +6,14 @@
 
 is my custom build of [[https://tools.suckless.org/dmenu][dmenu]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
 
+[[./../../assets/dmenu.png]]
+
 * Table of Contents :toc:
-- [[#screenshot][Screenshot]]
 - [[#patches][Patches]]
 - [[#config][Config]]
   - [[#font][Font]]
   - [[#colorscheme][Colorscheme]]
   - [[#other-varibles][Other Varibles]]
-
-* Screenshot
-[[./../../assets/dmenu.png]]
 
 * Patches
 This Build of Dmenu only uses the [[https://tools.suckless.org/dmenu/patches/xyw/][xyw]] patch

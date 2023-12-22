@@ -6,8 +6,9 @@
 
 is my custom build [[https://st.suckless.org/][st (suckless terminal)]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
 
+[[./../../assets/st.png]]
+
 * Table of Contents :toc:
-- [[#screenshot][Screenshot]]
 - [[#patches][Patches]]
 - [[#config][Config]]
   - [[#appearance][Appearance]]
@@ -15,9 +16,6 @@ is my custom build [[https://st.suckless.org/][st (suckless terminal)]] for [[ht
   - [[#boxdraw][BoxDraw]]
   - [[#binds][Binds]]
   - [[#advanced-settings][Advanced Settings]]
-
-* Screenshot
-[[./../../assets/st.png]]
 
 * Patches
 This Build of St uses these patches
