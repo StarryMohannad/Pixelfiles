@@ -1,0 +1,8 @@
+#+title: Btop Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for btop
+
+[[https://github.com/aristocratos/btop][Btop]] is a terminal process viewer, this config only applies the [[https://github.com/catppuccin/btop][Catppuccin]] colorscheme. you can set the theme in the btop settings menu
+
+[[./../../assets/btop.png]]

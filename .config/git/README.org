@@ -1,0 +1,6 @@
+#+title: Git Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for git
+
+[[https://git-scm.com][Git]] is the version control system github uses, this config applies the GPG Verification and adds my user information.

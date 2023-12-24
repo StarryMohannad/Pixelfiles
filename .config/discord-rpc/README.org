@@ -1,0 +1,8 @@
+#+title: MPD Discord Rich Presence
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for mpd-discord-rpc
+
+[[https://github.com/JakeStanger/mpd-discord-rpc][mpd-discord-rpc]] is a program that shows the current playing MPD song in Discord, this config only changes the layout of the rich presence.
+
+[[../../assets/mpd-discord-rpc.png]]

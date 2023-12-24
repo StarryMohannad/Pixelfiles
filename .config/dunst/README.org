@@ -1,0 +1,8 @@
+#+title: Dunst Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for dunst
+
+[[https://dunst-project.org/][Dunst]] is a notification handler, this config applies the [[https://github.com/catppuccin/catppuccin][Catppuccin]] colorscheme.
+
+[[../../assets/dunst.png]]

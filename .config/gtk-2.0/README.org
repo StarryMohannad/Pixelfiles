@@ -1,0 +1,8 @@
+#+title: GTK-2.0 Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for gtk-2.0
+
+[[https://gtk.org][GTK-2.0]] is a Window making framework, this config only applies the [[https://github.com/catppuccin/gtk][Catppuccin GTK Theme]], sets the [[https://fonts.google.com/specimen/Sora][Sora font]] and sets the [[https://github.com/catppuccin/papirus-folders][Papirus Catppuccin Icon Theme]], you can edit the theme in nwg-look.
+
+[[../../assets/gtk2.png]]

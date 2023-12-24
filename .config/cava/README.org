@@ -1,0 +1,8 @@
+#+title: Cava Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for cava
+
+[[https://github.com/karlstav/cava][Cava]] is a terminal music visualizer, this config only applies the [[https://github.com/catppuccin][Catppuccin]] colorscheme
+
+[[../../assets/cava.png]]
