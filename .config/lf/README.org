@@ -1,0 +1,92 @@
+#+title: lf Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for lf
+#+property: header-args :tangle lfrc
+
+[[https://github.com/gokcehan/lf][lf]] is a Tui File Manager, and is the default File Manager in Pixelfiles.
+
+[[../../assets/lf.png]]
+
+* Table of Contents :toc:
+- [[#config][Config]]
+  - [[#basic-varibles][Basic Varibles]]
+  - [[#image-preview][Image Preview]]
+  - [[#scripts][Scripts]]
+  - [[#binds][Binds]]
+
+* Config
+here is the config file for lf, i wrote it in org mode to document it, to apply changes press (ctrl+c ctrl+v t)
+
+** Basic Varibles
+these are basic settings
+
+| Varible  | Purpose                                                        |
+|----------+----------------------------------------------------------------|
+| icons    | Enables Icons                                                  |
+| drawbox  | Enables Borders                                                |
+| Hidden   | Sets the Hidden Files "if empty it will disable hidding files" |
+
+#+BEGIN_SRC
+set icons
+set drawbox
+set hidden ""
+#+END_SRC
+
+** Image Preview
+these varibles enables image previews using ueberzug (borrowed from [[https://github.com/LukeSmithxyz/voidrice/tree/master/.config/lf][LukeSmith Config]])
+
+| Varible   | Purpose                                                         |
+|-----------+-----------------------------------------------------------------|
+| previewer | the script that previews the image                              |
+| cleaner   | the script that cleans the preview when you move from the image |
+
+#+BEGIN_SRC
+set previewer '~/.config/lf/scope'
+set cleaner '~/.config/lf/cleaner'
+#+END_SRC
+
+** Scripts
+these are programmable scripts for lf
+
+*** Starship
+this enables the starship prompt in lf
+
+#+BEGIN_SRC
+cmd on-cd &{{
+    export STARSHIP_SHELL=
+    fmt="$(starship prompt)"
+    lf -remote "send $id set promptfmt \"$fmt\""
+}}
+#+END_SRC
+
+*** Delete Command
+this makes a delete command with a confirmation
+
+#+BEGIN_SRC
+cmd remove ${{
+    if [ -z $fs ]; then
+        rm -fr $f
+    else
+        IFS=':'; echo $fs | tr " " "\n"
+        echo 'delete? [y/n]'
+        read ans
+
+        [ $ans = 'y' ] && (echo 'deleting files...' && rm -fr $fs) || (echo 'cancelled...')
+    fi
+}}
+#+END_SRC
+
+** Binds
+these are the keybinds for lf
+
+| Bind | Command |
+|------+---------|
+| dd   | Delete  |
+| df   | Cut     |
+
+#+BEGIN_SRC
+map d
+map dd delete
+map df cut
+#+END_SRC

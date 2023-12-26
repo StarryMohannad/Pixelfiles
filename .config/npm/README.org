@@ -1,0 +1,6 @@
+#+title: NPM Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for npm
+
+[[https://www.npmjs.com/][NPM]] is node package manager, and the config only moves the npm files form the home directory.

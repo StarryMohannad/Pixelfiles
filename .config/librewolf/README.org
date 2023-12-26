@@ -1,0 +1,51 @@
+#+title: Firefox/Librewolf Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for firefox/librewolf
+
+[[https://librewolf.net/][Librewolf]] is a web browser, this config have instructions for installing [[https://github.com/catppuccin/firefox][Cattpuccin Theme]] for the browser and alot more things.
+
+[[../../assets/librewolf.png]]
+
+* Table of Contents :toc:
+- [[#applying-the-theme][Applying the Theme]]
+  - [[#browser-theme][Browser Theme]]
+  - [[#nighttab][Nighttab]]
+  - [[#stylus][Stylus]]
+  - [[#oldtwitter][OldTwitter]]
+
+* Applying the Theme
+
+** Browser Theme
+to change the browser theme:
+
+1. Install [[https://addons.mozilla.org/en-GB/firefox/addon/firefox-color/][Firefox Color]]
+2. Click [[https://color.firefox.com/?theme=XQAAAAJHBAAAAAAAAABBqYhm849SCicxcUcPX38oKRicm6da8pG5gi-DrbS7fiEFLUzDsWXWyUHMSkHZ2PpRK_LvZGTF44fp7VjbASbxkoZAmYAwEJIoRnjw8xrOTGV_TjmyI1jBzmpM9P7ysk1XcU5Vim_Fm-lEdd2D1sQPsPth0WcE8lIqGr5N573zMoLiPjHVWhVFpBZ9NAWyIoayQkaZv_GNa6odcJwiPMQzgDjIO3oXtudXnw5k_sEGylKYGjVjl7RybVWfu43_UVBnyZ8ABfj_vyEDG8dhLP8K3F5P019p_IgZuNLd-0oic1c-daCxCfj67-HqTSdBnLjOfUBGrYTONMolAuzjbHMW2Uin4VEb_Lt_mlRYOv2WkpwdvkN-vUubvhlaK1b2CB4fASckF4raPC2b4r2aA2EwdhFhUlB9WmVerOffIJ5l_E-kVUricQNqvAyoUwVen1iPrCKGT1PPiDaqHqwUin-0uWqoFZnbJFYRYkNuJ0oLF9tmMRstZYSOLvn5GLHHHQPLASLFYBKhocCHnZ7VOL_-q8Y6R59XVoel1QReV4XbPgz9RcNJ][This]]
+3. Click "Yep"
+
+** Nighttab
+[[https://github.com/zombieFox/nightTab][Nighttab]] is an alternative new tab for firefox
+to apply the config:
+
+1. Install [[][Nighttab]]
+2. Click the Gear icon and go to "Data > Restore"
+3. Click "Import from File"
+4. Select "~/.config/librewolf/nighttab.json"
+
+** Stylus
+[[https://add0n.com/stylus.html][Stylus]] is a tool to apply custom user stylesheets, this config includes all of [[https://github.com/catppuccin/userstyles][Catppuccin User Stylesheets]]
+to apply the config:
+
+1. Install [[https://addons.mozilla.org/en-US/firefox/addon/styl-us/][Stylus]]
+2. Click [[moz-extension://6da8d6e1-4151-4f22-9008-b720fb35f30f/manage.html][This]]
+3. Click "Import"
+4. Select "~/.config/librewolf/stylus.json"
+
+** OldTwitter
+[[https://github.com/dimdenGD/OldTwitter][Oldtwitter]] is an addon that restores the old twitter layout
+to apply the theme:
+
+1. Install [[https://addons.mozilla.org/en-US/firefox/addon/old-twitter-layout-2022/][OldTwitter]]
+2. Click [[https://twitter.com/old/settings][This]]
+3. Go to "Advanced options" and click "Import Style"
+4. Select "~/.config/librewolf/oldtwitter.css"

@@ -1,0 +1,71 @@
+#+title: MPD Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for mpd
+#+property: header-args :tangle mpd.conf
+
+[[https://www.musicpd.org/][MPD]] is a Music Player Daemon for Playing Music.
+
+* Table of Contents :toc:
+- [[#config][Config]]
+  - [[#directory][Directory]]
+  - [[#bind-address][Bind Address]]
+  - [[#update-settings][Update Settings]]
+  - [[#output][Output]]
+
+* Config
+here is the config file for mpd, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
+
+** Directory
+here you specify directories
+
+| Varible            | Purpose                |
+|--------------------+------------------------|
+| music_directory    | Where the Music go     |
+| playlist_directory | Where the Playlists go |
+| db_file            | Where the Database go  |
+| log_file           | Where the Errors go    |
+| state_file         | Where the State go ??  |
+| sticker_file       | What is a Sticker ??   |
+
+#+BEGIN_SRC
+music_directory "~/Sync/Music"
+
+playlist_directory "~/.local/share/mpd/playlists"
+db_file "~/.local/share/mpd/database"
+log_file "~/.local/share/mpd/log"
+state_file "~/.local/state/mpd/state"
+sticker_file "~/.local/share/mpd/sticker.sql"
+#+END_SRC
+
+** Bind Address
+binds the address to localhost
+
+#+BEGIN_SRC
+bind_to_address         "127.0.0.1"
+#+END_SRC
+
+** Update Settings
+these Settings for updating the music list
+
+| Varible                 | Purpose                                            |
+|-------------------------+----------------------------------------------------|
+| auto_update             | automaticly update the music list                  |
+| follow_inside_symlinks  | follow symlinks from inside of the music directory |
+| follow_outside_symlinks | follow symlinks form outside the music directory   |
+
+#+BEGIN_SRC
+auto_update "yes"
+follow_outside_symlinks "yes"
+follow_inside_symlinks "yes"
+#+END_SRC
+
+** Output
+this specifys the Audio Output
+
+#+BEGIN_SRC
+audio_output {
+type "pipewire"
+name "PipeWire Sound Server"
+}
+#+END_SRC

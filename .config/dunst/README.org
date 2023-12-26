@@ -8,7 +8,14 @@
 
 [[../../assets/dunst.png]]
 
-** Config
+* Table of Contents :toc:
+- [[#config][Config]]
+  - [[#global][Global]]
+  - [[#low-urgency][Low Urgency]]
+  - [[#medium-urgency][Medium Urgency]]
+  - [[#high-urgency][High Urgency]]
+
+* Config
 this is the config of the Dunst
 
 | Varible         | Purpose                                             |
@@ -21,7 +28,7 @@ this is the config of the Dunst
 | background      | Sets the Background Color                           |
 | foreground      | Sets the Foreground Color                           |
 
-*** Global
+** Global
 this applies to all notifications
 
 #+BEGIN_SRC toml
@@ -32,7 +39,7 @@ origin = bottom-right
 offset = 10x17
 #+END_SRC
 
-*** Low Urgency
+** Low Urgency
 this applies to low urgency notifications
 
 #+BEGIN_SRC toml
@@ -41,7 +48,7 @@ background = "#24273A"
 foreground = "#CAD3F5"
 #+END_SRC
 
-*** Medium Urgency
+** Medium Urgency
 this applies to medium urgency notifications
 
 #+BEGIN_SRC toml
@@ -50,7 +57,7 @@ background = "#24273A"
 foreground = "#CAD3F5"
 #+END_SRC
 
-*** High Urgency
+** High Urgency
 this applies to high urgency notifications
 
 #+BEGIN_SRC toml

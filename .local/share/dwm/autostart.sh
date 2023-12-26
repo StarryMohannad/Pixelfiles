@@ -11,5 +11,7 @@ setsid -f emacs --daemon # Emacs Daemon
 
 setsid -f "$DWM"/keepassxc.sh
 
+setsid -f "$DWM"/volume-tracker.sh
+
 xwallpaper --stretch "$DWM"/wallpaper.png # Sets the Wallpaper
 setsid -f mpv --no-video "$HOME"/.local/share/sounds/startup.mp3

@@ -1,0 +1,60 @@
+#+title: MPV Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for mpv
+#+property: header-args :tangle input.conf
+
+[[https://mpv.io][MPV]] is a multi-media player.
+
+* Table of Contents :toc:
+- [[#config][Config]]
+  - [[#volume-binds][Volume Binds]]
+  - [[#seek-binds][Seek Binds]]
+  - [[#other-binds][Other Binds]]
+
+* Config
+here is the config file for mpv, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
+it only adds vim keybinds
+
+** Volume Binds
+these binds control the volume
+
+| Bind | Command              |
+|------+----------------------|
+| j    | Decrease Volume by 5 |
+| k    | Increase Volume by 5 |
+
+#+BEGIN_SRC conf
+j add volume -5
+k add volume +5
+#+END_SRC
+
+** Seek Binds
+these binds seek the video
+
+| Bind | Command                          |
+|------+----------------------------------|
+| h    | Back 5 Secounds                  |
+| l    | Forward 5 Secounds               |
+| r    | Restart the Video from the Start |
+
+#+BEGIN_SRC conf
+l seek +5
+h seek -5
+r seek -9999999999999999999999999999999999999999999999999999999
+#+END_SRC
+
+** Other Binds
+other binds
+
+| Bind    | Command             |
+|---------+---------------------|
+| f       | Enables Fullscreen  |
+| Shift+f | Disables Fullscreen |
+| q       | Quits               |
+
+#+BEGIN_SRC conf
+f set fullscreen yes
+Shift+f set fullscreen no
+q quit
+#+END_SRC

@@ -1,1 +1,6 @@
 #+title: KPMenu Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for kpmenu
+
+[[https://github.com/AlessioDP/kpmenu][KPMenu]] is a dmenu script for Password Management, this config is only for kpmenu to work

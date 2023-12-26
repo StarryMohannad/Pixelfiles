@@ -1,0 +1,45 @@
+#+title: Pixelfiles Private Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: priv config for pf
+#+property: header-args :tangle shell-config.sh
+
+This is the private config for Pixelfiles, It targets directorys for the [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/dmenu][Dmenu Scripts]] to use.
+
+* Config
+here is the private config file, i wrote it in org mode to document it, to apply changes press (ctrl+c ctrl+v t)
+
+** BANG
+#+BEGIN_SRC shell
+#!/bin/sh
+#+END_SRC
+
+** Project Directorys
+these are for [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.local/share/dwm/dmenu/art][art]] and [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.local/share/dwm/dmenu/code][code]] scripts
+
+#+BEGIN_SRC shell
+export CODE_FOLDER=""
+export ART_FOLDER=""
+#+END_SRC
+
+** KeePass
+these are for KPMenu and KeePassXC
+
+| Varible    | Purpose                  |
+|------------+--------------------------|
+| KeePassDB  | Database Path            |
+| KeePassPW  | Database Password        |
+| KeePassKey | Database Key (if needed) |
+
+#+BEGIN_SRC shell
+export KeePassDB=""
+export KeePassPW=""
+export KeePassKey=""
+#+END_SRC
+
+** Steam Library
+this is for [[https://github.com/junglerobba/steam-dmenu][steam_dmenu]]
+
+#+BEGIN_SRC shell
+export STEAM_LIBRARY=""
+#+END_SRC

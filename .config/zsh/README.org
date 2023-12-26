@@ -1,0 +1,101 @@
+#+title: ZSH Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for zsh
+#+property: header-args :tangle .zshrc
+
+[[https://zsh.org][Zsh]] is a POSIX Shell for your terminal.
+
+[[../../assets/zsh.png]]
+
+* Table of Contents :toc:
+- [[#config][Config]]
+  - [[#startx][StartX]]
+  - [[#path][Path]]
+  - [[#history][History]]
+  - [[#zcomp][ZComp]]
+  - [[#outsourcing][Outsourcing]]
+  - [[#vim-mode][Vim Mode]]
+
+* Config
+
+** StartX
+this Starts X Server whenever it's in tty1
+
+#+BEGIN_SRC shell
+if [[ "$(tty)" = "/dev/tty1" ]] ; then
+    startx
+fi
+#+END_SRC
+
+** Path
+this adds "~/.local/bin" to the "$PATH" Varible
+
+#+BEGIN_SRC shell
+export PATH="$HOME"/.local/bin:$PATH
+#+END_SRC
+
+** History
+these are settings for the History File
+
+#+BEGIN_SRC shell
+export HISTFILE="$ZDOTDIR"/zshistory
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+#+END_SRC
+
+** ZComp
+this is for the shell completion
+
+#+BEGIN_SRC shell
+autoload -Uz compinit
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+#+END_SRC
+
+** Outsourcing
+this sources other files for aliases and plugins
+
+#+BEGIN_SRC shell
+source "$ZDOTDIR"/zshalias
+source "$ZDOTDIR"/zshplugins
+#+END_SRC
+
+*** Starship
+this enables the Starship prompt
+
+#+BEGIN_SRC shell
+eval "$(starship init zsh)"
+#+END_SRC
+
+*** Node Version Manager
+this sources the node version manager script
+
+#+BEGIN_SRC shell
+export NVM_DIR="$HOME/.local/share/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#+END_SRC
+
+*** Deno
+this sources Deno
+
+#+BEGIN_SRC shell
+export DENO_INSTALL=""$HOME"/.local/share/deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+#+END_SRC
+
+*** Zoxide
+this sources zoxide
+
+#+BEGIN_SRC shell
+eval "$(zoxide init zsh)"
+#+END_SRC
+
+** Vim Mode
+adds vim modes for zsh
+
+#+BEGIN_SRC shell
+bindkey -v
+#+END_SRC
