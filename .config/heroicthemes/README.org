@@ -3,4 +3,14 @@
 #+email: 73769579+StarryMohannad@users.noreply.github.com
 #+description: config for heroic
 
-[[][Heroic Games Launcher ]]
+[[https://heroicgameslauncher.com/][Heroic Games Launcher]] is a Game Launcher for Epic Games, GOG and Amazon Games, this config only installs the [[https://github.com/catppuccin/heroic][Heroic Cattpuccin Theme]].
+
+[[../../assets/heroic.png]]
+
+** to Apply the Catppuccin theme
+to apply the catppuccin theme you should:
+
+1. Go to Settings
+2. Click the "Custom Themes Path" button
+3. Select "~/.config/heroicthemes" as the directory
+4. Go to "Select Theme" and choese "catppuccin-macchiato.css"

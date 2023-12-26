@@ -2,7 +2,32 @@
 #+author: StarryMohannad :DD
 #+email: 73769579+StarryMohannad@users.noreply.github.com
 #+description: config for mpd-discord-rpc
+#+property: header-args :tangle config.toml
 
-[[https://github.com/JakeStanger/mpd-discord-rpc][mpd-discord-rpc]] is a program that shows the current playing MPD song in Discord, this config only changes the layout of the rich presence.
+[[https://github.com/JakeStanger/mpd-discord-rpc][mpd-discord-rpc]] is a program that shows the current playing MPD song in Discord.
 
 [[../../assets/mpd-discord-rpc.png]]
+
+** Config
+
+*** Essentials
+this sets the default discord app id and mpd port
+
+#+BEGIN_SRC toml
+id = 677226551607033903
+hosts = ["localhost:6600"]
+#+END_SRC
+
+*** Format
+this sets the format
+
+#+BEGIN_SRC toml
+[format]
+details = "$artist - $title"
+state = "$album"
+timestamp = "elapsed"
+large_image = "notes"
+small_image = "notes"
+large_text = ""
+small_text = ""
+#+END_SRC
