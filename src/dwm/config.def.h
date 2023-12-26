@@ -40,7 +40,9 @@ static const Rule rules[] = {
 { "st-256color", NULL, NULL, 0, 0, 1, 0, -1 },
 
 { "discord", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
+{ "zoom", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
 
+{ NULL, NULL, "Steam", 1 << 3, 1, 0, 0, -1 },
 { "steam", NULL, NULL, 1 << 3, 1, 0, 0, -1 },
 { "steam", NULL, "Steam", 1 << 3, 0, 0, 0, -1 },
 
@@ -72,6 +74,7 @@ static const Layout layouts[] = {
 static Keychord *keychords[] = {
 
 &((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/defapps/emacs" ) }),
+&((Keychord){1, {{MODKEY, XK_g }}, spawn, SHCMD("$DWM/defapps/game" ) }),
 &((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/defapps/mpd" ) }),
 &((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/defapps/file") }),
 &((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/defapps/term") }),
@@ -101,7 +104,7 @@ static Keychord *keychords[] = {
 &((Keychord){1, {{MODKEY, XK_j }}, focusstack, { .i =  +1 } }),
 &((Keychord){1, {{MODKEY, XK_k }}, focusstack, { .i =  -1 } }),
 &((Keychord){1, {{MODKEY, XK_Return }}, zoom, { 0 } }),
-&((Keychord){1, {{MODKEY, XK_space }}, togglefloating, { 0 } }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_g }}, togglefloating, { 0 } }),
 
 &((Keychord){1, {{MODKEY|ShiftMask, XK_l }}, setmfact,   { .f =  +0.05 } }), // Scale The Master Stack       | UP   //
 &((Keychord){1, {{MODKEY|ShiftMask, XK_h }}, setmfact,   { .f =  -0.05 } }), //                              | DOWN //

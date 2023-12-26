@@ -160,6 +160,7 @@ moves Chat applications to the "Chat Tab"
 
 #+BEGIN_SRC C
 { "discord", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
+{ "zoom", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
 #+END_SRC
 
 *** Gaming Applications
@@ -169,6 +170,7 @@ move Game Launchers to the "Gaming Tab"
 fixes issues with Steam windows
 
 #+BEGIN_SRC C
+{ NULL, NULL, "Steam", 1 << 3, 1, 0, 0, -1 },
 { "steam", NULL, NULL, 1 << 3, 1, 0, 0, -1 },
 { "steam", NULL, "Steam", 1 << 3, 0, 0, 0, -1 },
 #+END_SRC
@@ -271,12 +273,14 @@ These Applications open from scripts [[https://github.com/StarryMohannad/Pixelfi
 |---------+----------------------------------|
 | Super+e | Opens Emacs (Client)             |
 | Super+m | Opens Music Player (in Terminal) |
+| Super+g | Opens Steam                      |
 | Super+r | Opens File Manager (in Terminal) |
 | Super+t | Opens Terminal                   |
 | Super+w | Opens Web Browser                |
 
 #+BEGIN_SRC C
 &((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/defapps/emacs" ) }),
+&((Keychord){1, {{MODKEY, XK_g }}, spawn, SHCMD("$DWM/defapps/game" ) }),
 &((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/defapps/mpd" ) }),
 &((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/defapps/file") }),
 &((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/defapps/term") }),
@@ -343,19 +347,19 @@ MPD (Using MPDris and playerctl)
 **** Focused Window
 These are binds that control the Focused Window
 
-| Bind         | Command                                      |
-|--------------+----------------------------------------------|
-| Super+c      | Closes Window                                |
-| Super+j/k    | Moves Focus to the Previous/Next Window      |
-| Super+Return | Moves the Focused Window to the Master Stack |
-| Super+Space  | Makes the Focused Window Float               |
+| Bind              | Command                                      |
+|-------------------+----------------------------------------------|
+| Super+c           | Closes Window                                |
+| Super+j/k         | Moves Focus to the Previous/Next Window      |
+| Super+Return      | Moves the Focused Window to the Master Stack |
+| Super+Shift+Space | Makes the Focused Window Float               |
 
 #+BEGIN_SRC C
 &((Keychord){1, {{MODKEY, XK_c }}, killclient, { 0 } }),
 &((Keychord){1, {{MODKEY, XK_j }}, focusstack, { .i =  +1 } }),
 &((Keychord){1, {{MODKEY, XK_k }}, focusstack, { .i =  -1 } }),
 &((Keychord){1, {{MODKEY, XK_Return }}, zoom, { 0 } }),
-&((Keychord){1, {{MODKEY, XK_space }}, togglefloating, { 0 } }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_g }}, togglefloating, { 0 } }),
 #+END_SRC
 
 **** Layout

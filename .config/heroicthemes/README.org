@@ -1,0 +1,6 @@
+#+title: Heroic Games Launcher Config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: config for heroic
+
+[[][Heroic Games Launcher ]]
