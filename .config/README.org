@@ -1,0 +1,33 @@
+#+title: ~/.config
+#+author: StarryMohannad :DD
+#+email: 73769579+StarryMohannad@users.noreply.github.com
+#+description: crossroad in ~/.config
+
+You are in "~/.config"
+Where do you want to go ??
+
+| Directory     | Description                   |
+|---------------+-------------------------------|
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/bat][bat]]           | a modren cat replacement      |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/btop][btop]]          | a terminal process viewer     |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/cava][cava]]          | a terminal music visualizer   |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/discord-rpc][discord-rpc]]   | discord rich presence for mpd |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/dunst][dunst]]         | system notification handler   |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/git][git]]           | version control system        |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/gtk-2.0][gtk-2.0]]       | Gtk Version 2                 |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/gtk-3.0][gtk-3.0]]       | Gtk Version 3                 |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/heroicthemes][heroicthemes]]  | Heroic Games Launcher         |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/kpmenu][kpmenu]]        | KeePass dmenu script          |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/Kvantum][Kvantum]]       | Qt Style Manager              |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/lf][lf]]            | TUI File Manager              |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/librewolf][librewolf]]     | Web Browser                   |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpd][mpd]]           | Music Player Daemon           |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpv][mpv]]           | Multimedia Player             |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/npm][npm]]           | Node Package Manager          |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/pf][pf]]            | Pixelfiles Private Config     |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/X11][X11]]           | X Display Server              |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zathura][zathura]]       | Zathura PDF Reader            |
+| [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zsh][zsh]]           | Default System Shell          |
+|---------------+-------------------------------|
+| [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/picom.conf][picom.conf]]    | Desktop Composter             |
+| [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/starship.toml][starship.toml]] | Shell Style                   |
