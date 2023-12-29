@@ -15,13 +15,22 @@ cd /tmp/paru
 makepkg -si
 
 # Installing Packages
-paru -S perl-file-mimeinfo lf ueberzug zsh-autosuggestions zsh-syntax-highlighting kpmenu nwg-look-bin xorg xorg-xinit harfbuzz libx11 libxft libxinerama coreutils fontconfig freetype2 glibc ttf-dejavu ttf-firacode-nerd bat btop cava kpmenu kvantum mpv zathura zsh starship picom upower alsa-utils playerctl mpd mpc flatpak xwallpaper zoxide eza wget curl catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato nwg-look-bin shotgun hacksaw ncmpcpp mpd-discord-presence-git xsel mpdris2
-
-# Installing Node
-mkdir -p ~/.local/share/nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash NVM_DIR="~/.local/share/nvm"
-~/.local/share/nvm/nvm.sh install node
-~/.local/share/nvm/nvm.sh use node
+paru -S shotgun hacksaw xwallpaper \
+    coreutils wget curl\
+    picom\
+    kpmenu xsel\
+    mpv zathura\
+    upower alsa-utils\
+    bat btop cava zoxide eza\
+    glibc harfbuzz libx11 libxft libxinerama\
+    fontconfig freetype2 ttf-dejavu ttf-firacode-nerd\
+    xorg xorg-xinit\
+    nwg-look-bin kvantum\
+    catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato\
+    zsh starship zsh-autosuggestions zsh-syntax-highlighting\
+    lf ueberzug perl-file-mimeinfo\
+    mpd mpc ncmpcpp mpd-discord-rpc mpDris2 playerctl\
+    emacs ripgrep fd
 
 # Building Suckless Tools
 cd "$PF_SOURCE"/dwm
@@ -43,6 +52,7 @@ sudo make clean install
 ln -s "$PF_CONFIG"/bat             "$HOME"/.config/bat
 ln -s "$PF_CONFIG"/btop            "$HOME"/.config/btop
 ln -s "$PF_CONFIG"/cava            "$HOME"/.config/cava
+ln -s "$PF_CONFIG"/doom            "$HOME"/.config/doom
 ln -s "$PF_CONFIG"/dunst           "$HOME"/.config/dunst
 ln -s "$PF_CONFIG"/discord-rpc     "$HOME"/.config/discord-rpc
 ln -s "$PF_CONFIG"/firefox         "$HOME"/.config/firefox
@@ -68,6 +78,10 @@ ln -s "$PF_LOCAL"/share/sounds     "$HOME"/.local/share/sounds
 ln -s "$PF_LOCAL"/share/dwm        "$HOME"/.local/share/dwm
 
 cp -r "$PF_CONFIG"/pf              "$HOME"/.config/pf
+
+# Installing Doom Emacs
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install
 
 # Themeing
 papirus-folders -C cat-macchiato-blue --theme Papirus-Dark
