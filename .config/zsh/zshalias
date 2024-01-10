@@ -24,8 +24,9 @@ alias cl='clear'
 alias clh='rm -rf $ZSH/zshistory'
 alias cld='rm -rf $HOME/Downloads/*.*'
 
-alias vim='nvim'
-alias v='nvim'
+alias vim='emacsclient -nw'
+alias vi='emacsclient -nw'
+alias v='emacsclient -nw'
 
 alias s='sudo'
 alias se='sudoedit'
