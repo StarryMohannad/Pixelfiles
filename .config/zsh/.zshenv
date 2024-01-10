@@ -1,7 +1,7 @@
 # Default Apps
 export BROWSER="firefox"
 export TERMINAL="st"
-export EDITOR="emacsclient -nw"
+export EDITOR="emacsclient"
 export MENU="dmenu -z 525 -i -p"
 
 # XDG-DIRS
