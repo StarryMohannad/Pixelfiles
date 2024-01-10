@@ -1,3 +1,9 @@
 #!/bin/bash
 
-upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk ''/percentage/' {print $NF}'
+if [ "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state)" = "    state:               charging" ] ; then
+ printf "[C] "
+elif [ "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state)" = "    state:               pending-charge" ] ; then
+ printf "[PC] "
+fi
+
+echo "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk ''/percentage/' {print $NF}')"
