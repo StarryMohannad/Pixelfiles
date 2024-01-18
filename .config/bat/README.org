@@ -1,8 +1,0 @@
-#+title: Bat Config
-#+author: StarryMohannad :DD
-#+email: 73769579+StarryMohannad@users.noreply.github.com
-#+description: config for bat
-
-[[https://github.com/sharkdp/bat][Bat]] is a modern replacement for cat, this config only installs the [[https://github.com/catppuccin/bat][Catppuccin Theme]], the [[https://github.com/StarryMohannad/Pixelfiles/blob/main/.config/zsh/.zshenv][.zshenv]] file applies the theme in the "$BAT_THEME" Varible.
-
-[[../../assets/bat.png]]

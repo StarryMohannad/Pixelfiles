@@ -46,9 +46,6 @@ these are programs that you will find in the terminal
 
 | Program   | Purpose                                | Links  |
 |-----------+----------------------------------------+--------|
-| [[https://github.com/sharkdp/bat][Bat]]       | a Modren Cat Alternative               | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/bat][Config]] |
-| [[https://github.com/aristocratos/btop][Btop]]      | a system moniter                       | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/btop][Config]] |
-| [[https://github.com/karlstav/cava][Cava]]      | Music Visualizer                       | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/cava][Config]] |
 | [[https://git-scm.com/][Git]]       | Everyone's Favorate Verison Controller | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/git][Config]] |
 | [[https://github.com/gokcehan/lf][lf]]        | TUI File Manager                       | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/lf][Config]] |
 | [[https://www.musicpd.org/][MPD]]       | Music Player Daemon                    | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpd][Config]] |
@@ -62,7 +59,6 @@ these are programs that you will find in the terminal
 | Program               | Purpose                                 | Links  |
 |-----------------------+-----------------------------------------+--------|
 | [[https://librewolf.net/][Librewolf]]             | Web Browser :DD                         | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/librewolf][Config]] |
-| [[https://heroicgameslauncher.com/][Heroic Games Launcher]] | the best alternative for Epics Launcher | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/heroicthemes][Config]] |
 | [[https://github.com/AlessioDP/kpmenu][KPMenu]]                | a Dmenu Script for Password Management  | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/kpmenu][Config]] |
 | [[https://mpv.io/][MPV]]                   | Video Player                            | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpv][Config]] |
 | [[https://pwmt.org/projects/zathura/][Zathura]]               | PDF Reader                              | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zathura][Config]] |
@@ -70,5 +66,5 @@ these are programs that you will find in the terminal
 * Credit
 Special Thanks to :DD
 
-1. [[https://github.com/catppuccin][Catppuccin]]: Best Color Scheme on the Planet :3
+1. [[https://github.com/dylanaraps/pywal][Pywal]]: a Script to automagicly generate colorschemes from wallpapers :DD
 2. [[https://github.com/junglerobba/steam-dmenu][steam-dmenu]]: Useful ;)

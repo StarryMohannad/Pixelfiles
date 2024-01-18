@@ -17,7 +17,7 @@ makepkg -si
 # Installing Packages
 paru -S shotgun hacksaw xwallpaper \
     coreutils wget curl\
-    xcompmgr\
+    picom\
     kpmenu xsel\
     mpv zathura\
     upower alsa-utils\
@@ -25,12 +25,14 @@ paru -S shotgun hacksaw xwallpaper \
     glibc harfbuzz libx11 libxft libxinerama\
     fontconfig freetype2 ttf-dejavu ttf-firacode-nerd\
     xorg xorg-xinit\
-    nwg-look-bin kvantum\
-    catppuccin-cursors-macchiato papirus-folders-catppuccin-git catppuccin-gtk-theme-macchiato\
+    nwg-look-bin\
     zsh starship zsh-autosuggestions zsh-syntax-highlighting\
     lf ueberzug perl-file-mimeinfo\
     mpd mpc ncmpcpp mpd-discord-rpc mpDris2 playerctl\
-    emacs ripgrep fd
+    emacs ripgrep fd\
+    python-pywal feh pywal-discord-git zathura-pywal-git wpg-git python-pipx
+
+pipx install --index-url https://test.pypi.org/simple/ pywalfox==2.8.0rc1
 
 # Building Suckless Tools
 cd "$PF_SOURCE"/dwm
@@ -61,7 +63,6 @@ ln -s "$PF_CONFIG"/gtk-2.0         "$HOME"/.config/gtk-2.0
 ln -s "$PF_CONFIG"/gtk-3.0         "$HOME"/.config/gtk-3.0
 ln -s "$PF_CONFIG"/heroicthemes    "$HOME"/.config/heroicthemes
 ln -s "$PF_CONFIG"/kpmenu          "$HOME"/.config/kpmenu
-ln -s "$PF_CONFIG"/Kvantum         "$HOME"/.config/Kvantum
 ln -s "$PF_CONFIG"/lf              "$HOME"/.config/lf
 ln -s "$PF_CONFIG"/mpd             "$HOME"/.config/mpd
 ln -s "$PF_CONFIG"/mpv             "$HOME"/.config/mpv
@@ -84,8 +85,9 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install
 
 # Themeing
-papirus-folders -C cat-macchiato-blue --theme Papirus-Dark
-bat cache --build
+wpg-install.sh -g
+wpg-install.sh -i
+wpg-install.sh -d
 
 # Finishing Up
 echo 'export ZDOTDIR="$HOME"/.config/zsh' | sudo tee -a /etc/zsh/zshenv

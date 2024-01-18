@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if pgrep xcompmgr &>/dev/null; then
-    pkill xcompmgr &
-else
-    xcompmgr -cCfFD2 &
-fi
-
-exit 0

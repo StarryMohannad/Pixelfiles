@@ -3,7 +3,5 @@
 FileName="$(date '+%Y%m%d%H%M%S.png')"
 
 setsid -f mpv --no-video ~/.local/share/sounds/menu1.mp3
-"$DWM"/scripts/togglecomp
 shotgun -g "$(hacksaw)" ~/Sync/Pictures/Screenshots/"$FileName"
-"$DWM"/scripts/togglecomp
 xclip -selection clipboard -t image/png -i ~/Sync/Pictures/Screenshots/"$FileName"

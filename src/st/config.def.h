@@ -2,6 +2,8 @@ static char *font = "FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=tru
 
 static int borderpx = 5;
 
+float alpha = 1;
+
 // Colorscheme
 static const char *colorname[] = {
 "#494D64",
@@ -31,8 +33,6 @@ unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 258;
 
 static unsigned int defaultattr = 11;
-
-float alpha = 0.9;
 
 static unsigned int cursorshape = 2;
 
@@ -72,7 +72,7 @@ static double maxlatency = 33;
 static unsigned int cols = 80;
 static unsigned int rows = 24;
 
-char *termname = "st-256color";
+char *termname = "xterm-256color";
 
 static int bellvolume = 100;
 
@@ -91,6 +91,36 @@ static MouseShortcut mshortcuts[] = {
 { XK_ANY_MOD, Button4, ttysend, {.s = "\031"} },
 { ShiftMask, Button5, ttysend, {.s = "\033[6;2~"} },
 { XK_ANY_MOD, Button5, ttysend, {.s = "\005"} } };
+
+ResourcePref resources[] = {
+		{ "font",         STRING,  &font },
+		{ "color0",       STRING,  &colorname[0] },
+		{ "color1",       STRING,  &colorname[1] },
+		{ "color2",       STRING,  &colorname[2] },
+		{ "color3",       STRING,  &colorname[3] },
+		{ "color4",       STRING,  &colorname[4] },
+		{ "color5",       STRING,  &colorname[5] },
+		{ "color6",       STRING,  &colorname[6] },
+		{ "color7",       STRING,  &colorname[7] },
+		{ "color8",       STRING,  &colorname[8] },
+		{ "color9",       STRING,  &colorname[9] },
+		{ "color10",      STRING,  &colorname[10] },
+		{ "color11",      STRING,  &colorname[11] },
+		{ "color12",      STRING,  &colorname[12] },
+		{ "color13",      STRING,  &colorname[13] },
+		{ "color14",      STRING,  &colorname[14] },
+		{ "color15",      STRING,  &colorname[15] },
+		{ "background",   STRING,  &colorname[257] },
+		{ "foreground",   STRING,  &colorname[256] },
+		{ "cursorColor",  STRING,  &colorname[258] },
+		{ "termname",     STRING,  &termname },
+		{ "shell",        STRING,  &shell },
+		{ "blinktimeout", INTEGER, &blinktimeout },
+		{ "bellvolume",   INTEGER, &bellvolume },
+		{ "tabspaces",    INTEGER, &tabspaces },
+		{ "cwscale",      FLOAT,   &cwscale },
+		{ "chscale",      FLOAT,   &chscale },
+};
 
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)

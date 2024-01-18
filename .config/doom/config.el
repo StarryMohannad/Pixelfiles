@@ -34,10 +34,7 @@
 ;; `load-theme' function. This is the default:
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 15 :weight 'medium))
 
-(load-theme 'catppuccin t)
-(setq catppuccin-flavor 'macchiato) ;; or 'latte, 'macchiato, or 'mocha
-(disable-theme 'catppuccin)
-(load-theme 'catppuccin t)
+(load-theme 'ewal-doom-one t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.

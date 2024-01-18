@@ -1,8 +1,0 @@
-#+title: Zathura Config
-#+author: StarryMohannad :DD
-#+email: 73769579+StarryMohannad@users.noreply.github.com
-#+description: config for zathura
-
-[[https://pwmt.org/projects/zathura/][Zathura]] is a Minimal PDF Viewer, this config only Applies the [[https://github.com/catppuccin/zathura/][Catppuccin Theme]].
-
-[[../../assets/zathura.png]]

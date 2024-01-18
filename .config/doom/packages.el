@@ -51,3 +51,5 @@
 
 (package! catppuccin-theme)
 (package! elcord)
+(package! ewal)
+(package! ewal-doom-themes)

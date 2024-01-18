@@ -31,6 +31,6 @@ export SSB_HOME="$XDG_DATA_HOME"/zoom
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 
 # Theme
-export QT_STYLE_OVERRIDE="kvantum"
+QT_QPA_PLATFORMTHEME=gtk2
 export XCURSOR_THEME="Catppuccin-Macchiato-Dark-Cursors"
 export BAT_THEME="Catppuccin-macchiato"

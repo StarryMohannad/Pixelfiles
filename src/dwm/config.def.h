@@ -17,12 +17,16 @@ static const int swallowfloating = 0;
 
 static const char *fonts[] = { "FiraCode Nerd Font:size=10" };
 
-static const char col_gray1[] = "#24273a";
-static const char col_gray2[] = "#24273a";
-static const char col_gray3[] = "#cad3f5";
-static const char col_gray4[] = "#cad3f5";
-static const char col_cyan[]  = "#5b6078";
-static const char *colors[][3] = { [SchemeNorm] = { col_gray3, col_gray1, col_gray2 }, [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  } };
+static char normbgcolor[]           = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]           = "#bbbbbb";
+static char selfgcolor[]            = "#eeeeee";
+static char selbordercolor[]        = "#005577";
+static char selbgcolor[]            = "#005577";
+static char *colors[][3] = {
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+};
 
 static const char *tags[] = { "󰖟", "", "", "", "", "", "", "󰍡", "*" };
 
@@ -124,6 +128,7 @@ static Keychord *keychords[] = {
 &((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_q }}, spawn, SHCMD("$DWM/dmenu/bye") }),
 &((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_w }}, spawn, SHCMD("xkill") }),
 &((Keychord){1, {{MODKEY|ShiftMask, XK_p }}, spawn, SHCMD("$DWM/defapps/lock") }),
+&((Keychord){1, {{MODKEY          , XK_F5 }}, xrdb, { .v = NULL } }),
 
 TAGKEYS(XK_1, 0 )
 TAGKEYS(XK_2, 1 )

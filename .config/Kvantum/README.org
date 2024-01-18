@@ -1,8 +1,0 @@
-#+title: Kvantum Config
-#+author: StarryMohannad :DD
-#+email: 73769579+StarryMohannad@users.noreply.github.com
-#+description: config for kvantum
-
-[[https://github.com/tsujan/Kvantum/][Kavantum]] is a tool to theme Qt Programs, this config installs and applies [[https://github.com/catppuccin/kvantum][Catppuccin Kvantum Theme]], you can change the theme using "kvantum-manager".
-
-[[../../assets/kvantum.png]]
