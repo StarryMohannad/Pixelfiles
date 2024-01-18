@@ -1295,7 +1295,7 @@ void loadxrdb() {
         XRDB_LOAD_COLOR("background", normbgcolor);
         XRDB_LOAD_COLOR("foreground", normfgcolor);
         XRDB_LOAD_COLOR("foreground", selbordercolor);
-        XRDB_LOAD_COLOR("color2", selbgcolor);
+        XRDB_LOAD_COLOR("color1", selbgcolor);
         XRDB_LOAD_COLOR("foregroudn", selfgcolor);
       }
     }
