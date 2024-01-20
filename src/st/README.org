@@ -1,10 +1,10 @@
 #+title: Pixelfiles ST
 #+author: StarryMohannad :DD
 #+email: 73769579+StarryMohannad@users.noreply.github.com
-#+description: my build of st (suckless terminal) :DD
+#+description: my build of st (simple terminal) :DD
 #+property: header-args :tangle config.def.h
 
-is my custom build [[https://st.suckless.org/][st (suckless terminal)]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
+is my custom build [[https://st.suckless.org/][st (simple terminal)]] for [[https://github.com/StarryMohannad/Pixelfiles][Pixelfiles]] :D
 
 [[./../../assets/st.png]]
 
@@ -14,16 +14,18 @@ is my custom build [[https://st.suckless.org/][st (suckless terminal)]] for [[ht
   - [[#appearance][Appearance]]
   - [[#behaviour][Behaviour]]
   - [[#boxdraw][BoxDraw]]
+  - [[#xresources][Xresources]]
   - [[#binds][Binds]]
   - [[#advanced-settings][Advanced Settings]]
 
 * Patches
-This Build of St uses these patches
+This Build of st uses these [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/st/patches][patches]]
 
 1. [[https://st.suckless.org/patches/alpha][alpha]]
 2. [[https://st.suckless.org/patches/boxdraw][boxdraw]]
 3. [[https://st.suckless.org/patches/scrollback][srollback]]
 4. [[https://st.suckless.org/patches/w3m][w3m]]
+5. [[https://st.suckless.org/patches/xresources/][xresources]]
 
 * Config
 here is the config file for st, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
@@ -217,12 +219,7 @@ int allowwindowops = 0;
 #+END_SRC
 
 *** Draw Latency
-/*
- * draw latency range in ms - from new content/keypress/etc until drawing.
- * within this range, st draws when content stops arriving (idle). mostly it's
- * near minlatency, but it waits longer for slow updates to avoid partial draw.
- * low minlatency will tear/flicker more, as it can "detect" idle too early.
- */
+draw latency range in ms - from new content/keypress/etc until drawing. within this range, st draws when content stops arriving (idle). it's near minlatency, but it waits longer for slow updates to avoid partial draw. low minlatency will tear/flicker more, as it can "detect" idle too early.
 
 #+BEGIN_SRC C
 static double minlatency = 8;
@@ -265,38 +262,8 @@ if set to 1 it will render as adjacent "pixels"
 const int boxdraw_braille = 0;
 #+END_SRC
 
-** Binds
-
-*** Mouse
-
-**** Define Mouse MODKEY
-this will define the button you should hold when doing Mouse Binds in the terminal
-
-#+BEGIN_SRC C
-static uint forcemousemod = ShiftMask;
-#+END_SRC
-
-**** Mouse Binds
-
-| Bind                              | Command                   |
-|-----------------------------------+---------------------------|
-| Shift+ScrollUp                    | Scrolls Up                |
-| Shift+ScrollDown                  | Scrolls Down              |
-| Middle-Click                      | Pastes from the Clipboard |
-| ScrollUp/ScrollDown Without Shift | Outputs Random Symbols    |
-
-#+BEGIN_SRC C
-static MouseShortcut mshortcuts[] = {
-{ ShiftMask, Button4, kscrollup, {.i = 1} },
-{ ShiftMask, Button5, kscrolldown, {.i = 1} },
-{ XK_ANY_MOD, Button2, selpaste, {.i = 0}, 1 },
-{ ShiftMask, Button4, ttysend, {.s = "\033[5;2~"} },
-{ XK_ANY_MOD, Button4, ttysend, {.s = "\031"} },
-{ ShiftMask, Button5, ttysend, {.s = "\033[6;2~"} },
-{ XK_ANY_MOD, Button5, ttysend, {.s = "\005"} } };
-#+END_SRC
-
-*** Xresources
+** Xresources
+this will load the colorscheme from Xresources (useful for pywal)
 
 #+BEGIN_SRC C
 ResourcePref resources[] = {
@@ -329,6 +296,38 @@ ResourcePref resources[] = {
 		{ "chscale",      FLOAT,   &chscale },
 };
 #+END_SRC
+
+** Binds
+
+*** Mouse
+
+**** Define Mouse MODKEY
+this will define the button you should hold when doing Mouse Binds in the terminal
+
+#+BEGIN_SRC C
+static uint forcemousemod = ShiftMask;
+#+END_SRC
+
+**** Mouse Binds
+
+| Bind                              | Command                   |
+|-----------------------------------+---------------------------|
+| Shift+ScrollUp                    | Scrolls Up                |
+| Shift+ScrollDown                  | Scrolls Down              |
+| Middle-Click                      | Pastes from the Clipboard |
+| ScrollUp/ScrollDown Without Shift | Outputs Random Symbols    |
+
+#+BEGIN_SRC C
+static MouseShortcut mshortcuts[] = {
+{ ShiftMask, Button4, kscrollup, {.i = 1} },
+{ ShiftMask, Button5, kscrolldown, {.i = 1} },
+{ XK_ANY_MOD, Button2, selpaste, {.i = 0}, 1 },
+{ ShiftMask, Button4, ttysend, {.s = "\033[5;2~"} },
+{ XK_ANY_MOD, Button4, ttysend, {.s = "\031"} },
+{ ShiftMask, Button5, ttysend, {.s = "\033[6;2~"} },
+{ XK_ANY_MOD, Button5, ttysend, {.s = "\005"} } };
+#+END_SRC
+
 
 *** Keyboard
 

@@ -18,7 +18,7 @@ is my custom build of [[https://dwm.suckless.org][dwm (dynamic window manager)]]
   - [[#binds][Binds]]
 
 * Patches
-This Build of DWM uses
+This Build of dwm uses these [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/st/patches][patches]]
 
 1. [[https://dwm.suckless.org/patches/autostart/][autostart]]
 2. [[https://dwm.suckless.org/patches/fullgaps/][fullgaps]]
@@ -26,6 +26,7 @@ This Build of DWM uses
 4. [[https://dwm.suckless.org/patches/steam/][steam]]
 5. [[https://dwm.suckless.org/patches/swallow/][swallow]]
 6. [[https://dwm.suckless.org/patches/systray][systray]]
+7. [[https://dwm.suckless.org/patches/xrdb/][xrdb]]
 
 * Config
 here is the config file for dwm, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)

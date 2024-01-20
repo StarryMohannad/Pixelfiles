@@ -81,17 +81,6 @@ const int boxdraw_bold = 0;
 
 const int boxdraw_braille = 0;
 
-static uint forcemousemod = ShiftMask;
-
-static MouseShortcut mshortcuts[] = {
-{ ShiftMask, Button4, kscrollup, {.i = 1} },
-{ ShiftMask, Button5, kscrolldown, {.i = 1} },
-{ XK_ANY_MOD, Button2, selpaste, {.i = 0}, 1 },
-{ ShiftMask, Button4, ttysend, {.s = "\033[5;2~"} },
-{ XK_ANY_MOD, Button4, ttysend, {.s = "\031"} },
-{ ShiftMask, Button5, ttysend, {.s = "\033[6;2~"} },
-{ XK_ANY_MOD, Button5, ttysend, {.s = "\005"} } };
-
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
 		{ "color0",       STRING,  &colorname[0] },
@@ -121,6 +110,17 @@ ResourcePref resources[] = {
 		{ "cwscale",      FLOAT,   &cwscale },
 		{ "chscale",      FLOAT,   &chscale },
 };
+
+static uint forcemousemod = ShiftMask;
+
+static MouseShortcut mshortcuts[] = {
+{ ShiftMask, Button4, kscrollup, {.i = 1} },
+{ ShiftMask, Button5, kscrolldown, {.i = 1} },
+{ XK_ANY_MOD, Button2, selpaste, {.i = 0}, 1 },
+{ ShiftMask, Button4, ttysend, {.s = "\033[5;2~"} },
+{ XK_ANY_MOD, Button4, ttysend, {.s = "\031"} },
+{ ShiftMask, Button5, ttysend, {.s = "\033[6;2~"} },
+{ XK_ANY_MOD, Button5, ttysend, {.s = "\005"} } };
 
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)

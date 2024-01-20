@@ -12,11 +12,14 @@ is my custom build of [[https://tools.suckless.org/dmenu][dmenu]] for [[https://
 - [[#patches][Patches]]
 - [[#config][Config]]
   - [[#font][Font]]
-  - [[#colorscheme][Colorscheme]]
+  - [[#fallback-colorscheme][Fallback Colorscheme]]
   - [[#other-varibles][Other Varibles]]
 
 * Patches
-This Build of Dmenu only uses the [[https://tools.suckless.org/dmenu/patches/xyw/][xyw]] patch
+This Build of dmenu uses these [[https://github.com/StarryMohannad/Pixelfiles/tree/main/src/dmenu/patches][patches]]
+
+1. [[https://tools.suckless.org/dmenu/patches/xyw/][xyw]]
+2. [[https://tools.suckless.org/dmenu/patches/xresources/][xresources]]
 
 * Config
 here is the config file for dmenu, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
@@ -28,9 +31,8 @@ this sets dmenu font
 static const char *fonts[] = { "FiraCode Nerd Font:size=10" };
 #+END_SRC
 
-** Colorscheme
-this sets the colorscheme of dmenu
-( I use Cattpuccin :3 )
+** Fallback Colorscheme
+this colorscheme will apply if Xresources wasn't Present
 
 #+BEGIN_SRC C
 static const char *colors[SchemeLast][2] = {
