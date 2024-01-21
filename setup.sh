@@ -75,6 +75,7 @@ ln -s "$PF_CONFIG"/zsh             "$HOME"/.config/zsh
 ln -s "$PF_CONFIG"/picom.conf      "$HOME"/.config/picom.conf
 ln -s "$PF_CONFIG"/starship.toml   "$HOME"/.config/starship.toml
 
+ln -s "$PF_LOCAL"/share/wallpapers "$HOME"/.local/share/wallpapers
 ln -s "$PF_LOCAL"/share/sounds     "$HOME"/.local/share/sounds
 ln -s "$PF_LOCAL"/share/dwm        "$HOME"/.local/share/dwm
 

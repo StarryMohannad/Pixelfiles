@@ -14,6 +14,7 @@ Pixelfiles is my dotfiles for Arch/dwm it uses the Catppuccin Theme (The Macchia
   - [[#base-desktop-programs][Base Desktop Programs]]
   - [[#cli-programs][CLI Programs]]
   - [[#other-programs][Other Programs]]
+- [[#installation-insturctions][Installation Insturctions]]
 - [[#credit][Credit]]
 
 * Configs for
@@ -62,6 +63,32 @@ these are programs that you will find in the terminal
 | [[https://github.com/AlessioDP/kpmenu][KPMenu]]                | a Dmenu Script for Password Management  | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/kpmenu][Config]] |
 | [[https://mpv.io/][MPV]]                   | Video Player                            | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpv][Config]] |
 | [[https://pwmt.org/projects/zathura/][Zathura]]               | PDF Reader                              | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zathura][Config]] |
+
+* Installation Insturctions
+to install Pixelfiles:
+
+1. Download the Dependences for the install script
+    #+BEGIN_SRC shell
+sudo pacman -S git bash curl wget
+    #+END_SRC
+
+2. Clone the Repo
+   #+BEGIN_SRC shell
+mkdir -p ~/.local
+git clone https://github.com/StarryMohannad/Pixelfiles ~/.local/pf
+   #+END_SRC
+
+3. Run the Setup script
+   #+BEGIN_SRC shell
+~/.local/pf/setup.sh
+   #+END_SRC
+
+4. Reboot
+   #+BEGIN_SRC shell
+reboot
+   #+END_SRC
+
+5. Profit B)
 
 * Credit
 Special Thanks to :DD
