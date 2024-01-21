@@ -68,25 +68,25 @@ these are programs that you will find in the terminal
 to install Pixelfiles:
 
 1. Download the Dependences for the install script
-    #+BEGIN_SRC shell
+#+BEGIN_SRC shell
 sudo pacman -S git bash curl wget
-    #+END_SRC
+#+END_SRC
 
 2. Clone the Repo
-   #+BEGIN_SRC shell
+#+BEGIN_SRC shell
 mkdir -p ~/.local
 git clone https://github.com/StarryMohannad/Pixelfiles ~/.local/pf
-   #+END_SRC
+#+END_SRC
 
 3. Run the Setup script
-   #+BEGIN_SRC shell
+#+BEGIN_SRC shell
 ~/.local/pf/setup.sh
-   #+END_SRC
+#+END_SRC
 
 4. Reboot
-   #+BEGIN_SRC shell
+#+BEGIN_SRC shell
 reboot
-   #+END_SRC
+#+END_SRC
 
 5. Profit B)
 
