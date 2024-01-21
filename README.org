@@ -4,7 +4,7 @@
 #+description: aka my dotfiles :DD
 #+property: header-args :tangle config.def.h
 
-Pixelfiles is my dotfiles for Arch/dwm it uses the Catppuccin Theme (The Macchiato Flavour) and It's (kinda, maybe not so) Minimal
+Pixelfiles is my dotfiles for Arch/dwm it uses pywal to make colorschemes based on the wallpaper and It's (kinda, maybe not so) Minimal
 
 [[./assets/pixelfiles.png]]
 
