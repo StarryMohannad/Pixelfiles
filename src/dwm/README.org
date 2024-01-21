@@ -101,9 +101,8 @@ this sets the font and it's size
 static const char *fonts[] = { "FiraCode Nerd Font:size=10" };
 #+END_SRC
 
-*** Colorscheme
-this sets the color scheme of the bar
-( I set it to catppuccin colors :3 )
+*** Fallback Colorscheme
+this is the colorscheme dwm will use if Xresources did not exist
 
 #+BEGIN_SRC C
 static char normbgcolor[]           = "#222222";

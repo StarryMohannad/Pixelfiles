@@ -9,13 +9,76 @@ Pixelfiles is my dotfiles for Arch/dwm it uses the Catppuccin Theme (The Macchia
 [[./assets/pixelfiles.png]]
 
 * Table of Contents :toc:
+- [[#list-of-things-i-have-to-do][List of things I have to do]]
+- [[#installation-insturctions][Installation Insturctions]]
 - [[#configs-for][Configs for]]
   - [[#base-things][Base things]]
   - [[#base-desktop-programs][Base Desktop Programs]]
   - [[#cli-programs][CLI Programs]]
   - [[#other-programs][Other Programs]]
-- [[#installation-insturctions][Installation Insturctions]]
 - [[#credit][Credit]]
+
+* TODO List of things I have to do
+- [ ] Scripts for Programs
+  - [ ] dwm
+    - [ ] make regshot and scrshot display a notification when taking a screenshot
+    - [ ] make binds for dmenu scripts that
+      - [ ] configure NetworkManager
+      - [ ] configure Bluetooth
+      - [ ] handle system updates
+  - [ ] sxiv
+    - [ ] a script that sets the wallpaper with pywal
+    - [ ] a script that copies the Image to the clipboard
+    - [ ] a script that duplicates the Image and opens gimp to edit it
+  - [ ] lf
+    - [ ] a script to extract .zip/.7z files
+    - [ ] a script to convert videos mkv/mp4
+    - [ ] a script to sets an Image as a wallpaper
+    - [ ] a text editor that isn't emacs
+- [ ] Replace all screenshots
+  - [ ] ./src
+    - [ ] dwm
+    - [ ] st
+    - [ ] dwmblocks
+    - [ ] sxiv
+    - [ ] dmenu
+  - [ ] ./.config
+    - [ ] discord-rpc
+    - [ ] DOOM Emacs
+    - [ ] Xorg Server
+    - [ ] dunst
+    - [ ] gtk 2&3
+    - [ ] kpmenu
+    - [ ] lf
+    - [ ] librewolf
+    - [ ] zsh
+
+
+* Installation Insturctions
+to install Pixelfiles:
+
+1. Download the Dependences for the install script
+#+BEGIN_SRC shell
+sudo pacman -S git bash curl wget
+#+END_SRC
+
+2. Clone the Repo
+#+BEGIN_SRC shell
+mkdir -p ~/.local
+git clone https://github.com/StarryMohannad/Pixelfiles ~/.local/pf
+#+END_SRC
+
+3. Run the Setup script
+#+BEGIN_SRC shell
+~/.local/pf/setup.sh
+#+END_SRC
+
+4. Reboot
+#+BEGIN_SRC shell
+reboot
+#+END_SRC
+
+5. Profit B)
 
 * Configs for
 these dot files come with all sorts of configs
@@ -63,32 +126,6 @@ these are programs that you will find in the terminal
 | [[https://github.com/AlessioDP/kpmenu][KPMenu]]                | a Dmenu Script for Password Management  | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/kpmenu][Config]] |
 | [[https://mpv.io/][MPV]]                   | Video Player                            | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/mpv][Config]] |
 | [[https://pwmt.org/projects/zathura/][Zathura]]               | PDF Reader                              | [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.config/zathura][Config]] |
-
-* Installation Insturctions
-to install Pixelfiles:
-
-1. Download the Dependences for the install script
-#+BEGIN_SRC shell
-sudo pacman -S git bash curl wget
-#+END_SRC
-
-2. Clone the Repo
-#+BEGIN_SRC shell
-mkdir -p ~/.local
-git clone https://github.com/StarryMohannad/Pixelfiles ~/.local/pf
-#+END_SRC
-
-3. Run the Setup script
-#+BEGIN_SRC shell
-~/.local/pf/setup.sh
-#+END_SRC
-
-4. Reboot
-#+BEGIN_SRC shell
-reboot
-#+END_SRC
-
-5. Profit B)
 
 * Credit
 Special Thanks to :DD
