@@ -18,7 +18,7 @@ here is the config file for dwmblocks, I wrote it in org mode to document it, to
 
 ** Blocks
 these are the blocks that appear on the status bar
-they use scripts placed [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/blocks][Here]]
+they use scripts placed [[https://github.com/StarryMohannad/Pixelfiles/tree/main/.local/share/dwm/script/dwmblocks][Here]]
 
 | Block    | Script | Purpose                                   |
 |----------+--------+-------------------------------------------|
@@ -30,11 +30,11 @@ they use scripts placed [[https://github.com/StarryMohannad/Pixelfiles/tree/main
 
 #+BEGIN_SRC C
 static const Block blocks[] = {
-{ "  ", "~/.local/share/dwm/blocks/mus", 1, 3},
-{ "󱐋  ", "~/.local/share/dwm/blocks/bat", 1, 2},
-{ "󰕾  ", "~/.local/share/dwm/blocks/vol", 1, 0},
-{ "󰸗  ", "~/.local/share/dwm/blocks/cal", 1, 5},
-{ "  ", "~/.local/share/dwm/blocks/tim", 1, 1}, };
+{ "  ", "~/.local/share/dwm/scripts/dwmblocks/mus", 1, 3},
+{ "󱐋  ", "~/.local/share/dwm/scripts/dwmblocks/bat", 1, 2},
+{ "󰕾  ", "~/.local/share/dwm/scripts/dwmblocks/vol", 1, 0},
+{ "󰸗  ", "~/.local/share/dwm/scripts/dwmblocks/cal", 1, 5},
+{ "  ", "~/.local/share/dwm/scripts/dwmblocks/tim", 1, 1}, };
 #+END_SRC
 
 ** Delimiter

@@ -3,4 +3,4 @@
 export STARSHIP_SHELL=
 
 setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/open.mp3
-st ~/.local/share/dwm/scripts/lfub
+st "$XDG_DATA_HOME"/dwm/scripts/bin/lfub

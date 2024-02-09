@@ -19,9 +19,9 @@ Pixelfiles is my dotfiles for Arch/dwm it uses pywal to make colorschemes based 
 - [[#credit][Credit]]
 
 * TODO List of things I have to do
-- [ ] Scripts for Programs
-  - [ ] dwm
-    - [ ] make regshot and scrshot display a notification when taking a screenshot
+- [-] Scripts for Programs
+  - [-] dwm
+    - [-] make regshot and scrshot display a notification when taking a screenshot
     - [ ] make binds for dmenu scripts that
       - [ ] configure NetworkManager
       - [ ] configure Bluetooth

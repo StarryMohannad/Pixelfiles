@@ -15,7 +15,7 @@ cd /tmp/paru
 makepkg -si
 
 # Installing Packages
-paru -S shotgun hacksaw xwallpaper \
+paru -S shotgun hacksaw tesseract\
     coreutils wget curl\
     picom\
     kpmenu xsel\

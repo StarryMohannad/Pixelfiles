@@ -9,9 +9,9 @@ setsid -f mpDris2 # MPD Dris Compatiblity
 
 setsid -f emacs --daemon # Emacs Daemon
 
-setsid -f "$DWM"/scripts/keepassxc.sh
+setsid -f "$DWM"/scripts/dwm/startup/keepassxc.sh
 
-setsid -f "$DWM"/scripts/volume-tracker.sh
+setsid -f "$DWM"/scripts/dwm/startup/volume-tracker.sh
 
-"$DWM"/scripts/wallpaper.sh
+"$DWM"/scripts/dwm/startup/wallpaper.sh
 setsid -f mpv --no-video "$HOME"/.local/share/sounds/startup.mp3

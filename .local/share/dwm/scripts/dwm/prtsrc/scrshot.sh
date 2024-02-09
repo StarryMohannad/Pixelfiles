@@ -2,6 +2,7 @@
 
 FileName="$(date '+%Y%m%d%H%M%S.png')"
 
-setsid -f mpv --no-video ~/.local/share/sounds/menu1.mp3
 shotgun -s ~/Sync/Pictures/Screenshots/"$FileName"
 xclip -selection clipboard -t image/png -i ~/Sync/Pictures/Screenshots/"$FileName"
+setsid -f mpv --no-video ~/.local/share/sounds/prtsc.mp3
+notify-send "Full Screenshot taken" "'$FileName' is now in the clipboard"

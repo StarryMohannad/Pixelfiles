@@ -77,32 +77,32 @@ static const Layout layouts[] = {
 
 static Keychord *keychords[] = {
 
-&((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/defapps/emacs" ) }),
-&((Keychord){1, {{MODKEY, XK_g }}, spawn, SHCMD("$DWM/defapps/game" ) }),
-&((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/defapps/mpd" ) }),
-&((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/defapps/file") }),
-&((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/defapps/term") }),
-&((Keychord){1, {{MODKEY, XK_w }}, spawn, SHCMD("$DWM/defapps/www" ) }),
+&((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/emacs" ) }),
+&((Keychord){1, {{MODKEY, XK_g }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/game" ) }),
+&((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/mpd" ) }),
+&((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/file") }),
+&((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/term") }),
+&((Keychord){1, {{MODKEY, XK_w }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/www" ) }),
 
-&((Keychord){1, {{MODKEY, XK_o }}, spawn, SHCMD("$DWM/dmenu/pass") }),
-&((Keychord){1, {{MODKEY, XK_p }}, spawn, SHCMD("$DWM/dmenu/run") }),
-&((Keychord){2, {{MODKEY, XK_d }, {0, XK_t }}, spawn, SHCMD("$DWM/dmenu/code" ) }),
-&((Keychord){2, {{MODKEY, XK_d }, {0, XK_h }}, spawn, SHCMD("$DWM/dmenu/art" ) }),
-&((Keychord){2, {{MODKEY, XK_d }, {0, XK_g }}, spawn, SHCMD("$DWM/dmenu/steam" ) }),
+&((Keychord){1, {{MODKEY, XK_o }}, spawn, SHCMD("$DWM/scripts/dmenu/pass") }),
+&((Keychord){1, {{MODKEY, XK_p }}, spawn, SHCMD("$DWM/scripts/dmenu/run") }),
+&((Keychord){2, {{MODKEY, XK_d }, {0, XK_t }}, spawn, SHCMD("$DWM/scripts/dmenu/code" ) }),
+&((Keychord){2, {{MODKEY, XK_d }, {0, XK_h }}, spawn, SHCMD("$DWM/scripts/dmenu/art" ) }),
+&((Keychord){2, {{MODKEY, XK_d }, {0, XK_g }}, spawn, SHCMD("$DWM/scripts/dmenu/steam" ) }),
 
-&((Keychord){1, {{0, XK_Print  }}, spawn, SHCMD("$DWM/scripts/regshot" ) }),
-&((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/scrshot" ) }),
+&((Keychord){1, {{0, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-shot.sh" ) }),
+&((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/screen-shot.sh" ) }),
 
-&((Keychord){1, {{ 0, XF86XK_MonBrightnessDown }}, spawn, SHCMD("$DWM/hotkeys/bright_down") }),
-&((Keychord){1, {{ 0, XF86XK_MonBrightnessUp }}, spawn, SHCMD("$DWM/hotkeys/bright_up") }),
+&((Keychord){1, {{ 0, XF86XK_MonBrightnessDown }}, spawn, SHCMD("$DWM/scripts/dwm/scripts/dwm/hotkeys/bright/down.sh") }),
+&((Keychord){1, {{ 0, XF86XK_MonBrightnessUp }}, spawn, SHCMD("$DWM/scripts/dwm/scripts/dwm/hotkeys/bright/up.sh") }),
 
-&((Keychord){1, {{ 0, XF86XK_AudioMute }}, spawn, SHCMD("$DWM/hotkeys/vol_mute") }),
-&((Keychord){1, {{ 0, XF86XK_AudioLowerVolume }}, spawn, SHCMD("$DWM/hotkeys/vol_down") }),
-&((Keychord){1, {{ 0, XF86XK_AudioRaiseVolume }}, spawn, SHCMD("$DWM/hotkeys/vol_up") }),
+&((Keychord){1, {{ 0, XF86XK_AudioMute }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/vol/mute.sh") }),
+&((Keychord){1, {{ 0, XF86XK_AudioLowerVolume }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/vol/down.sh") }),
+&((Keychord){1, {{ 0, XF86XK_AudioRaiseVolume }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/vol/up.sh") }),
 
-&((Keychord){1, {{ 0, XF86XK_AudioPlay }}, spawn, SHCMD("$DWM/hotkeys/mpd_play") }),
-&((Keychord){1, {{ 0, XF86XK_AudioPrev }}, spawn, SHCMD("$DWM/hotkeys/mpd_prev") }),
-&((Keychord){1, {{ 0, XF86XK_AudioNext }}, spawn, SHCMD("$DWM/hotkeys/mpd_next") }),
+&((Keychord){1, {{ 0, XF86XK_AudioPlay }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/mpd/play.sh") }),
+&((Keychord){1, {{ 0, XF86XK_AudioPrev }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/mpd/previous.sh") }),
+&((Keychord){1, {{ 0, XF86XK_AudioNext }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/mpd/next.sh") }),
 
 &((Keychord){1, {{MODKEY, XK_c }}, killclient, { 0 } }),
 &((Keychord){1, {{MODKEY, XK_j }}, focusstack, { .i =  +1 } }),
@@ -125,9 +125,9 @@ static Keychord *keychords[] = {
 &((Keychord){1, {{MODKEY, XK_0 }}, view, { .ui = ~0 } }),
 &((Keychord){1, {{MODKEY|ShiftMask, XK_0 }}, tag, { .ui = ~0 } }),
 
-&((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_q }}, spawn, SHCMD("$DWM/dmenu/bye") }),
+&((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_q }}, spawn, SHCMD("$DWM/scripts/dwm/quit.sh") }),
 &((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_w }}, spawn, SHCMD("xkill") }),
-&((Keychord){1, {{MODKEY|ShiftMask, XK_p }}, spawn, SHCMD("$DWM/defapps/lock") }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_p }}, spawn, SHCMD("$DWM/scripts/dwm/lock.sh") }),
 &((Keychord){1, {{MODKEY          , XK_F5 }}, xrdb, { .v = NULL } }),
 
 TAGKEYS(XK_1, 0 )
