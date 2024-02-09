@@ -53,3 +53,4 @@
 (package! elcord)
 (package! ewal)
 (package! ewal-doom-themes)
+(package! all-the-icons)

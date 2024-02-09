@@ -25,7 +25,6 @@ they use scripts placed [[https://github.com/StarryMohannad/Pixelfiles/tree/main
 | Music    | mus    | Displays the current Playing Song in MPD  |
 | Battary  | bat    | Displays the current Battary Presentage   |
 | Volume   | vol    | Displays the current Speaker Volume       |
-| Weather  | wtr    | Displays the current Weather in your city |
 | Calender | cal    | Displays the current Date                 |
 | Clock    | tim    | Displays the current Time                 |
 
@@ -34,7 +33,6 @@ static const Block blocks[] = {
 { "  ", "~/.local/share/dwm/blocks/mus", 1, 3},
 { "󱐋  ", "~/.local/share/dwm/blocks/bat", 1, 2},
 { "󰕾  ", "~/.local/share/dwm/blocks/vol", 1, 0},
-{ "",    "~/.local/share/dwm/blocks/wtr", 1, 5},
 { "󰸗  ", "~/.local/share/dwm/blocks/cal", 1, 5},
 { "  ", "~/.local/share/dwm/blocks/tim", 1, 1}, };
 #+END_SRC
