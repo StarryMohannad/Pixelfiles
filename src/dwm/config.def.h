@@ -91,6 +91,7 @@ static Keychord *keychords[] = {
 &((Keychord){2, {{MODKEY, XK_d }, {0, XK_g }}, spawn, SHCMD("$DWM/scripts/dmenu/steam" ) }),
 
 &((Keychord){1, {{0, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-shot.sh" ) }),
+&((Keychord){1, {{0, ShiftMask|XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-text.sh" ) }),
 &((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/screen-shot.sh" ) }),
 
 &((Keychord){1, {{ 0, XF86XK_MonBrightnessDown }}, spawn, SHCMD("$DWM/scripts/dwm/scripts/dwm/hotkeys/bright/down.sh") }),
@@ -128,7 +129,7 @@ static Keychord *keychords[] = {
 &((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_q }}, spawn, SHCMD("$DWM/scripts/dwm/quit.sh") }),
 &((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_w }}, spawn, SHCMD("xkill") }),
 &((Keychord){1, {{MODKEY|ShiftMask, XK_p }}, spawn, SHCMD("$DWM/scripts/dwm/lock.sh") }),
-&((Keychord){1, {{MODKEY          , XK_F5 }}, xrdb, { .v = NULL } }),
+&((Keychord){1, {{MODKEY, XK_F5 }}, xrdb, { .v = NULL } }),
 
 TAGKEYS(XK_1, 0 )
 TAGKEYS(XK_2, 1 )

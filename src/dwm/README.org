@@ -315,13 +315,15 @@ You can find their scripts [[https://github.com/StarryMohannad/Pixelfiles/tree/m
 **** Screenshots
 These are for taking screenshots using shotgun and hacksaw
 
-| Bind         | Command               |
-|--------------+-----------------------|
-| Super+Prtsrc | Fullscreen Screenshot |
-| Prtsrc       | Rectangle Screenshot  |
+| Bind         | Command                   |
+|--------------+---------------------------|
+| Super+Prtsrc | Fullscreen Screenshot     |
+| Shift+Prsrc  | Copys text from screnshot |
+| Prtsrc       | Rectangle Screenshot      |
 
 #+BEGIN_SRC C
 &((Keychord){1, {{0, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-shot.sh" ) }),
+&((Keychord){1, {{0, ShiftMask|XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-text.sh" ) }),
 &((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/screen-shot.sh" ) }),
 #+END_SRC
 
@@ -417,7 +419,7 @@ These are Random Things :P
 &((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_q }}, spawn, SHCMD("$DWM/scripts/dwm/quit.sh") }),
 &((Keychord){2, {{MODKEY|ShiftMask, XK_q },{0, XK_w }}, spawn, SHCMD("xkill") }),
 &((Keychord){1, {{MODKEY|ShiftMask, XK_p }}, spawn, SHCMD("$DWM/scripts/dwm/lock.sh") }),
-&((Keychord){1, {{MODKEY          , XK_F5 }}, xrdb, { .v = NULL } }),
+&((Keychord){1, {{MODKEY, XK_F5 }}, xrdb, { .v = NULL } }),
 #+END_SRC
 
 
