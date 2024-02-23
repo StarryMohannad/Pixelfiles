@@ -1,7 +1,8 @@
 # Default Apps
 export BROWSER="firefox"
 export TERMINAL="st"
-export EDITOR="emacsclient"
+export EDITOR="kak"
+export FILEMANAGER="$HOME"/.local/share/dwm/scripts/bin/lfub
 export MENU="dmenu -z 525 -i -p"
 
 # XDG-DIRS
@@ -29,6 +30,7 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export SSB_HOME="$XDG_DATA_HOME"/zoom
 export WINEPREFIX="$XDG_DATA_HOME"/wine
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 
 # Theme
 QT_QPA_PLATFORMTHEME=gtk2

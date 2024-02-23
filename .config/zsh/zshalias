@@ -47,4 +47,5 @@ alias sy='systemctl'
 # CleanUP
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 alias feh="feh --no-fehbg"
-alias lf="~/.local/share/dwm/scripts/lfub"
+alias lf="~/.local/share/dwm/scripts/bin/lfub"
+alias adb='HOME="$XDG_DATA_HOME"/android adb'

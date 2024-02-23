@@ -7,8 +7,6 @@ setsid -f picom # Compositor
 
 setsid -f mpDris2 # MPD Dris Compatiblity
 
-setsid -f emacs --daemon # Emacs Daemon
-
 setsid -f "$DWM"/scripts/dwm/startup/keepassxc.sh
 
 setsid -f "$DWM"/scripts/dwm/startup/volume-tracker.sh
