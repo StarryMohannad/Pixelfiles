@@ -1,2 +1,4 @@
 #!/bin/sh
-dmenu_path | dmenu -p "Run:" "$@" | ${SHELL:-"/bin/sh"} &
+
+export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin:~/.local/share/nimble/bini:~/.local/bin:~/.local/share/cargo/bin
+dmenu_path | dmenu -p "Run:" "$@" | ${SHELL:-"/usr/bin/sh"} &
