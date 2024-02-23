@@ -1,25 +1,21 @@
 format = """
 [░▒▓](background)\
-[  ](bg:white fg:black)\
-[](bg:blue fg:white)\
+$username\
+[](bg:red fg:white)\
 $directory\
-[](fg:blue bg:green)\
+[](fg:red bg:blue)\
 $git_branch\
 $git_status\
-[](fg:green bg:blue)\
+[](fg:blue bg:green)\
 $nodejs\
 $rust\
 $golang\
 $php\
-[](fg:blue bg:green)\
 [ ](fg:green)\
 """
 
-
-#[ $USER ](bg:#b8c0e0 fg:#1e2030)\
-#$time\
 [directory]
-style = "fg:white bg:blue"
+style = "fg:white bg:red"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -29,38 +25,39 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+"Videos" = " "
+
+[username]
+style_user = "bg:white fg:black"
+style_root = "bg:black fg:white"
+format = '[ ]($style)[$user]($style)[ ]($style)'
+show_always = true
 
 [git_branch]
 symbol = ""
 style = "bg:green"
-format = '[[ $symbol $branch ](fg:white bg:green)]($style)'
+format = '[[ $symbol $branch ](fg:white bg:blue)]($style)'
 
 [git_status]
 style = "bg:green"
-format = '[[($all_status$ahead_behind )](fg:white bg:green)]($style)'
+format = '[[($all_status$ahead_behind )](fg:white bg:blue)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:blue"
-format = '[[ $symbol ($version) ](fg:white bg:blue)]($style)'
+style = "bg:green"
+format = '[[ $symbol ($version) ](fg:white bg:green)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:blue"
-format = '[[ $symbol ($version) ](fg:white bg:blue)]($style)'
+style = "bg:green"
+format = '[[ $symbol ($version) ](fg:white bg:green)]($style)'
 
 [golang]
 symbol = "ﳑ"
-style = "bg:blue"
-format = '[[ $symbol ($version) ](fg:white bg:blue)]($style)'
+style = "bg:green"
+format = '[[ $symbol ($version) ](fg:white bg:green)]($style)'
 
 [php]
 symbol = ""
-style = "bg:blue"
-format = '[[ $symbol ($version) ](fg:white bg:blue)]($style)'
-
-[time]
-disabled = true
-time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+style = "bg:green"
+format = '[[ $symbol ($version) ](fg:white bg:green)]($style)'

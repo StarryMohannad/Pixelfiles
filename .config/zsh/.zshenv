@@ -31,6 +31,7 @@ export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export SSB_HOME="$XDG_DATA_HOME"/zoom
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
+export NIMBLE_DIR="$XDG_DATA_HOME/nimble"
 
 # Theme
 QT_QPA_PLATFORMTHEME=gtk2

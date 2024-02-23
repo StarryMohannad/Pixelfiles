@@ -51,8 +51,8 @@ These are Varibles for the window layout
 | snap      | is how far the window from the screen boarders to snap with the screen edges |
 
 #+BEGIN_SRC C
-static const unsigned int borderpx = 2;
-static const unsigned int gappx = 7;
+static const unsigned int borderpx = 1;
+static const unsigned int gappx = 5;
 static const unsigned int snap = 16;
 #+END_SRC
 
@@ -156,7 +156,7 @@ moves emacs to the "Code Tag"
 This enables window swallowing
 
 #+BEGIN_SRC C
-{ "st-256color", NULL, NULL, 0, 0, 1, 0, -1 },
+{ "St", NULL, NULL, 0, 0, 1, 0, -1 },
 #+END_SRC
 
 *** Chating Applications
@@ -318,13 +318,13 @@ These are for taking screenshots using shotgun and hacksaw
 | Bind         | Command                   |
 |--------------+---------------------------|
 | Super+Prtsrc | Fullscreen Screenshot     |
-| Shift+Prsrc  | Copys text from screnshot |
+| Alt+Prsrc    | Copys text from screnshot |
 | Prtsrc       | Rectangle Screenshot      |
 
 #+BEGIN_SRC C
 &((Keychord){1, {{0, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-shot.sh" ) }),
-&((Keychord){1, {{0, ShiftMask|XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-text.sh" ) }),
-&((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/screen-shot.sh" ) }),
+&((Keychord){1, {{Mod1Mask, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-text.sh" ) }),
+&((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/screenshot.sh" ) }),
 #+END_SRC
 
 **** Hotkeys
@@ -332,8 +332,8 @@ This binds Function Keys for controlling
 
 Brightness
 #+BEGIN_SRC C
-&((Keychord){1, {{ 0, XF86XK_MonBrightnessDown }}, spawn, SHCMD("$DWM/scripts/dwm/scripts/dwm/hotkeys/bright/down.sh") }),
-&((Keychord){1, {{ 0, XF86XK_MonBrightnessUp }}, spawn, SHCMD("$DWM/scripts/dwm/scripts/dwm/hotkeys/bright/up.sh") }),
+&((Keychord){1, {{ 0, XF86XK_MonBrightnessDown }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/bright/down.sh") }),
+&((Keychord){1, {{ 0, XF86XK_MonBrightnessUp }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/bright/up.sh") }),
 #+END_SRC
 
 Volume
@@ -377,6 +377,9 @@ These binds affect the Layout
 | Super+Shift+h/l   | Decrese/Increse the Size of the Master Stack               |
 | Super+u/i         | Increse/Decrese the Numbers of Windows in the Master Stack |
 | Super+Shift+t/f/m | Changes the Layout to Tiled/Floating/Monocle               |
+| Super+[-]         | Decreses Gap Size                                          |
+| Super+[=]         | Increses Gap Size                                          |
+| Super+Shift+[=]   | Reset Gap Size                                             |
 
 #+BEGIN_SRC C
 &((Keychord){1, {{MODKEY|ShiftMask, XK_l }}, setmfact,   { .f =  +0.05 } }), // Scale The Master Stack       | UP   //
@@ -387,6 +390,9 @@ These binds affect the Layout
 &((Keychord){1, {{MODKEY|ShiftMask, XK_t }}, setlayout,  { .v =  &layouts[0] } }), // Layout  | Tiled                     //
 &((Keychord){1, {{MODKEY|ShiftMask, XK_f }}, setlayout,  { .v =  &layouts[1] } }), //         | Floating                  //
 &((Keychord){1, {{MODKEY|ShiftMask, XK_m }}, setlayout,  { .v =  &layouts[2] } }), //         | Monocle                   //
+&((Keychord){1, {{MODKEY, XK_minus }}, setgaps, {.i = -1 } }),
+&((Keychord){1, {{MODKEY, XK_equal }}, setgaps, {.i = +1 } }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_equal }}, setgaps, {.i = gappx  } }),
 #+END_SRC
 
 **** Tags

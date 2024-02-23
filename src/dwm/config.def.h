@@ -1,7 +1,7 @@
 #include <X11/XF86keysym.h>
 
-static const unsigned int borderpx = 2;
-static const unsigned int gappx = 7;
+static const unsigned int borderpx = 1;
+static const unsigned int gappx = 5;
 static const unsigned int snap = 16;
 
 static const int showsystray = 1;
@@ -41,7 +41,7 @@ static const Rule rules[] = {
 
 { "emacs", NULL, NULL, 1 << 1, 0, 0, 0, -1 },
 
-{ "st-256color", NULL, NULL, 0, 0, 1, 0, -1 },
+{ "St", NULL, NULL, 0, 0, 1, 0, -1 },
 
 { "discord", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
 { "zoom", NULL, NULL, 1 << 7, 0, 0, 0, -1 },
@@ -91,11 +91,11 @@ static Keychord *keychords[] = {
 &((Keychord){2, {{MODKEY, XK_d }, {0, XK_g }}, spawn, SHCMD("$DWM/scripts/dmenu/steam" ) }),
 
 &((Keychord){1, {{0, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-shot.sh" ) }),
-&((Keychord){1, {{0, ShiftMask|XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-text.sh" ) }),
-&((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/screen-shot.sh" ) }),
+&((Keychord){1, {{Mod1Mask, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-text.sh" ) }),
+&((Keychord){1, {{MODKEY, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/screenshot.sh" ) }),
 
-&((Keychord){1, {{ 0, XF86XK_MonBrightnessDown }}, spawn, SHCMD("$DWM/scripts/dwm/scripts/dwm/hotkeys/bright/down.sh") }),
-&((Keychord){1, {{ 0, XF86XK_MonBrightnessUp }}, spawn, SHCMD("$DWM/scripts/dwm/scripts/dwm/hotkeys/bright/up.sh") }),
+&((Keychord){1, {{ 0, XF86XK_MonBrightnessDown }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/bright/down.sh") }),
+&((Keychord){1, {{ 0, XF86XK_MonBrightnessUp }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/bright/up.sh") }),
 
 &((Keychord){1, {{ 0, XF86XK_AudioMute }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/vol/mute.sh") }),
 &((Keychord){1, {{ 0, XF86XK_AudioLowerVolume }}, spawn, SHCMD("$DWM/scripts/dwm/hotkeys/vol/down.sh") }),
@@ -119,6 +119,9 @@ static Keychord *keychords[] = {
 &((Keychord){1, {{MODKEY|ShiftMask, XK_t }}, setlayout,  { .v =  &layouts[0] } }), // Layout  | Tiled                     //
 &((Keychord){1, {{MODKEY|ShiftMask, XK_f }}, setlayout,  { .v =  &layouts[1] } }), //         | Floating                  //
 &((Keychord){1, {{MODKEY|ShiftMask, XK_m }}, setlayout,  { .v =  &layouts[2] } }), //         | Monocle                   //
+&((Keychord){1, {{MODKEY, XK_minus }}, setgaps, {.i = -1 } }),
+&((Keychord){1, {{MODKEY, XK_equal }}, setgaps, {.i = +1 } }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_equal }}, setgaps, {.i = gappx  } }),
 
 &((Keychord){1, {{MODKEY, XK_h }}, shiftview, { .i  = -1 } }),
 &((Keychord){1, {{MODKEY, XK_l }}, shiftview, { .i  = +1 } }),
