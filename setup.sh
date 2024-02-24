@@ -29,7 +29,7 @@ paru -S shotgun hacksaw tesseract\
     zsh starship zsh-autosuggestions zsh-syntax-highlighting\
     lf ueberzug perl-file-mimeinfo\
     mpd mpc ncmpcpp mpd-discord-rpc mpDris2 playerctl\
-    emacs ripgrep fd\
+    kakoune kak-lsp\
     python-pywal feh pywal-discord-git zathura-pywal-git wpg-git python-pipx
 
 pipx install --index-url https://test.pypi.org/simple/ pywalfox==2.8.0rc1
@@ -54,7 +54,7 @@ sudo make clean install
 ln -s "$PF_CONFIG"/bat             "$HOME"/.config/bat
 ln -s "$PF_CONFIG"/btop            "$HOME"/.config/btop
 ln -s "$PF_CONFIG"/cava            "$HOME"/.config/cava
-ln -s "$PF_CONFIG"/doom            "$HOME"/.config/doom
+ln -s "$PF_CONFIG"/kak             "$HOME"/.config/kak
 ln -s "$PF_CONFIG"/dunst           "$HOME"/.config/dunst
 ln -s "$PF_CONFIG"/discord-rpc     "$HOME"/.config/discord-rpc
 ln -s "$PF_CONFIG"/firefox         "$HOME"/.config/firefox
