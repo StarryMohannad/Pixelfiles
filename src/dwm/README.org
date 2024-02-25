@@ -52,7 +52,7 @@ These are Varibles for the window layout
 
 #+BEGIN_SRC C
 static const unsigned int borderpx = 1;
-static const unsigned int gappx = 5;
+static const unsigned int gappx = 14;
 static const unsigned int snap = 16;
 #+END_SRC
 

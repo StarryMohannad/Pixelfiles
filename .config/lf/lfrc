@@ -5,29 +5,45 @@ set hidden ""
 set cleaner   '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
 
-# Delete Command
-cmd remove ${{
-    if [ -z $fs ]; then
-        rm -fr $f
-    else
-        IFS=':'; echo $fs | tr " " "\n"
-        echo 'delete? [y/n]'
-        read ans
+cmd z %{{
+	result="$(zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
 
-        [ $ans = 'y' ] && (echo 'deleting files...' && rm -fr $fs) || (echo 'cancelled...')
-    fi
+cmd zi ${{
+	result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+cmd on-cd &{{
+        zoxide add "$PWD"
 }}
 
 cmd on-select &{{
     lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f")\""
 }}
 
-cmd on-cd &{{
-    export STARSHIP_SHELL=
-    fmt="$(starship prompt)"
-    lf -remote "send $id set promptfmt \"$fmt\""
+cmd zle-cd %printf 'cd %q && zle reset-prompt\n' "$PWD" >&$ZLE_FIFO
+
+cmd zle-insert-relative %{{
+    for f in $fx; do
+        printf 'LBUFFER+="${LBUFFER:+ }${(q)$(realpath %q --relative-to=$PWD)}"\n' "$f" >&$ZLE_FIFO
+    done
 }}
 
-map d
-map dd delete
-map df cut
+cmd zle-insert-absolute %{{
+    for f in $fx; do
+        printf 'LBUFFER+="${LBUFFER:+ }%q"\n' "$f" >&$ZLE_FIFO
+    done
+}}
+
+cmd zle-init :{{
+    map . zle-cd
+    map a zle-insert-relative
+    map A zle-insert-absolute
+}}
+
+&[[ -n "$ZLE_FIFO" ]] && lf -remote "send $id zle-init"
+
+map d cut
+map D delete
