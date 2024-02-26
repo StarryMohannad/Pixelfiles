@@ -1,7 +1,7 @@
 #include <X11/XF86keysym.h>
 
-static const unsigned int borderpx = 1;
-static const unsigned int gappx = 5;
+static const unsigned int borderpx = 0;
+static const unsigned int gappx = 14;
 static const unsigned int snap = 16;
 
 static const int showsystray = 1;
@@ -54,7 +54,7 @@ static const Rule rules[] = {
 
 static const float mfact = 0.55; // Factor of Master Stack
 static const int nmaster = 1;    // Number of Windows in Master Stack
-static const int resizehints = 1;    //
+static const int resizehints = 0;
 static const int lockfullscreen = 1; // force focus on the fullscreen window
 
 static const Layout layouts[] = {

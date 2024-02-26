@@ -1,6 +1,6 @@
 .config/btop/btop.conf
 .config/btop/btop.log
-
+.config/pf/shell-config.sh
 .config/nvim/plugin
 .config/zsh/zshistory
 
