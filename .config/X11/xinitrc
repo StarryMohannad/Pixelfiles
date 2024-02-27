@@ -7,6 +7,4 @@ fi
 
 setxkbmap -layout us,ara -option grp:win_space_toggle
 
-xrdb -merge ~/.config/X11/Xresources
-
 dwm
