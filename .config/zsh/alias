@@ -1,4 +1,5 @@
 alias mkdir='mkdir -p'
+alias ..='cd ..'
 
 # Alternatives
 alias ls='eza --long --header --git --icons --group-directories-first'
@@ -11,7 +12,8 @@ alias cd='z'
 # Shotcuts
 alias g='git'
 alias gi='git init'
-alias ga='git add .'
+alias ga='git add'
+alias ga.='git add .'
 alias gc='git commit -m'
 alias gcl='git clone'
 alias gp='git push'
@@ -24,18 +26,10 @@ alias cl='clear'
 alias clh='rm -rf $ZSH/zshistory'
 alias cld='rm -rf $HOME/Downloads/*.*'
 
-alias vim='emacsclient -nw'
-alias vi='emacsclient -nw'
-alias v='emacsclient -nw'
-
 alias s='sudo'
 alias se='sudoedit'
 alias ss='sudo systemctl'
 alias p='paru'
-
-alias e='$EDITOR'
-alias b='$BROWSER'
-alias r='$FILEMANAGER'
 
 alias f='flatpak'
 alias fin='flatpak install'
