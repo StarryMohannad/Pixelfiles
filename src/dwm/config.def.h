@@ -1,7 +1,7 @@
 #include <X11/XF86keysym.h>
 
 static const unsigned int borderpx = 0;
-static const unsigned int gappx = 14;
+static const unsigned int gappx = 8;
 static const unsigned int snap = 16;
 
 static const int showsystray = 1;
@@ -119,9 +119,10 @@ static Keychord *keychords[] = {
 &((Keychord){1, {{MODKEY|ShiftMask, XK_t }}, setlayout,  { .v =  &layouts[0] } }), // Layout  | Tiled                     //
 &((Keychord){1, {{MODKEY|ShiftMask, XK_f }}, setlayout,  { .v =  &layouts[1] } }), //         | Floating                  //
 &((Keychord){1, {{MODKEY|ShiftMask, XK_m }}, setlayout,  { .v =  &layouts[2] } }), //         | Monocle                   //
-&((Keychord){1, {{MODKEY, XK_minus }}, setgaps, {.i = -1 } }),
-&((Keychord){1, {{MODKEY, XK_equal }}, setgaps, {.i = +1 } }),
-&((Keychord){1, {{MODKEY|ShiftMask, XK_equal }}, setgaps, {.i = gappx  } }),
+&((Keychord){1, {{MODKEY, XK_minus }}, setgaps, { .i = -1 } }),
+&((Keychord){1, {{MODKEY, XK_equal }}, setgaps, { .i = +1 } }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_equal }}, setgaps, { .v = gappx } }),
+&((Keychord){1, {{MODKEY|ShiftMask, XK_minus }}, setgaps, { .v = 0 } }),
 
 &((Keychord){1, {{MODKEY, XK_h }}, shiftview, { .i  = -1 } }),
 &((Keychord){1, {{MODKEY, XK_l }}, shiftview, { .i  = +1 } }),

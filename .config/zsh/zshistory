@@ -1,0 +1,25 @@
+cd .zsh
+cd zsh
+la .zshrc
+cat .zsh
+bat --color=auto
+bat --color=auto ./zshalias
+bat --color=auto ./.zshenv
+bat --theme=default ./.zshenv
+bat --theme=1337 ./.zshenv
+bat --theme=ansi ./.zshenv
+kak .zshenv
+cat .zshenv
+cl
+la
+rm -rf catppuccin_macchiato-zsh-syntax-highlighting.zsh
+kak zshistory
+kak zshplugins
+mv zshalias alias
+mv zshplugins plugins
+mv zshistory history
+kak ~/.local/pf/.gitignore
+kak .zshrc'
+kak .zshrc
+clear
+ls

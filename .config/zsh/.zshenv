@@ -36,4 +36,9 @@ export NIMBLE_DIR="$XDG_DATA_HOME/nimble"
 # Theme
 QT_QPA_PLATFORMTHEME=gtk2
 export XCURSOR_THEME="Catppuccin-Macchiato-Dark-Cursors"
-export BAT_THEME="Catppuccin-macchiato"
+export BAT_THEME="ansi"
+
+export DENO_INSTALL=""$HOME"/.local/share/deno"
+
+# Paths
+export PATH="$DENO_INSTALL"/bin:"$XDG_DATA_HOME"/gem/ruby/3.0.0/bin:"$XDG_DATA_HOME"/npm/bin:"$XDG_DATA_HOME"/nimble/bin:"$HOME"/.local/bin:$PATH
