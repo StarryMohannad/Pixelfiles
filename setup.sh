@@ -84,7 +84,7 @@ cp -r "$PF_CONFIG"/pf              "$HOME"/.config/pf
 # Install Plug.kak
 mkdir -p $HOME/.config/kak/plugins
 git clone https://github.com/andreyorst/plug.kak.git $HOME/.config/kak/plugins/plug.kak
-kak -e plug-clean
+kak -e plug-install
 
 # Themeing
 wpg-install.sh -g
