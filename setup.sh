@@ -81,9 +81,10 @@ ln -s "$PF_LOCAL"/share/dwm        "$HOME"/.local/share/dwm
 
 cp -r "$PF_CONFIG"/pf              "$HOME"/.config/pf
 
-# Installing Doom Emacs
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-~/.config/emacs/bin/doom install
+# Install Plug.kak
+mkdir -p $HOME/.config/kak/plugins
+git clone https://github.com/andreyorst/plug.kak.git $HOME/.config/kak/plugins/plug.kak
+kak -e plug-clean
 
 # Themeing
 wpg-install.sh -g
