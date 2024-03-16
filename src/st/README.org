@@ -52,7 +52,7 @@ static int borderpx = 5;
 this sets the opacity
 
 #+BEGIN_SRC C
-float alpha = 1;
+float alpha = 0.9;
 #+END_SRC
 
 *** Colorscheme
@@ -237,7 +237,7 @@ static unsigned int rows = 24;
 *** TERM Value
 
 #+BEGIN_SRC C
-char *termname = "xterm-256color";
+char *termname = "st-256color";
 #+END_SRC
 
 *** Bell Volume

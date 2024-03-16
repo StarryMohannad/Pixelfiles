@@ -1,7 +1,6 @@
 static const Block blocks[] = {
 { "  ", "~/.local/share/dwm/scripts/dwmblocks/mus", 1, 3},
 { "󱐋  ", "~/.local/share/dwm/scripts/dwmblocks/bat", 1, 2},
-{ "󰕾  ", "~/.local/share/dwm/scripts/dwmblocks/vol", 1, 0},
 { "󰸗  ", "~/.local/share/dwm/scripts/dwmblocks/cal", 1, 5},
 { "  ", "~/.local/share/dwm/scripts/dwmblocks/tim", 1, 1}, };
 

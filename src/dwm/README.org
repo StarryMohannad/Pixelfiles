@@ -23,10 +23,11 @@ This Build of dwm uses these [[https://github.com/StarryMohannad/Pixelfiles/tree
 1. [[https://dwm.suckless.org/patches/autostart/][autostart]]
 2. [[https://dwm.suckless.org/patches/fullgaps/][fullgaps]]
 3. [[https://dwm.suckless.org/patches/keychord/][keychord]]
-4. [[https://dwm.suckless.org/patches/steam/][steam]]
-5. [[https://dwm.suckless.org/patches/swallow/][swallow]]
-6. [[https://dwm.suckless.org/patches/systray][systray]]
-7. [[https://dwm.suckless.org/patches/xrdb/][xrdb]]
+4. [[https://dwm.suckless.org/patches/notitle/][notitle]]
+5. [[https://dwm.suckless.org/patches/steam/][steam]]
+6. [[https://dwm.suckless.org/patches/swallow/][swallow]]
+7. [[https://dwm.suckless.org/patches/systray][systray]]
+8. [[https://dwm.suckless.org/patches/xrdb/][xrdb]]
 
 * Config
 here is the config file for dwm, I wrote it in org mode to document it, to apply changes press (Ctrl+c Ctrl+v t)
@@ -52,7 +53,7 @@ These are Varibles for the window layout
 
 #+BEGIN_SRC C
 static const unsigned int borderpx = 0;
-static const unsigned int gappx = 8;
+static const unsigned int gappx = 16;
 static const unsigned int snap = 16;
 #+END_SRC
 
@@ -113,7 +114,7 @@ static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 static char *colors[][3] = {
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+       [SchemeSel]  = { selbgcolor,  normbgcolor, selbordercolor  },
 };
 #+END_SRC
 
@@ -150,6 +151,7 @@ moves emacs to the "Code Tag"
 
 #+BEGIN_SRC C
 { "emacs", NULL, NULL, 1 << 1, 0, 0, 0, -1 },
+{ "sun-awt-X11-XFramePeer", NULL , NULL, 0, 1, 0, 0, -1 },
 #+END_SRC
 
 *** Terminal
@@ -275,18 +277,15 @@ These Applications open from scripts [[https://github.com/StarryMohannad/Pixelfi
 
 | Bind    | Command                          |
 |---------+----------------------------------|
-| Super+e | Opens Emacs (Client)             |
 | Super+m | Opens Music Player (in Terminal) |
-| Super+g | Opens Steam                      |
+| Super+g | Opens steam_dmenu                |
 | Super+r | Opens File Manager (in Terminal) |
 | Super+t | Opens Terminal                   |
 | Super+w | Opens Web Browser                |
 
 #+BEGIN_SRC C
-&((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/emacs" ) }),
-&((Keychord){1, {{MODKEY, XK_g }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/game" ) }),
 &((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/mpd" ) }),
-&((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/file") }),
+&((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/file") }),
 &((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/term") }),
 &((Keychord){1, {{MODKEY, XK_w }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/www" ) }),
 #+END_SRC
@@ -297,7 +296,6 @@ You can find their scripts [[https://github.com/StarryMohannad/Pixelfiles/tree/m
 
 | Bind            | Command                           |
 |-----------------+-----------------------------------|
-| Super+d g       | Opens dmenu_steam for Steam Games |
 | Super+d h       | Opens Art Prompt                  |
 | Super+d t       | Opens Code Prompt                 |
 | Super+o         | Opens KPMenu Password Manager     |
@@ -305,11 +303,11 @@ You can find their scripts [[https://github.com/StarryMohannad/Pixelfiles/tree/m
 | Super+Shift+q q | Opens the Logout Script           |
 
 #+BEGIN_SRC C
+&((Keychord){1, {{MODKEY, XK_g }}, spawn, SHCMD("$DWM/scripts/dmenu/steam" ) }),
 &((Keychord){1, {{MODKEY, XK_o }}, spawn, SHCMD("$DWM/scripts/dmenu/pass") }),
 &((Keychord){1, {{MODKEY, XK_p }}, spawn, SHCMD("$DWM/scripts/dmenu/run") }),
 &((Keychord){2, {{MODKEY, XK_d }, {0, XK_t }}, spawn, SHCMD("$DWM/scripts/dmenu/code" ) }),
 &((Keychord){2, {{MODKEY, XK_d }, {0, XK_h }}, spawn, SHCMD("$DWM/scripts/dmenu/art" ) }),
-&((Keychord){2, {{MODKEY, XK_d }, {0, XK_g }}, spawn, SHCMD("$DWM/scripts/dmenu/steam" ) }),
 #+END_SRC
 
 **** Screenshots
@@ -475,7 +473,6 @@ Bindings for Mice :DD
 static const Button buttons[] = {
 { ClkTagBar, MODKEY, Button1, tag, { 0 } },
 { ClkTagBar, MODKEY, Button3, toggletag, { 0 } },
-{ ClkWinTitle, 0, Button2, zoom, { 0 } },
 { ClkStatusText, 0, Button2, spawn, SHCMD("$DWM/defapps/term") },
 { ClkClientWin, MODKEY, Button1, movemouse, { 0 } },
 { ClkClientWin, MODKEY, Button2, togglefloating, { 0 } },

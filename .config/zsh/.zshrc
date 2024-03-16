@@ -1,5 +1,5 @@
 if [[ "$(tty)" = "/dev/tty1" ]] ; then
-    startx
+    startx && exit
 fi
 
 export HISTFILE="$ZDOTDIR"/history
@@ -23,4 +23,4 @@ export NVM_DIR="$HOME/.local/share/nvm"
 eval "$(zoxide init zsh)"
 
 bindkey -v
-if [ "$TMUX" = "" ]; then tmux && exit; fi
+# if [ "$TMUX" = "" ]; then tmux && exit; fi

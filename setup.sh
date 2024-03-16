@@ -17,7 +17,7 @@ makepkg -si
 # Installing Packages
 paru -S shotgun hacksaw tesseract\
     coreutils wget curl\
-    picom\
+    xcompmgr\
     kpmenu xsel\
     mpv zathura\
     upower alsa-utils\

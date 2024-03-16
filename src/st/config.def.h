@@ -2,7 +2,7 @@ static char *font = "FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=tru
 
 static int borderpx = 5;
 
-float alpha = 1;
+float alpha = 0.9;
 
 // Colorscheme
 static const char *colorname[] = {
@@ -72,7 +72,7 @@ static double maxlatency = 33;
 static unsigned int cols = 80;
 static unsigned int rows = 24;
 
-char *termname = "xterm-256color";
+char *termname = "st-256color";
 
 static int bellvolume = 100;
 

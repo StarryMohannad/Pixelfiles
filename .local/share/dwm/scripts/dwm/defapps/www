@@ -1,4 +1,6 @@
 #!/bin/sh
 
+export QT_QPA_PLATFORMTHEME=""
+
 setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/open.mp3
-librewolf
+qutebrowser

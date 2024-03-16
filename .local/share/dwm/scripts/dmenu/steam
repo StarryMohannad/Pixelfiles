@@ -3,5 +3,5 @@
 source "$XDG_CONFIG_HOME"/pf/shell-config.sh
 
 setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu1.mp3
-python3 "$DWM"/dmenu/etc/steam_dmenu.py -d "$MENU Steam: " -l "$STEAM_LIBRARY"
+python3 "$DWM"/scripts/dmenu/etc/steam_dmenu.py -d "$MENU Steam: " -l "$STEAM_LIBRARY"
 setsid -f mpv --no-video "$XDG_DATA_HOME"/sounds/menu2.mp3

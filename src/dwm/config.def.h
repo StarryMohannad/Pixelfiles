@@ -1,7 +1,7 @@
 #include <X11/XF86keysym.h>
 
 static const unsigned int borderpx = 0;
-static const unsigned int gappx = 8;
+static const unsigned int gappx = 16;
 static const unsigned int snap = 16;
 
 static const int showsystray = 1;
@@ -25,7 +25,7 @@ static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 static char *colors[][3] = {
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+       [SchemeSel]  = { selbgcolor,  normbgcolor, selbordercolor  },
 };
 
 static const char *tags[] = { "󰖟", "", "", "", "", "", "", "󰍡", "*" };
@@ -40,6 +40,7 @@ static const Rule rules[] = {
 { "brave-browser", NULL, NULL, 1 << 0, 0, 0, 0, -1 },
 
 { "emacs", NULL, NULL, 1 << 1, 0, 0, 0, -1 },
+{ "sun-awt-X11-XFramePeer", NULL , NULL, 0, 1, 0, 0, -1 },
 
 { "St", NULL, NULL, 0, 0, 1, 0, -1 },
 
@@ -77,18 +78,16 @@ static const Layout layouts[] = {
 
 static Keychord *keychords[] = {
 
-&((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/emacs" ) }),
-&((Keychord){1, {{MODKEY, XK_g }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/game" ) }),
 &((Keychord){1, {{MODKEY, XK_m }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/mpd" ) }),
-&((Keychord){1, {{MODKEY, XK_r }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/file") }),
+&((Keychord){1, {{MODKEY, XK_e }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/file") }),
 &((Keychord){1, {{MODKEY, XK_t }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/term") }),
 &((Keychord){1, {{MODKEY, XK_w }}, spawn, SHCMD("$DWM/scripts/dwm/defapps/www" ) }),
 
+&((Keychord){1, {{MODKEY, XK_g }}, spawn, SHCMD("$DWM/scripts/dmenu/steam" ) }),
 &((Keychord){1, {{MODKEY, XK_o }}, spawn, SHCMD("$DWM/scripts/dmenu/pass") }),
 &((Keychord){1, {{MODKEY, XK_p }}, spawn, SHCMD("$DWM/scripts/dmenu/run") }),
 &((Keychord){2, {{MODKEY, XK_d }, {0, XK_t }}, spawn, SHCMD("$DWM/scripts/dmenu/code" ) }),
 &((Keychord){2, {{MODKEY, XK_d }, {0, XK_h }}, spawn, SHCMD("$DWM/scripts/dmenu/art" ) }),
-&((Keychord){2, {{MODKEY, XK_d }, {0, XK_g }}, spawn, SHCMD("$DWM/scripts/dmenu/steam" ) }),
 
 &((Keychord){1, {{0, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-shot.sh" ) }),
 &((Keychord){1, {{Mod1Mask, XK_Print  }}, spawn, SHCMD("$DWM/scripts/dwm/prtsc/rectangle-text.sh" ) }),
@@ -155,7 +154,6 @@ TAGKEYS(XK_9, 8 )
 static const Button buttons[] = {
 { ClkTagBar, MODKEY, Button1, tag, { 0 } },
 { ClkTagBar, MODKEY, Button3, toggletag, { 0 } },
-{ ClkWinTitle, 0, Button2, zoom, { 0 } },
 { ClkStatusText, 0, Button2, spawn, SHCMD("$DWM/defapps/term") },
 { ClkClientWin, MODKEY, Button1, movemouse, { 0 } },
 { ClkClientWin, MODKEY, Button2, togglefloating, { 0 } },

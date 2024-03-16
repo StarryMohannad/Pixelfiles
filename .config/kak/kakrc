@@ -39,11 +39,6 @@ hook global WinSetOption filetype=(html|css|json|rust|python|go|javascript|types
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 plug "andreyorst/plug.kak" noload
 
-# Discord RPC
-plug "abuffseagull/kakoune-discord" do %{ cargo install --path . --force } %{
-  discord-presence-enable
-}
-
 # AutoPairs
 plug "alexherbo2/auto-pairs.kak" config %{
   enable-auto-pairs
@@ -84,3 +79,8 @@ map -docstring "insert newline below" global user ] "o<esc>k"
 # spellcheck (requires aspell)
 map -docstring "check document for spelling" global user w ": spell<ret>"
 map -docstring "clear document spelling" global user q ": spell-clear<ret>"
+
+# Discord RPC
+plug "abuffseagull/kakoune-discord" do %{ cargo install --path . --force } %{
+  discord-presence-enable
+}

@@ -1,9 +1,9 @@
 # Basic vars
-set icons
 set drawbox
 set hidden ""
 set cleaner   '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
+set icons
 
 cmd z %{{
 	result="$(zoxide query --exclude $PWD $@ | sed 's/\\/\\\\/g;s/"/\\"/g')"
