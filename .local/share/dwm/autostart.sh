@@ -3,7 +3,7 @@
 setsid -f syncthing serve --no-browser # Syncthing for Syncing Files
 
 setsid -f dwmblocks # DWMBlocks for Status
-setsid -f xcompmgr -cC # Compositor
+setsid -f xcompmgr # Compositor
 
 setsid -f mpDris2 # MPD Dris Compatiblity
 

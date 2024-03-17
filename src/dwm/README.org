@@ -52,7 +52,7 @@ These are Varibles for the window layout
 | snap      | is how far the window from the screen boarders to snap with the screen edges |
 
 #+BEGIN_SRC C
-static const unsigned int borderpx = 0;
+static const unsigned int borderpx = 1;
 static const unsigned int gappx = 16;
 static const unsigned int snap = 16;
 #+END_SRC

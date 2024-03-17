@@ -1,6 +1,6 @@
 #include <X11/XF86keysym.h>
 
-static const unsigned int borderpx = 0;
+static const unsigned int borderpx = 1;
 static const unsigned int gappx = 16;
 static const unsigned int snap = 16;
 
